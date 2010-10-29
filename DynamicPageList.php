@@ -52,7 +52,6 @@ $dir = dirname(__FILE__) . '/';
 $wgExtensionMessagesFiles['DynamicPageList'] = $dir . 'DynamicPageList.i18n.php';
 
 function wfDynamicPageList( &$parser ) {
-	wfLoadExtensionMessages( 'DynamicPageList' );
 	$parser->setHook( "DynamicPageList", "DynamicPageList" );
 	return true;
 }
@@ -66,7 +65,6 @@ function DynamicPageList( $input ) {
 	global $wgDLPmaxCategories, $wgDLPMaxResultCount;
 	global $wgDLPAllowUnlimitedResults, $wgDLPAllowUnlimitedCategories;
 
-	$aParams = array();
 	$bCountSet = false;
 
 	$sStartList = '<ul>';
@@ -543,7 +541,7 @@ function DynamicPageList( $input ) {
 	//process results of query, outputing equivalent of <li>[[Article]]</li> for each result,
 	//or something similar if the list uses other startlist/endlist
 	$articleList = Array();
-	while ($row = $dbr->fetchObject( $res ) ) {
+	foreach ( $res as $row ) {
 		$title = Title::makeTitle( $row->page_namespace, $row->page_title);
 		if ( true == $bAddFirstCategoryDate ) {
 			if ( $sDateFormat != '' ) {
