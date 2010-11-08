@@ -74,6 +74,16 @@ $messages['ast'] = array(
 	'intersection_noincludecats' => 'Error: ¡Necesites amiestar a lo menos una categoría, o especificar un espaciu de nomes!',
 );
 
+/** Bashkir (Башҡорт)
+ * @author Assele
+ */
+$messages['ba'] = array(
+	'intersection-desc' => 'Категорияға һуңғы өҫтәүҙәрҙе, йәки бер нисә категорияның киҫешеүен тамғалы исемлек рәүешендә сығара',
+	'intersection_toomanycats' => 'Хата: Бигерәк күп категориялар!',
+	'intersection_noresults' => 'Хата: Бер һөҙөмтә лә юҡ!',
+	'intersection_noincludecats' => 'Хата: Һеҙ кәмендә бер категория индерергә йәки исемдәр арауығын билдәләргә тейешһегеҙ!',
+);
+
 /** Southern Balochi (بلوچی مکرانی)
  * @author Mostafadaneshvar
  */
