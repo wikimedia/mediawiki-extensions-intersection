@@ -740,6 +740,14 @@ $messages['sah'] = array(
 	'intersection_noincludecats' => 'Error: Биир эмит категорияны эбэтэр ааты (пространство имен) талыахтааххын!',
 );
 
+/** Sinhala (සිංහල)
+ * @author Budhajeewa
+ */
+$messages['si'] = array(
+	'intersection_toomanycats' => 'දෝෂය: ප්‍රවර්ග ගණන ඉතා වැඩිය!',
+	'intersection_noresults' => 'දෝෂය: ප්‍රතිඵලයක් නැත!',
+);
+
 /** Slovak (Slovenčina)
  * @author Helix84
  */
