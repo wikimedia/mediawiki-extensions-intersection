@@ -956,12 +956,13 @@ $messages['zh-hans'] = array(
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
+ * @author Mark85296341
  * @author Shinjiman
  */
 $messages['zh-hant'] = array(
-	'intersection-desc' => '輸出一個點列最近在分類中的項目，或者係數個分類的一個聯繫',
-	'intersection_toomanycats' => 'DynamicPageList: 太多分類!',
-	'intersection_noresults' => 'DynamicPageList: 沒有結果!',
-	'intersection_noincludecats' => 'DynamicPageList: 您需要去包含最少一個分類，或者指定一個空間名!',
+	'intersection-desc' => '輸出一個點列最近在分類中的項目，或者係數個分類的一個關聯',
+	'intersection_toomanycats' => 'DynamicPageList：太多分類！',
+	'intersection_noresults' => 'DynamicPageList：沒有結果！',
+	'intersection_noincludecats' => 'DynamicPageList：您需要去包含最少一個分類，或者指定一個空間名！',
 );
 
