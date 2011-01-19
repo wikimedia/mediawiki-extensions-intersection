@@ -261,12 +261,13 @@ $messages['eu'] = array(
 
 /** Persian (فارسی)
  * @author Huji
+ * @author Mjbmr
  */
 $messages['fa'] = array(
 	'intersection-desc' => 'فهرست گلوله‌ای از صفحه‌هایی به نمایش در می‌آورد که به تازگی در یک یا چند رده وارد شده‌اند',
-	'intersection_toomanycats' => 'DynamicPageList: تعداد رده‌ها زیاد است!',
-	'intersection_noresults' => 'DynamicPageList: نتیجه‌ای وجود ندارد!',
-	'intersection_noincludecats' => 'DynamicPageList: شما حداقل باید یک رده را وارد کنید، یا یک فضای نام را مشخص کنید!',
+	'intersection_toomanycats' => 'خطا: تعداد رده‌ها زیاد است!',
+	'intersection_noresults' => 'خطا: نتیجه‌ای وجود ندارد!',
+	'intersection_noincludecats' => 'خطا: شما حداقل باید یک رده را وارد کنید، یا یک فضای نام را مشخص کنید!',
 );
 
 /** Finnish (Suomi)
