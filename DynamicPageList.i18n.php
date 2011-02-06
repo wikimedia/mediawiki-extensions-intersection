@@ -167,6 +167,14 @@ $messages['cs'] = array(
 	'intersection_noincludecats' => 'Error: Musíte zahrnout alespoň jednu kategorii nebo určit jmenný prostor!',
 );
 
+/** Welsh (Cymraeg)
+ * @author Lloffiwr
+ */
+$messages['cy'] = array(
+	'intersection_toomanycats' => 'Gwall: Gormod o gategorïau!',
+	'intersection_noresults' => 'Gwall: Dim canlyniadau!',
+);
+
 /** German (Deutsch)
  * @author Pill
  * @author Purodha
