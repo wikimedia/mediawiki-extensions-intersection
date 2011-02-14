@@ -779,6 +779,16 @@ $messages['sl'] = array(
 	'intersection_noincludecats' => 'Napaka: Vključiti morate vsaj eno kategorijo ali določiti imenski prostor!',
 );
 
+/** Albanian (Shqip)
+ * @author Olsi
+ */
+$messages['sq'] = array(
+	'intersection-desc' => 'Rezultatet një listë bulleted nga pikat më të fundit që banojnë në një kategori, apo një ndërprerje të disa kategori',
+	'intersection_toomanycats' => 'Gabim: Shumë kategori!',
+	'intersection_noresults' => 'Gabim: Nuk ka rezultate!',
+	'intersection_noincludecats' => 'Gabim: Ju duhet të përfshini të paktën një kategori, ose të specifikoni një hapësirë!',
+);
+
 /** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
  * @author Millosh
  */
