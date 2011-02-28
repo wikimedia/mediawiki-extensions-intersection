@@ -1,6 +1,6 @@
 <?php
 /*
-	
+
  Purpose:       outputs a bulleted list of most recent
                 items residing in a category, or a union
                 of several categories.
@@ -26,41 +26,52 @@
 
  Current feature request list
 	 1. Unset cached of calling page
-	 4. RSS feed output? (GNSM extension?)
+	 2. RSS feed output? (GNSM extension?)
 
  To install, add following to LocalSettings.php
-   include("extensions/intersection/DynamicPageList.php");
+   include("$IP/extensions/intersection/DynamicPageList.php");
 
 */
 
+if ( !defined( 'MEDIAWIKI' ) ) {
+	die( 'This is not a valid entry point to MediaWiki.' );
+}
+
+// Extension credits that will show up on Special:Version
+$wgExtensionCredits['parserhook'][] = array(
+	'path'           => __FILE__,
+	'name'           => 'DynamicPageList',
+	'version'        => '1.5',
+	'descriptionmsg' => 'intersection-desc',
+	'url'            => 'http://www.mediawiki.org/wiki/Extension:Intersection',
+	'author'         => array( '[http://en.wikinews.org/wiki/User:Amgine Amgine]', '[http://en.wikinews.org/wiki/User:IlyaHaykinson IlyaHaykinson]' ),
+);
+
+// Internationalization file
+$dir = dirname( __FILE__ ) . '/';
+$wgExtensionMessagesFiles['DynamicPageList'] = $dir . 'DynamicPageList.i18n.php';
+
+# Configuration variables
 $wgDLPmaxCategories = 6;                // Maximum number of categories to look for
 $wgDLPMaxResultCount = 200;             // Maximum number of results to allow
 $wgDLPAllowUnlimitedResults = false;    // Allow unlimited results
 $wgDLPAllowUnlimitedCategories = false; // Allow unlimited categories
 
 $wgHooks['ParserFirstCallInit'][] = 'wfDynamicPageList';
-
-$wgExtensionCredits['parserhook'][] = array(
-	'path'           => __FILE__,
-	'name'           => 'DynamicPageList',
-	'descriptionmsg' => 'intersection-desc',
-	'url'            => 'http://www.mediawiki.org/wiki/Extension:Intersection',
-	'author'         => array( '[http://en.wikinews.org/wiki/User:Amgine Amgine]', '[http://en.wikinews.org/wiki/User:IlyaHaykinson IlyaHaykinson]' ),
-);
-
-$dir = dirname(__FILE__) . '/';
-$wgExtensionMessagesFiles['DynamicPageList'] = $dir . 'DynamicPageList.i18n.php';
-
+/**
+ * Set up the <DynamicPageList> tag.
+ *
+ * @param $parser Object: instance of Parser
+ * @return Boolean: true
+ */
 function wfDynamicPageList( &$parser ) {
-	$parser->setHook( "DynamicPageList", "DynamicPageList" );
+	$parser->setHook( 'DynamicPageList', 'renderDynamicPageList' );
 	return true;
 }
 
 // The callback function for converting the input text to HTML output
-function DynamicPageList( $input ) {
-	global $wgUser;
-	global $wgLang;
-	global $wgContLang;
+function renderDynamicPageList( $input ) {
+	global $wgUser, $wgLang, $wgContLang;
 	global $wgDisableCounters; // to determine if to allow sorting by #hits.
 	global $wgDLPmaxCategories, $wgDLPMaxResultCount;
 	global $wgDLPAllowUnlimitedResults, $wgDLPAllowUnlimitedCategories;
@@ -90,9 +101,9 @@ function DynamicPageList( $input ) {
 
 	$bNamespace = false;
 	$iNamespace = 0;
-	
+
 	$iOffset = 0;
-	
+
 	$bGoogleHack = false;
 
 	$bSuppressErrors = false;
@@ -105,38 +116,44 @@ function DynamicPageList( $input ) {
 	$aCategories = array();
 	$aExcludeCategories = array();
 
-	$aParams = explode("\n", $input);
+	$aParams = explode( "\n", $input );
 
 	$parser = new Parser;
 	$poptions = new ParserOptions;
 
 	foreach ( $aParams as $sParam )	{
-		$aParam = explode( "=", $sParam, 2 );
+		$aParam = explode( '=', $sParam, 2 );
 		if( count( $aParam ) < 2 ) {
 			continue;
 		}
-		$sType = trim($aParam[0]);
-		$sArg = trim($aParam[1]);
+		$sType = trim( $aParam[0] );
+		$sArg = trim( $aParam[1] );
 		switch ( $sType ) {
 			case 'category':
-				$title = Title::newFromText( $parser->transformMsg($sArg, $poptions) );
-				if( is_null( $title ) )
+				$title = Title::newFromText(
+					$parser->transformMsg( $sArg, $poptions )
+				);
+				if( is_null( $title ) ) {
 					continue;
+				}
 				$aCategories[] = $title;
 				break;
 			case 'notcategory':
-				$title = Title::newFromText( $parser->transformMsg($sArg, $poptions) );
-				if( is_null( $title ) )
+				$title = Title::newFromText(
+					$parser->transformMsg( $sArg, $poptions )
+				);
+				if( is_null( $title ) ) {
 					continue;
+				}
 				$aExcludeCategories[] = $title;
 				break;
 			case 'namespace':
-				$ns = $wgContLang->getNsIndex($sArg);
-				if ( null != $ns ) {
+				$ns = $wgContLang->getNsIndex( $sArg );
+				if ( $ns != null ) {
 					$iNamespace = $ns;
 					$bNamespace = true;
 				} else {
-					$iNamespace = intval($sArg);
+					$iNamespace = intval( $sArg );
 					if ( $iNamespace >= 0 )	{
 						$bNamespace = true;
 					} else {
@@ -145,21 +162,21 @@ function DynamicPageList( $input ) {
 				}
 				break;
 			case 'count':
-				//ensure that $iCount is a number;
-				$iCount = IntVal( $sArg );
+				// ensure that $iCount is a number;
+				$iCount = intval( $sArg );
 				$bCountSet = true;
 				break;
 			case 'offset':
-				$iOffset = IntVal( $sArg );
+				$iOffset = intval( $sArg );
 				break;
 			case 'imagewidth':
-				$iGalleryImageWidth = IntVal( $sArg );
+				$iGalleryImageWidth = intval( $sArg );
 				break;
 			case 'imageheight':
-				$iGalleryImageHeight = IntVal( $sArg );
+				$iGalleryImageHeight = intval( $sArg );
 				break;
 			case 'imagesperrow':
-				$iGalleryNumbRows = IntVal( $sArg );
+				$iGalleryNumbRows = intval( $sArg );
 				break;
 			case 'mode':
 				switch ( $sArg ) {
@@ -186,7 +203,7 @@ function DynamicPageList( $input ) {
 						$bInlineMode = false;
 						break;
 					case 'inline':
-						//aka comma seperated list
+						// aka comma seperated list
 						$sStartList = '';
 						$sEndList = '';
 						$sStartItem = '';
@@ -205,7 +222,7 @@ function DynamicPageList( $input ) {
 			case 'gallerycaption':
 				// Should perhaps actually parse caption instead
 				// as links and what not in caption might be useful.
-				$sGalleryCaption =  $parser->transformMsg( $sArg, $poptions );
+				$sGalleryCaption = $parser->transformMsg( $sArg, $poptions );
 				break;
 			case 'galleryshowfilesize':
 				switch ( $sArg ) {
@@ -316,14 +333,14 @@ function DynamicPageList( $input ) {
 				}
 				break;
 			case 'suppresserrors':
-				if ( 'true' == $sArg ) {
+				if ( $sArg == 'true' ) {
 					$bSuppressErrors = true;
 				} else {
 					$bSuppressErrors = false;
 				}
 				break;
 			case 'addfirstcategorydate':
-				if ( 'true' == $sArg ) {
+				if ( $sArg == 'true' ) {
 					$bAddFirstCategoryDate = true;
 				} elseif ( preg_match( '/^(?:[ymd]{2,3}|ISO 8601)$/', $sArg ) )  {
 					// if it more or less is valid dateformat.
@@ -359,12 +376,12 @@ function DynamicPageList( $input ) {
 		} // end main switch()
 	} // end foreach()
 
-	$iCatCount = count($aCategories);
-	$iExcludeCatCount = count($aExcludeCategories);
+	$iCatCount = count( $aCategories );
+	$iExcludeCatCount = count( $aExcludeCategories );
 	$iTotalCatCount = $iCatCount + $iExcludeCatCount;
 
 	if ( $iCatCount < 1 && false == $bNamespace ) {
-		if ( false == $bSuppressErrors ) {
+		if ( $bSuppressErrors == false ) {
 			return htmlspecialchars( wfMsg( 'intersection_noincludecats' ) ); // "!!no included categories!!";
 		} else {
 			return '';
@@ -372,7 +389,7 @@ function DynamicPageList( $input ) {
 	}
 
 	if ( $iTotalCatCount > $wgDLPmaxCategories && !$wgDLPAllowUnlimitedCategories ) {
-		if ( false == $bSuppressErrors ) {
+		if ( $bSuppressErrors == false ) {
 			return htmlspecialchars( wfMsg( 'intersection_toomanycats' ) ); // "!!too many categories!!";
 		} else {
 			return '';
@@ -391,7 +408,7 @@ function DynamicPageList( $input ) {
 		$bCountSet = true;
 	}
 
-	//disallow showing date if the query doesn't have an inclusion category parameter
+	// disallow showing date if the query doesn't have an inclusion category parameter
 	if ( $iCatCount < 1 ) {
 		$bAddFirstCategoryDate = false;
 		// don't sort by fields relating to categories if there are no categories.
@@ -400,83 +417,86 @@ function DynamicPageList( $input ) {
 		}
 	}
 
-
-	//build the SQL query
+	// build the SQL query
 	$dbr = wfGetDB( DB_SLAVE );
-	$aTables = Array( 'page' );
-	$aFields = Array( 'page_namespace', 'page_title' );
-	$aWhere = Array();
-	$aJoin = Array();
-	$aOptions = Array();
+	$tables = array( 'page' );
+	$fields = array( 'page_namespace', 'page_title' );
+	$where = array();
+	$join = array();
+	$options = array();
 
 	if ( $bGoogleHack ) {
-		$aFields[] = 'page_id';
+		$fields[] = 'page_id';
 	}
 
 	if ( $bAddFirstCategoryDate ) {
-		$aFields[] = 'c1.cl_timestamp';
+		$fields[] = 'c1.cl_timestamp';
 	}
 
-	if ( true == $bNamespace ) {
-		$aWhere['page_namespace'] = $iNamespace;
+	if ( $bNamespace == true ) {
+		$where['page_namespace'] = $iNamespace;
 	}
 
 	// Bug 14943 - Allow filtering based on FlaggedRevs stability.
 	// Check if the extension actually exists before changing the query...
 	if ( function_exists( 'efLoadFlaggedRevs' ) && $bFlaggedRevs ) {
-		$aTables[] = 'flaggedpages';
-		$aJoin['flaggedpages'] = Array( 'LEFT JOIN', 'page_id = fp_page_id' );
+		$tables[] = 'flaggedpages';
+		$join['flaggedpages'] = array( 'LEFT JOIN', 'page_id = fp_page_id' );
 
 		switch( $sStable ) {
 			case 'only':
-				$aWhere[] = 'fp_stable IS NOT NULL';
+				$where[] = 'fp_stable IS NOT NULL';
 				break;
 			case 'exclude':
-				$aWhere['fp_stable'] = null;
+				$where['fp_stable'] = null;
 				break;
 		}
 
 		switch( $sQuality ) {
 			case 'only':
-				$aWhere[] = 'fp_quality >= 1';
+				$where[] = 'fp_quality >= 1';
 				break;
 			case 'exclude':
-				$aWhere[] = 'fp_quality = 0 OR fp_quality IS NULL';
+				$where[] = 'fp_quality = 0 OR fp_quality IS NULL';
 				break;
 		}
 	}
 
 	switch ( $sRedirects ) {
 		case 'only':
-			$aWhere['page_is_redirect'] = 1;
+			$where['page_is_redirect'] = 1;
 			break;
 		case 'exclude':
-			$aWhere['page_is_redirect'] = 0;
+			$where['page_is_redirect'] = 0;
 			break;
 	}
 
 	$iCurrentTableNumber = 1;
 	$categorylinks = $dbr->tableName( 'categorylinks' );
 
-	for ($i = 0; $i < $iCatCount; $i++) {
-		$aJoin["$categorylinks AS c$iCurrentTableNumber"] = Array( 'INNER JOIN',
-			Array( "page_id = c{$iCurrentTableNumber}.cl_from",
+	for ( $i = 0; $i < $iCatCount; $i++ ) {
+		$join["$categorylinks AS c$iCurrentTableNumber"] = array(
+			'INNER JOIN',
+			array(
+				"page_id = c{$iCurrentTableNumber}.cl_from",
 			 	"c{$iCurrentTableNumber}.cl_to={$dbr->addQuotes($aCategories[$i]->getDBKey())}"
 			)
 		);
-		$aTables[] = "$categorylinks AS c$iCurrentTableNumber";
+		$tables[] = "$categorylinks AS c$iCurrentTableNumber";
 
 		$iCurrentTableNumber++;
 	}
 
-	for ($i = 0; $i < $iExcludeCatCount; $i++) {
-		$aJoin["$categorylinks AS c$iCurrentTableNumber"] = Array( 'LEFT OUTER JOIN',
-			Array( "page_id = c{$iCurrentTableNumber}.cl_from",
-				 "c{$iCurrentTableNumber}.cl_to={$dbr->addQuotes($aExcludeCategories[$i]->getDBKey())}"
+	for ( $i = 0; $i < $iExcludeCatCount; $i++ ) {
+		$join["$categorylinks AS c$iCurrentTableNumber"] = array(
+			'LEFT OUTER JOIN',
+			array(
+				"page_id = c{$iCurrentTableNumber}.cl_from",
+				"c{$iCurrentTableNumber}.cl_to={$dbr->addQuotes($aExcludeCategories[$i]->getDBKey())}"
 			)
 		);
-		$aTables[] = "$categorylinks AS c$iCurrentTableNumber";
-		$aWhere["c{$iCurrentTableNumber}.cl_to"] = null;
+		$tables[] = "$categorylinks AS c$iCurrentTableNumber";
+		$where["c{$iCurrentTableNumber}.cl_to"] = null;
 		$iCurrentTableNumber++;
 	}
 
@@ -508,28 +528,28 @@ function DynamicPageList( $input ) {
 			break;
 	}
 
-	$aOptions['ORDER BY'] = "$sSqlSort $sSqlOrder";
+	$options['ORDER BY'] = "$sSqlSort $sSqlOrder";
 
 	if ( $bCountSet ) {
-		$aOptions['LIMIT'] = $iCount;
+		$options['LIMIT'] = $iCount;
 	}
 	if ( $iOffset > 0 ) {
-		$aOptions['OFFSET'] = $iOffset;
+		$options['OFFSET'] = $iOffset;
 	}
 
 	// process the query
-	$res = $dbr->select( $aTables, $aFields, $aWhere, __METHOD__, $aOptions, $aJoin );
+	$res = $dbr->select( $tables, $fields, $where, __METHOD__, $options, $join );
 	$sk = $wgUser->getSkin();
 
 	if ( $dbr->numRows( $res ) == 0 ) {
-		if ( false == $bSuppressErrors ) {
+		if ( $bSuppressErrors == false ) {
 			return htmlspecialchars( wfMsg( 'intersection_noresults' ) );
 		} else {
 			return '';
-	}
+		}
 	}
 
-	//start unordered list
+	// start unordered list
 	$output = $sStartList . "\n";
 
 	$categoryDate = '';
@@ -538,11 +558,12 @@ function DynamicPageList( $input ) {
 		$df = DateFormatter::getInstance();
 	}
 
-	//process results of query, outputing equivalent of <li>[[Article]]</li> for each result,
-	//or something similar if the list uses other startlist/endlist
-	$articleList = Array();
+	// process results of query, outputing equivalent of <li>[[Article]]</li>
+	// for each result, or something similar if the list uses other
+	// startlist/endlist
+	$articleList = array();
 	foreach ( $res as $row ) {
-		$title = Title::makeTitle( $row->page_namespace, $row->page_title);
+		$title = Title::makeTitle( $row->page_namespace, $row->page_title );
 		if ( true == $bAddFirstCategoryDate ) {
 			if ( $sDateFormat != '' ) {
 				# this is a tad ugly
@@ -567,47 +588,57 @@ function DynamicPageList( $input ) {
 
 		$query = array();
 
-		if ( true == $bGoogleHack ) {
-			$query['dpl_id'] = intval($row->page_id);
+		if ( $bGoogleHack == true ) {
+			$query['dpl_id'] = intval( $row->page_id );
 		}
 
-		if ( true == $bShowNamespace ) {
+		if ( $bShowNamespace == true ) {
 			$titleText = $title->getPrefixedText();
 		} else {
 			$titleText = $title->getText();
 		}
 
 		if ( $bUseGallery ) {
-				# Note, $categoryDate is treated as raw html
-				# this is safe since the only html present
-				# would come from the dateformatter <span>.
-				$gallery->add( $title, $categoryDate );
+			# Note, $categoryDate is treated as raw html
+			# this is safe since the only html present
+			# would come from the dateformatter <span>.
+			$gallery->add( $title, $categoryDate );
 		} else {
-			$articleList[] = $categoryDate
-				. $sk->link( $title, htmlspecialchars( $titleText ), $aLinkOptions, $query, array( 'forcearticlepath', 'known' ) );
+			$articleList[] = $categoryDate .
+				$sk->link(
+					$title,
+					htmlspecialchars( $titleText ),
+					$aLinkOptions,
+					$query,
+					array( 'forcearticlepath', 'known' )
+				);
 		}
 	}
 
-	//end unordered list
+	// end unordered list
 	if ( $bUseGallery ) {
 		$gallery->setHideBadImages();
 		$gallery->setShowFilename( $bGalleryFileName );
 		$gallery->setShowBytes( $bGalleryFileSize );
-		if ( $iGalleryImageHeight > 0 )
+		if ( $iGalleryImageHeight > 0 ) {
 			$gallery->setHeights( $iGalleryImageHeight );
-		if ( $iGalleryImageWidth > 0 )
+		}
+		if ( $iGalleryImageWidth > 0 ) {
 			$gallery->setWidths( $iGalleryImageWidth );
-		if ( $iGalleryNumbRows > 0 )
+		}
+		if ( $iGalleryNumbRows > 0 ) {
 			$gallery->setPerRow( $iGalleryNumbRows );
-		if ( $sGalleryCaption != '' )
+		}
+		if ( $sGalleryCaption != '' ) {
 			$gallery->setCaption( $sGalleryCaption ); # gallery class escapes string
+		}
 		$output = $gallery->toHtml();
 	} else {
 		$output .= $sStartItem;
 		if ( $bInlineMode ) {
 			$output .= $wgContLang->commaList( $articleList );
-		} else { 
-			$output .= implode( "$sEndItem \n $sStartItem", $articleList ); 
+		} else {
+			$output .= implode( "$sEndItem \n $sStartItem", $articleList );
 		}
 		$output .= $sEndItem;
 		$output .= $sEndList . "\n";
