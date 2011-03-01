@@ -290,14 +290,15 @@ $messages['fi'] = array(
 
 /** French (Français)
  * @author Grondin
+ * @author IAlex
  * @author Urhixidur
  * @author Verdy p
  */
 $messages['fr'] = array(
 	'intersection-desc' => 'Affiche une liste, à puces, des articles les plus récents dans une catégorie, ou à partir d’une combinaison de plusieurs catégories.',
-	'intersection_toomanycats' => 'DynamicPageList : trop de catégories !',
-	'intersection_noresults' => 'DynamicPageList : aucun résultat !',
-	'intersection_noincludecats' => 'Error : vous devez inclure au moins une catégorie, ou préciser un nom d’espace !',
+	'intersection_toomanycats' => 'Erreur : trop de catégories !',
+	'intersection_noresults' => 'Erreur : aucun résultat !',
+	'intersection_noincludecats' => 'Erreur : vous devez inclure au moins une catégorie, ou préciser un espace de noms !',
 );
 
 /** Franco-Provençal (Arpetan)
