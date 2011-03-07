@@ -51,6 +51,8 @@ $wgExtensionCredits['parserhook'][] = array(
 $dir = dirname( __FILE__ ) . '/';
 $wgExtensionMessagesFiles['DynamicPageList'] = $dir . 'DynamicPageList.i18n.php';
 
+$wgParserTestFiles[] = $dir . 'DynamicPageList.tests.txt';
+
 # Configuration variables
 $wgDLPmaxCategories = 6;                // Maximum number of categories to look for
 $wgDLPMaxResultCount = 200;             // Maximum number of results to allow
