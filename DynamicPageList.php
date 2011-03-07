@@ -209,6 +209,7 @@ function renderDynamicPageList( $input ) {
 						$sStartList = '';
 						$sEndList = '';
 						$sStartItem = '';
+						$sEndItem = '';
 						$bInlineMode = true;
 						break;
 					case 'unordered':
