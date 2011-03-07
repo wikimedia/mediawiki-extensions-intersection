@@ -385,8 +385,8 @@ category=DPLtest
 mode=inline
 </DynamicPageList>
 !!result
-<a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a>, <a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a>, <a href="/wiki/DPLTest1">DPLTest1</a>
-
+<p><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a>, <a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a>, <a href="/wiki/DPLTest1">DPLTest1</a>
+</p>
 !!end
 
 # None of these are images, so crappy test.
