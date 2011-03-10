@@ -15,6 +15,7 @@
 ##  varries depending on today's date.
 ## *gallery stuff (lack of images)
 ## *some order methods, due to lack of flexibity in page creation
+## googlehack (dpl_id) stuff because page_id changes depending on other tests.
 
 !! article
 DPLTest1
@@ -68,8 +69,8 @@ category=DPLtest
 !!result
 <ul>
 <li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li> 
- <li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
- <li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
+<li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
+<li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
 
 !!end
 
@@ -84,28 +85,30 @@ category=DPLtest
 !!result
 <ul>
 <li><a href="/wiki/DPLTest1">DPLTest1</a></li> 
- <li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
- <li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li></ul>
+<li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
+<li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li></ul>
 
 !!end
 
 # Depnds on page id of other pages
 # so could break depending on other tests
 # if they get different page id
-!!test
-dpl_id 
-!!input
-<DynamicPageList>
-category=DPLtest
-googlehack=true
-</DynamicPageList>
-!!result
-<ul>
-<li><a href="/wiki/Yet_another_DPL_test_page!?dpl_id=53">Yet another DPL test page!</a></li> 
- <li><a href="/wiki/Talk:DPLTest2?dpl_id=51">Talk:DPLTest2</a></li> 
- <li><a href="/wiki/DPLTest1?dpl_id=50">DPLTest1</a></li></ul>
-
-!!end
+#
+# Low and behold that actually does happen. Commenting out.
+#!!test
+#dpl_id 
+#!!input
+#<DynamicPageList>
+#category=DPLtest
+#googlehack=true
+#</DynamicPageList>
+#!!result
+#<ul>
+#<li><a href="/wiki/Yet_another_DPL_test_page!?dpl_id=53">Yet another DPL test page!</a></li> 
+#<li><a href="/wiki/Talk:DPLTest2?dpl_id=51">Talk:DPLTest2</a></li> 
+#<li><a href="/wiki/DPLTest1?dpl_id=50">DPLTest1</a></li></ul>
+#
+#!!end
 
 
 !!test
@@ -118,8 +121,8 @@ nofollow=true
 !!result
 <ul>
 <li><a href="/wiki/Yet_another_DPL_test_page!" rel="nofollow">Yet another DPL test page!</a></li> 
- <li><a href="/wiki/Talk:DPLTest2" rel="nofollow">Talk:DPLTest2</a></li> 
- <li><a href="/wiki/DPLTest1" rel="nofollow">DPLTest1</a></li></ul>
+<li><a href="/wiki/Talk:DPLTest2" rel="nofollow">Talk:DPLTest2</a></li> 
+<li><a href="/wiki/DPLTest1" rel="nofollow">DPLTest1</a></li></ul>
 
 !!end
 
@@ -237,7 +240,7 @@ count=2
 !!result
 <ul>
 <li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li> 
- <li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
+<li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
 
 !!end
 
@@ -265,9 +268,9 @@ redirects=include
 !!result
 <ul>
 <li><a href="/wiki/DPLRedir" class="mw-redirect">DPLRedir</a></li> 
- <li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li> 
- <li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
- <li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
+<li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li> 
+<li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
+<li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
 
 !!end
 
@@ -297,8 +300,8 @@ addfirstcategorydate=INVALID
 !!result
 <ul>
 <li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li> 
- <li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
- <li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
+<li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
+<li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
 
 !!end
 
@@ -312,8 +315,8 @@ addfirstcategorydate=false
 !!result
 <ul>
 <li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li> 
- <li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
- <li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
+<li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
+<li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
 
 !!end
 
@@ -328,8 +331,8 @@ mode=unordered
 !!result
 <ul>
 <li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li> 
- <li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
- <li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
+<li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
+<li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
 
 !!end
 !!test
@@ -342,8 +345,8 @@ mode=INVALID
 !!result
 <ul>
 <li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li> 
- <li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
- <li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
+<li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
+<li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
 
 !!end
 
@@ -357,8 +360,8 @@ mode=ordered
 !!result
 <ol>
 <li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li> 
- <li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
- <li><a href="/wiki/DPLTest1">DPLTest1</a></li></ol>
+<li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
+<li><a href="/wiki/DPLTest1">DPLTest1</a></li></ol>
 
 !!end
 
@@ -371,10 +374,10 @@ category=DPLtest
 mode=none
 </DynamicPageList>
 !!result
-<a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a><br /> 
+<p><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a><br /> 
 <a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a><br /> 
 <a href="/wiki/DPLTest1">DPLTest1</a><br />
-
+</p>
 !!end
 
 !!test
@@ -395,7 +398,6 @@ mode=gallery (complex, no image)
 !!input
 <DynamicPageList>
 category=DPLtest
-addfirstcategorydate=ymd
 imagewidth=70
 galleryshowfilesize=yes
 galleryshowfilename=yes
@@ -410,7 +412,7 @@ mode=gallery
 			<div style="height: 150px;">Yet another DPL test page!</div>
 			<div class="gallerytext">
 <p><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test...</a><br />
-<span class="mw-formatted-date" title="2011-03-07">2011 March 7</span> File missing<br />
+File missing<br />
 </p>
 			</div>
 		</div></li>
@@ -418,7 +420,7 @@ mode=gallery
 			<div style="height: 150px;">DPLTest2</div>
 			<div class="gallerytext">
 <p><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">DPLTest2</a><br />
-<span class="mw-formatted-date" title="2011-03-07">2011 March 7</span> File missing<br />
+File missing<br />
 </p>
 			</div>
 		</div></li>
@@ -426,7 +428,7 @@ mode=gallery
 			<div style="height: 150px;">DPLTest1</div>
 			<div class="gallerytext">
 <p><a href="/wiki/DPLTest1">DPLTest1</a><br />
-<span class="mw-formatted-date" title="2011-03-07">2011 March 7</span> File missing<br />
+File missing<br />
 </p>
 			</div>
 		</div></li>
@@ -555,8 +557,8 @@ ordermethod=created
 !!result
 <ul>
 <li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li> 
- <li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
- <li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
+<li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
+<li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
 
 !!end
 
@@ -589,8 +591,8 @@ ordermethod=length
 !!result
 <ul>
 <li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
- <li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li> 
- <li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
+<li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li> 
+<li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
 
 !!end
 
@@ -604,8 +606,8 @@ ordermethod=sortkey
 !!result
 <ul>
 <li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li> 
- <li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
- <li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
+<li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
+<li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
 
 !!end
 
@@ -621,8 +623,27 @@ order=ascending
 !!result
 <ul>
 <li><a href="/wiki/DPLTest1">DPLTest1</a></li> 
- <li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
- <li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li></ul>
+<li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
+<li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li></ul>
 
 !!end
 
+# Check {{PAGENAME}} in category clause (dates variables are somewhat more common, but
+# this is easier to check.
+#
+# using {{PAGENAME:DPLtest}} because dpl uses a weird (and probably wrong way) of
+# expanding {{PAGENAME}} and friends, which doesn't work with parsertests and
+# the title= option.
+!!test
+Magic word in category clause
+!!input
+<DynamicPageList>
+category={{PAGENAME:DPLtest}}
+</DynamicPageList>
+!!result
+<ul>
+<li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li> 
+<li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
+<li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
+
+!!end

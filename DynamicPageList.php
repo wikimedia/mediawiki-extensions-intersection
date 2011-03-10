@@ -642,7 +642,7 @@ function renderDynamicPageList( $input ) {
 		if ( $inlineMode ) {
 			$output .= $wgContLang->commaList( $articleList );
 		} else {
-			$output .= implode( "$endItem \n $startItem", $articleList );
+			$output .= implode( "$endItem \n$startItem", $articleList );
 		}
 		$output .= $endItem;
 		$output .= $endList . "\n";
