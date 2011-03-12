@@ -102,7 +102,7 @@ function renderDynamicPageList( $input ) {
 	$stable = $quality = 'include';
 	$flaggedRevs = false;
 
-	$bNamespace = false;
+	$namespaceFiltering = false;
 	$namespaceIndex = 0;
 
 	$offset = 0;
@@ -125,12 +125,12 @@ function renderDynamicPageList( $input ) {
 	$poptions = new ParserOptions;
 
 	foreach ( $parameters as $parameter ) {
-		$aParam = explode( '=', $parameter, 2 );
-		if( count( $aParam ) < 2 ) {
+		$paramField = explode( '=', $parameter, 2 );
+		if( count( $paramField ) < 2 ) {
 			continue;
 		}
-		$type = trim( $aParam[0] );
-		$arg = trim( $aParam[1] );
+		$type = trim( $paramField[0] );
+		$arg = trim( $paramField[1] );
 		switch ( $type ) {
 			case 'category':
 				$title = Title::newFromText(
@@ -154,13 +154,20 @@ function renderDynamicPageList( $input ) {
 				$ns = $wgContLang->getNsIndex( $arg );
 				if ( $ns != null ) {
 					$namespaceIndex = $ns;
-					$bNamespace = true;
+					$namespaceFiltering = true;
 				} else {
+					// Note, since intval("some string") = 0
+					// this considers pretty much anything
+					// invalid here as the main namespace.
+					// This was probably originally a bug,
+					// but is now depended upon by people
+					// writing things like namespace=main
+					// so be careful when changing this code.
 					$namespaceIndex = intval( $arg );
 					if ( $namespaceIndex >= 0 )	{
-						$bNamespace = true;
+						$namespaceFiltering = true;
 					} else {
-						$bNamespace = false;
+						$namespaceFiltering = false;
 					}
 				}
 				break;
@@ -384,7 +391,7 @@ function renderDynamicPageList( $input ) {
 	$excludeCatCount = count( $excludeCategories );
 	$totalCatCount = $catCount + $excludeCatCount;
 
-	if ( $catCount < 1 && false == $bNamespace ) {
+	if ( $catCount < 1 && false == $namespaceFiltering ) {
 		if ( $suppressErrors == false ) {
 			return htmlspecialchars( wfMsg( 'intersection_noincludecats' ) ); // "!!no included categories!!";
 		} else {
@@ -437,7 +444,7 @@ function renderDynamicPageList( $input ) {
 		$fields[] = 'c1.cl_timestamp';
 	}
 
-	if ( $bNamespace == true ) {
+	if ( $namespaceFiltering == true ) {
 		$where['page_namespace'] = $namespaceIndex;
 	}
 
