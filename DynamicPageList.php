@@ -74,7 +74,7 @@ function wfDynamicPageList( &$parser ) {
 
 // The callback function for converting the input text to HTML output
 function renderDynamicPageList( $input ) {
-	global $wgUser, $wgLang, $wgContLang;
+	global $wgUser, $wgContLang;
 	global $wgDisableCounters; // to determine if to allow sorting by #hits.
 	global $wgDLPmaxCategories, $wgDLPMaxResultCount;
 	global $wgDLPAllowUnlimitedResults, $wgDLPAllowUnlimitedCategories;
@@ -393,7 +393,7 @@ function renderDynamicPageList( $input ) {
 
 	if ( $catCount < 1 && false == $namespaceFiltering ) {
 		if ( $suppressErrors == false ) {
-			return htmlspecialchars( wfMsg( 'intersection_noincludecats' ) ); // "!!no included categories!!";
+			return htmlspecialchars( wfMsgForContent( 'intersection_noincludecats' ) ); // "!!no included categories!!";
 		} else {
 			return '';
 		}
@@ -401,7 +401,7 @@ function renderDynamicPageList( $input ) {
 
 	if ( $totalCatCount > $wgDLPmaxCategories && !$wgDLPAllowUnlimitedCategories ) {
 		if ( $suppressErrors == false ) {
-			return htmlspecialchars( wfMsg( 'intersection_toomanycats' ) ); // "!!too many categories!!";
+			return htmlspecialchars( wfMsgForContent( 'intersection_toomanycats' ) ); // "!!too many categories!!";
 		} else {
 			return '';
 		}
@@ -554,7 +554,7 @@ function renderDynamicPageList( $input ) {
 
 	if ( $dbr->numRows( $res ) == 0 ) {
 		if ( $suppressErrors == false ) {
-			return htmlspecialchars( wfMsg( 'intersection_noresults' ) );
+			return htmlspecialchars( wfMsgForContent( 'intersection_noresults' ) );
 		} else {
 			return '';
 		}
@@ -588,10 +588,10 @@ function renderDynamicPageList( $input ) {
 				}
 				$categoryDate = $df->reformat( $dateFormat, $categoryDate, array( 'match-whole' ) );
 			} else {
-				$categoryDate = $wgLang->date( wfTimestamp( TS_MW, $row->cl_timestamp ) );
+				$categoryDate = $wgContLang->date( wfTimestamp( TS_MW, $row->cl_timestamp ) );
 			}
 			if ( !$useGallery ) {
-				$categoryDate .= wfMsg( 'colon-separator' );
+				$categoryDate .= wfMsgForContent( 'colon-separator' );
 			} else {
 				$categoryDate .= ' ';
 			}
