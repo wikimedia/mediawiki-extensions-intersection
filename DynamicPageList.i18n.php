@@ -74,6 +74,15 @@ $messages['ast'] = array(
 	'intersection_noincludecats' => 'Error: ¡Necesites amiestar a lo menos una categoría, o especificar un espaciu de nomes!',
 );
 
+/** Azerbaijani (Azərbaycanca)
+ * @author Wertuose
+ */
+$messages['az'] = array(
+	'intersection_toomanycats' => 'Xəta: Kateqoriya sayı həddindən çoxdur!',
+	'intersection_noresults' => 'Xəta: Nəticə yoxdur!',
+	'intersection_noincludecats' => 'Xəta: Siz ən azı bir kateqoriya əlavə etməli və ya adlar fəzası müəyyənləşdirməlisiniz!',
+);
+
 /** Bashkir (Башҡортса)
  * @author Assele
  */
