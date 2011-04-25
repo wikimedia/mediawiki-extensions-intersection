@@ -184,6 +184,16 @@ $messages['cy'] = array(
 	'intersection_noresults' => 'Gwall: Dim canlyniadau!',
 );
 
+/** Danish (Dansk)
+ * @author Peter Alberti
+ */
+$messages['da'] = array(
+	'intersection-desc' => 'Giver en punktopstilling af de nyeste elementer i en kategori eller i foreningen af flere kategorier',
+	'intersection_toomanycats' => 'Fejl: For mange kategorier!',
+	'intersection_noresults' => 'Fejl: Ingen resultater!',
+	'intersection_noincludecats' => 'Fejl: Du skal medtage mindst én kategori eller angive et navnerum!',
+);
+
 /** German (Deutsch)
  * @author Pill
  * @author Purodha
