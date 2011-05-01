@@ -702,10 +702,10 @@ $messages['pms'] = array(
  * @author Malafaya
  */
 $messages['pt'] = array(
-	'intersection-desc' => 'constrói uma lista pontuada dos itens mais recentes presentes numa categoria, ou uma união de várias categorias',
-	'intersection_toomanycats' => 'Error: Categorias em excesso!',
-	'intersection_noresults' => 'Error: Sem resultados!',
-	'intersection_noincludecats' => 'Erro: É necessário incluir no mínimo uma categoria ou especificar um espaço nominal!',
+	'intersection-desc' => 'Produz uma lista com marcadores dos elementos mais recentes presentes numa categoria, ou uma intersecção de várias categorias',
+	'intersection_toomanycats' => 'Erro: Demasiadas categorias!',
+	'intersection_noresults' => 'Erro: Não há resultados!',
+	'intersection_noincludecats' => 'Erro: Tem de incluir no mínimo uma categoria ou especificar um espaço nominal!',
 );
 
 /** Brazilian Portuguese (Português do Brasil)
@@ -952,9 +952,9 @@ $messages['vep'] = array(
  */
 $messages['vi'] = array(
 	'intersection-desc' => 'Cho ra danh sách những khoản gần đây nhất được xếp vào một thể loại hay hợp của hơn một thể loại',
-	'intersection_toomanycats' => 'Error: Nhiều thể loại quá!',
-	'intersection_noresults' => 'Error: Không tìm thấy trang nào!',
-	'intersection_noincludecats' => 'Error: Cần phải bao gồm ít nhất một thể loại hay định rõ một không gian tên!',
+	'intersection_toomanycats' => 'Lỗi: Quá nhiều thể loại!',
+	'intersection_noresults' => 'Lỗi: Không tìm thấy trang nào!',
+	'intersection_noincludecats' => 'Lỗi: Cần phải bao gồm ít nhất một thể loại hay định rõ một không gian tên!',
 );
 
 /** Volapük (Volapük)
