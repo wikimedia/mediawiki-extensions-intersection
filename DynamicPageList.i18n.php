@@ -609,11 +609,12 @@ $messages['mr'] = array(
 );
 
 /** Malay (Bahasa Melayu)
+ * @author Anakmalaysia
  * @author Aviator
  */
 $messages['ms'] = array(
 	'intersection-desc' => 'Mengoutput senarai item terkini dalam sesebuah kategori atau kesatuan beberapa buah kategori',
-	'intersection_toomanycats' => 'Error: Kategori terlalu banyak!',
+	'intersection_toomanycats' => 'Ralat: Kategori terlalu banyak!',
 	'intersection_noresults' => 'Error: Tiada hasil!',
 	'intersection_noincludecats' => 'Error: Anda hendaklah memasukkan sekurang-kurangnya sebuah kategori atau menyatakan sebuah ruang nama!',
 );
