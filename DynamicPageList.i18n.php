@@ -180,8 +180,10 @@ $messages['cs'] = array(
  * @author Lloffiwr
  */
 $messages['cy'] = array(
+	'intersection-desc' => "Yn cynhyrchu rhestr o bwyntiau bwled, o'r eitemau diweddaraf i gael eu gosod mewn categori penodol, neu mewn cyfuniad o gategorïau",
 	'intersection_toomanycats' => 'Gwall: Gormod o gategorïau!',
 	'intersection_noresults' => 'Gwall: Dim canlyniadau!',
+	'intersection_noincludecats' => 'Gwall: Mae angen cynnwys un categori o leiaf, neu bennu parth!',
 );
 
 /** Danish (Dansk)
