@@ -699,6 +699,14 @@ $messages['pms'] = array(
 	'intersection_noincludecats' => 'Eror: It deuve anserì almanch na categorìa, o spessifié në spassi nominal!',
 );
 
+/** Western Punjabi (پنجابی)
+ * @author Khalid Mahmood
+ */
+$messages['pnb'] = array(
+	'intersection_toomanycats' => 'غلطی: بعوت ساریاں گٹھاں',
+	'intersection_noresults' => 'غلطی: کج نئیں لبیا',
+);
+
 /** Portuguese (Português)
  * @author 555
  * @author Hamilton Abreu
