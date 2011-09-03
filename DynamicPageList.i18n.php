@@ -197,13 +197,14 @@ $messages['da'] = array(
 );
 
 /** German (Deutsch)
+ * @author Kghbln
  * @author Pill
  * @author Purodha
  * @author Raimond Spekking
  * @author Umherirrender
  */
 $messages['de'] = array(
-	'intersection-desc' => 'Ausgabe einer Liste der aktuellsten Einträge in einer Kategorie, oder der Schnittmenge mehrerer Kategorien',
+	'intersection-desc' => 'Ermöglicht die Ausgabe einer Liste der aktuellsten Einträge in einer Kategorie, oder aus der Schnittmenge mehrerer Kategorien',
 	'intersection_toomanycats' => 'Fehler: Zu viele Kategorien!',
 	'intersection_noresults' => 'Fehler: Keine Ergebnisse!',
 	'intersection_noincludecats' => 'Fehler: Du musst mindestens eine Kategorie einbinden oder gib einen Namensraum an!',
