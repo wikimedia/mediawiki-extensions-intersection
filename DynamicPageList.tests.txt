@@ -68,9 +68,9 @@ category=DPLtest
 </DynamicPageList>
 !!result
 <ul>
-<li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li> 
-<li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
-<li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
+<li><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a></li> 
+<li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a></li> 
+<li><a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a></li></ul>
 
 !!end
 
@@ -84,9 +84,9 @@ category=DPLtest
 </DynamicPageList>
 !!result
 <ul>
-<li><a href="/wiki/DPLTest1">DPLTest1</a></li> 
-<li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
-<li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li></ul>
+<li><a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a></li> 
+<li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a></li> 
+<li><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a></li></ul>
 
 !!end
 
@@ -120,9 +120,9 @@ nofollow=true
 </DynamicPageList>
 !!result
 <ul>
-<li><a href="/wiki/Yet_another_DPL_test_page!" rel="nofollow">Yet another DPL test page!</a></li> 
-<li><a href="/wiki/Talk:DPLTest2" rel="nofollow">Talk:DPLTest2</a></li> 
-<li><a href="/wiki/DPLTest1" rel="nofollow">DPLTest1</a></li></ul>
+<li><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!" rel="nofollow">Yet another DPL test page!</a></li> 
+<li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2" rel="nofollow">Talk:DPLTest2</a></li> 
+<li><a href="/wiki/DPLTest1" title="DPLTest1" rel="nofollow">DPLTest1</a></li></ul>
 
 !!end
 
@@ -187,7 +187,7 @@ notcategory=DPLtest3
 </DynamicPageList>
 !!result
 <ul>
-<li><a href="/wiki/Talk:No_Categories">Talk:No Categories</a></li></ul>
+<li><a href="/wiki/Talk:No_Categories" title="Talk:No Categories">Talk:No Categories</a></li></ul>
 
 !!end
 
@@ -200,7 +200,7 @@ namespace=talk
 </DynamicPageList>
 !!result
 <ul>
-<li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li></ul>
+<li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a></li></ul>
 
 !!end
 
@@ -212,7 +212,7 @@ namespace=help
 </DynamicPageList>
 !!result
 <ul>
-<li><a href="/wiki/Help:DPLTest3">Help:DPLTest3</a></li></ul>
+<li><a href="/wiki/Help:DPLTest3" title="Help:DPLTest3">Help:DPLTest3</a></li></ul>
 
 !!end
 
@@ -239,8 +239,8 @@ count=2
 </DynamicPageList>
 !!result
 <ul>
-<li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li> 
-<li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
+<li><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a></li> 
+<li><a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a></li></ul>
 
 !!end
 
@@ -254,7 +254,7 @@ offset=1
 </DynamicPageList>
 !!result
 <ul>
-<li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li></ul>
+<li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a></li></ul>
 
 !!end
 
@@ -267,10 +267,10 @@ redirects=include
 </DynamicPageList>
 !!result
 <ul>
-<li><a href="/wiki/DPLRedir" class="mw-redirect">DPLRedir</a></li> 
-<li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li> 
-<li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
-<li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
+<li><a href="/wiki/DPLRedir" class="mw-redirect" title="DPLRedir">DPLRedir</a></li> 
+<li><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a></li> 
+<li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a></li> 
+<li><a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a></li></ul>
 
 !!end
 
@@ -283,7 +283,7 @@ redirects=only
 </DynamicPageList>
 !!result
 <ul>
-<li><a href="/wiki/DPLRedir" class="mw-redirect">DPLRedir</a></li></ul>
+<li><a href="/wiki/DPLRedir" class="mw-redirect" title="DPLRedir">DPLRedir</a></li></ul>
 
 !!end
 
@@ -299,9 +299,9 @@ addfirstcategorydate=INVALID
 </DynamicPageList>
 !!result
 <ul>
-<li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li> 
-<li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
-<li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
+<li><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a></li> 
+<li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a></li> 
+<li><a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a></li></ul>
 
 !!end
 
@@ -314,9 +314,9 @@ addfirstcategorydate=false
 </DynamicPageList>
 !!result
 <ul>
-<li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li> 
-<li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
-<li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
+<li><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a></li> 
+<li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a></li> 
+<li><a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a></li></ul>
 
 !!end
 
@@ -330,9 +330,9 @@ mode=unordered
 </DynamicPageList>
 !!result
 <ul>
-<li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li> 
-<li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
-<li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
+<li><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a></li> 
+<li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a></li> 
+<li><a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a></li></ul>
 
 !!end
 !!test
@@ -344,9 +344,9 @@ mode=INVALID
 </DynamicPageList>
 !!result
 <ul>
-<li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li> 
-<li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
-<li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
+<li><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a></li> 
+<li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a></li> 
+<li><a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a></li></ul>
 
 !!end
 
@@ -359,9 +359,9 @@ mode=ordered
 </DynamicPageList>
 !!result
 <ol>
-<li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li> 
-<li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
-<li><a href="/wiki/DPLTest1">DPLTest1</a></li></ol>
+<li><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a></li> 
+<li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a></li> 
+<li><a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a></li></ol>
 
 !!end
 
@@ -374,9 +374,9 @@ category=DPLtest
 mode=none
 </DynamicPageList>
 !!result
-<p><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a><br /> 
-<a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a><br /> 
-<a href="/wiki/DPLTest1">DPLTest1</a><br />
+<p><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a><br /> 
+<a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a><br /> 
+<a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a><br />
 </p>
 !!end
 
@@ -388,7 +388,7 @@ category=DPLtest
 mode=inline
 </DynamicPageList>
 !!result
-<p><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a>, <a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a>, <a href="/wiki/DPLTest1">DPLTest1</a>
+<p><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a>, <a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a>, <a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a>
 </p>
 !!end
 
@@ -406,12 +406,12 @@ gallerycaption=Look at my pretty gallery. {{SERVER}}
 mode=gallery
 </DynamicPageList>
 !!result
-<ul class="gallery" style="max-width: 840px;_width: 840px;">
+<ul class="gallery" style="max-width: 791px;_width: 791px;">
 	<li class='gallerycaption'>Look at my pretty gallery. http://Britney-Spears</li>
 		<li class="gallerybox" style="width: 105px"><div style="width: 105px">
 			<div style="height: 150px;">Yet another DPL test page!</div>
 			<div class="gallerytext">
-<p><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test...</a><br />
+<p><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test p...</a><br />
 File missing<br />
 </p>
 			</div>
@@ -427,7 +427,7 @@ File missing<br />
 		<li class="gallerybox" style="width: 105px"><div style="width: 105px">
 			<div style="height: 150px;">DPLTest1</div>
 			<div class="gallerytext">
-<p><a href="/wiki/DPLTest1">DPLTest1</a><br />
+<p><a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a><br />
 File missing<br />
 </p>
 			</div>
@@ -448,7 +448,7 @@ mode=gallery
 		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
 			<div style="height: 150px;">Yet another DPL test page!</div>
 			<div class="gallerytext">
-<p><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test...</a><br />
+<p><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test p...</a><br />
 </p>
 			</div>
 		</div></li>
@@ -462,7 +462,7 @@ mode=gallery
 		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
 			<div style="height: 150px;">DPLTest1</div>
 			<div class="gallerytext">
-<p><a href="/wiki/DPLTest1">DPLTest1</a><br />
+<p><a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a><br />
 </p>
 			</div>
 		</div></li>
@@ -486,18 +486,18 @@ ordermethod=sortkey
 order=descending
 </DynamicPageList>
 !!result
-<ul class="gallery" style="max-width: 840px;_width: 840px;">
+<ul class="gallery" style="max-width: 791px;_width: 791px;">
 	<li class='gallerycaption'>I love Captions</li>
 		<li class="gallerybox" style="width: 105px"><div style="width: 105px">
 			<div style="height: 150px;"><a href="/wiki/File:Bad.jpg" title="File:Bad.jpg">Bad.jpg</a></div>
 			<div class="gallerytext">
 <p><a href="/wiki/File:Bad.jpg" title="File:Bad.jpg">Bad.jpg</a><br />
-7,881 bytes<br />
+12,345 bytes<br />
 </p>
 			</div>
 		</div></li>
 		<li class="gallerybox" style="width: 105px"><div style="width: 105px">
-			<div class="thumb" style="width: 100px;"><div style="margin:66px auto;"><a href="/wiki/File:Foobar.jpg" class="image"><img alt="Foobar.jpg" src="http://example.com/images/3/3a/Foobar.jpg" width="70" height="8" /></a></div></div>
+			<div class="thumb" style="width: 100px;"><div style="margin:71px auto;"><a href="/wiki/File:Foobar.jpg" class="image"><img alt="Foobar.jpg" src="http://example.com/images/3/3a/Foobar.jpg" width="70" height="8" /></a></div></div>
 			<div class="gallerytext">
 <p><a href="/wiki/File:Foobar.jpg" title="File:Foobar.jpg">Foobar.jpg</a><br />
 12,345 bytes<br />
@@ -556,9 +556,9 @@ ordermethod=created
 </DynamicPageList>
 !!result
 <ul>
-<li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li> 
-<li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
-<li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
+<li><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a></li> 
+<li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a></li> 
+<li><a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a></li></ul>
 
 !!end
 
@@ -590,9 +590,9 @@ ordermethod=length
 </DynamicPageList>
 !!result
 <ul>
-<li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
-<li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li> 
-<li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
+<li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a></li> 
+<li><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a></li> 
+<li><a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a></li></ul>
 
 !!end
 
@@ -605,9 +605,9 @@ ordermethod=sortkey
 </DynamicPageList>
 !!result
 <ul>
-<li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li> 
-<li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
-<li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
+<li><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a></li> 
+<li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a></li> 
+<li><a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a></li></ul>
 
 !!end
 
@@ -622,9 +622,9 @@ order=ascending
 </DynamicPageList>
 !!result
 <ul>
-<li><a href="/wiki/DPLTest1">DPLTest1</a></li> 
-<li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
-<li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li></ul>
+<li><a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a></li> 
+<li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a></li> 
+<li><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a></li></ul>
 
 !!end
 
@@ -642,8 +642,8 @@ category={{PAGENAME:DPLtest}}
 </DynamicPageList>
 !!result
 <ul>
-<li><a href="/wiki/Yet_another_DPL_test_page!">Yet another DPL test page!</a></li> 
-<li><a href="/wiki/Talk:DPLTest2">Talk:DPLTest2</a></li> 
-<li><a href="/wiki/DPLTest1">DPLTest1</a></li></ul>
+<li><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a></li> 
+<li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a></li> 
+<li><a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a></li></ul>
 
 !!end
