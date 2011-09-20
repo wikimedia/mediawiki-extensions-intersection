@@ -133,7 +133,8 @@ function renderDynamicPageList( $input ) {
 		$arg = trim( $paramField[1] );
 		switch ( $type ) {
 			case 'category':
-				$title = Title::newFromText(
+				$title = Title::makeTitleSafe(
+					NS_CATEGORY,
 					$parser->transformMsg( $arg, $poptions )
 				);
 				if( is_null( $title ) ) {
@@ -142,7 +143,8 @@ function renderDynamicPageList( $input ) {
 				$categories[] = $title;
 				break;
 			case 'notcategory':
-				$title = Title::newFromText(
+				$title = Title::makeTitleSafe(
+					NS_CATEGORY,
 					$parser->transformMsg( $arg, $poptions )
 				);
 				if( is_null( $title ) ) {
