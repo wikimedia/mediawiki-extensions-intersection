@@ -673,6 +673,15 @@ $messages['oc'] = array(
 	'intersection_noincludecats' => 'Error : avètz besonh d’inclure almens una categoria, o de precisar un nom d’espaci !',
 );
 
+/** Oriya (ଓଡ଼ିଆ)
+ * @author Psubhashish
+ */
+$messages['or'] = array(
+	'intersection_toomanycats' => 'ଭୁଲ: ଅନେକ ଗୁଡ଼ିଏ ଶ୍ରେଣୀ!',
+	'intersection_noresults' => 'ଭୁଲ: କିଛି ମିଳିଲା ନାହିଁ !',
+	'intersection_noincludecats' => 'ଭୁଲ: ଆପଣଙ୍କୁ ଅତି କାମରେ ଗୋଟିଏ ଶ୍ରେଣୀ ଦେବାକୁ ପଡ଼ିବ କିମ୍ବା ଏକ ନେମସ୍ପେସ ଦିଅନ୍ତୁ!',
+);
+
 /** Ossetic (Ирон)
  * @author Amikeco
  */
