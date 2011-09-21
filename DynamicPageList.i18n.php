@@ -713,8 +713,10 @@ $messages['pms'] = array(
  * @author Khalid Mahmood
  */
 $messages['pnb'] = array(
+	'intersection-desc' => 'نشان لگی لسٹ دی آؤٹپٹ اک گٹھ چ یا چوکھیاں ساریاں گٹھاں دے رلن تے',
 	'intersection_toomanycats' => 'غلطی: بعوت ساریاں گٹھاں',
 	'intersection_noresults' => 'غلطی: کج نئیں لبیا',
+	'intersection_noincludecats' => 'غلطی: توانوں کعٹو کعٹ اک گٹھ نوں نال جوڑن دی ضرورت اے، یا اک ناںتھاں دسو!!',
 );
 
 /** Portuguese (Português)
