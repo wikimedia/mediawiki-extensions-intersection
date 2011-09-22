@@ -677,6 +677,7 @@ $messages['oc'] = array(
  * @author Psubhashish
  */
 $messages['or'] = array(
+	'intersection-desc' => 'ଏକ ଶ୍ରେଣିରେ ଥିବା ପ୍ରଧାନ ବିନ୍ଦୁଦିଆ ବସ୍ତୁର ତାଲିକା ତିଆରି କରିଥାଏ, କିମ୍ବା ନାନାଦି ଶ୍ରେଣୀର ଏକ ଅନ୍ତଭାଗ ଦେଖାଇଥାଏ',
 	'intersection_toomanycats' => 'ଭୁଲ: ଅନେକ ଗୁଡ଼ିଏ ଶ୍ରେଣୀ!',
 	'intersection_noresults' => 'ଭୁଲ: କିଛି ମିଳିଲା ନାହିଁ !',
 	'intersection_noincludecats' => 'ଭୁଲ: ଆପଣଙ୍କୁ ଅତି କାମରେ ଗୋଟିଏ ଶ୍ରେଣୀ ଦେବାକୁ ପଡ଼ିବ କିମ୍ବା ଏକ ନେମସ୍ପେସ ଦିଅନ୍ତୁ!',
