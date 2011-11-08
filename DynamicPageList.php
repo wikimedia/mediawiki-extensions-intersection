@@ -452,7 +452,7 @@ function renderDynamicPageList( $input ) {
 
 	// Bug 14943 - Allow filtering based on FlaggedRevs stability.
 	// Check if the extension actually exists before changing the query...
-	if ( function_exists( 'efLoadFlaggedRevs' ) && $flaggedRevs ) {
+	if ( $flaggedRevs && defined( 'FLAGGED_REVISIONS' ) ) {
 		$tables[] = 'flaggedpages';
 		$join['flaggedpages'] = array( 'LEFT JOIN', 'page_id = fp_page_id' );
 
