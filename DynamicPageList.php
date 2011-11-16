@@ -54,11 +54,16 @@ $wgExtensionMessagesFiles['DynamicPageList'] = $dir . 'DynamicPageList.i18n.php'
 // Parser tests
 $wgParserTestFiles[] = $dir . 'DynamicPageList.tests.txt';
 
-# Configuration variables
+# Configuration variables. Warning: These use DLP instead of DPL
+# for historical reasons (pretend Dynamic list of pages)
 $wgDLPmaxCategories = 6;                // Maximum number of categories to look for
 $wgDLPMaxResultCount = 200;             // Maximum number of results to allow
 $wgDLPAllowUnlimitedResults = false;    // Allow unlimited results
 $wgDLPAllowUnlimitedCategories = false; // Allow unlimited categories
+// How long to cache pages using DPL's in seconds. Default to 1 day. Set to
+// false to not decrease cache time (most efficient), Set to 0 to disable
+// cache altogether (inefficient, but results will never be outdated)
+$wgDLPMaxCacheTime = 60*60*24;          // How long to cache pages
 
 $wgHooks['ParserFirstCallInit'][] = 'wfDynamicPageList';
 /**
@@ -73,11 +78,15 @@ function wfDynamicPageList( &$parser ) {
 }
 
 // The callback function for converting the input text to HTML output
-function renderDynamicPageList( $input ) {
+function renderDynamicPageList( $input, $args, $mwParser ) {
 	global $wgUser, $wgContLang;
 	global $wgDisableCounters; // to determine if to allow sorting by #hits.
-	global $wgDLPmaxCategories, $wgDLPMaxResultCount;
+	global $wgDLPmaxCategories, $wgDLPMaxResultCount, $wgDLPMaxCacheTime;
 	global $wgDLPAllowUnlimitedResults, $wgDLPAllowUnlimitedCategories;
+
+	if ( $wgDLPMaxCacheTime !== false ) {
+		$mwParser->getOutput()->updateCacheExpiry( $wgDLPMaxCacheTime );
+	}
 
 	$countSet = false;
 
