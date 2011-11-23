@@ -833,7 +833,7 @@ $messages['sq'] = array(
 	'intersection_noincludecats' => 'Gabim: Ju duhet të përfshini të paktën një kategori, ose të specifikoni një hapësirë!',
 );
 
-/** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
  * @author Millosh
  */
 $messages['sr-ec'] = array(
@@ -843,7 +843,7 @@ $messages['sr-ec'] = array(
 	'intersection_noincludecats' => 'Грешка: Потребно је укључити бар једну категорију или одредити именски простор!',
 );
 
-/** Serbian Latin ekavian (‪Srpski (latinica)‬)
+/** Serbian (Latin script) (‪Srpski (latinica)‬)
  * @author Michaello
  */
 $messages['sr-el'] = array(
@@ -891,7 +891,7 @@ $messages['te'] = array(
 	'intersection_noincludecats' => 'Error: మీరు కనీసం ఒక్క వర్గాన్నైనా చేర్చాలి, లేదా ఓ నేమ్&zwnj;స్పేసునైనా ఇవ్వాలి!',
 );
 
-/** Tajik (Cyrillic) (Тоҷикӣ (Cyrillic))
+/** Tajik (Cyrillic script) (Тоҷикӣ)
  * @author Ibrahim
  */
 $messages['tg-cyrl'] = array(
@@ -901,7 +901,7 @@ $messages['tg-cyrl'] = array(
 	'intersection_noincludecats' => 'Error: Шумо ҳадди ақал бояд як гурӯҳро ворид кунед, ё як фазои номро мушаххас кунед!',
 );
 
-/** Tajik (Latin) (Тоҷикӣ (Latin))
+/** Tajik (Latin script) (tojikī)
  * @author Liangent
  */
 $messages['tg-latn'] = array(
