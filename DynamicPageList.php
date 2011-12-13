@@ -43,7 +43,7 @@ $wgExtensionCredits['parserhook'][] = array(
 	'name'           => 'DynamicPageList',
 	'version'        => '1.5',
 	'descriptionmsg' => 'intersection-desc',
-	'url'            => 'http://www.mediawiki.org/wiki/Extension:Intersection',
+	'url'            => 'https://www.mediawiki.org/wiki/Extension:Intersection',
 	'author'         => array( '[http://en.wikinews.org/wiki/User:Amgine Amgine]', '[http://en.wikinews.org/wiki/User:IlyaHaykinson IlyaHaykinson]' ),
 );
 
