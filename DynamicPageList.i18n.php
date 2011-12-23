@@ -567,10 +567,12 @@ $messages['lt'] = array(
 );
 
 /** Latvian (Latviešu)
+ * @author GreenZeb
  * @author Xil
  */
 $messages['lv'] = array(
 	'intersection_toomanycats' => 'Kļūda: pārāk daudz kategoriju!',
+	'intersection_noresults' => 'Kļūda: Nav rezultātu!',
 );
 
 /** Malagasy (Malagasy)
