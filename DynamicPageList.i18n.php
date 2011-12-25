@@ -624,6 +624,16 @@ $messages['ms'] = array(
 	'intersection_noincludecats' => 'Error: Anda hendaklah memasukkan sekurang-kurangnya sebuah kategori atau menyatakan sebuah ruang nama!',
 );
 
+/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+ * @author Jon Harald Søby
+ */
+$messages['nb'] = array(
+	'intersection-desc' => 'Gir en punktliste over de nyeste elementene i en kategori, eller elementer som er felles i flere kategorier',
+	'intersection_toomanycats' => 'Dynamisk sideliste: For mange kategorier!',
+	'intersection_noresults' => 'Dynamisk sideliste: Ingen resultater!',
+	'intersection_noincludecats' => 'Dynamisk sideliste: Du må inkludere minst én kategori, eller oppgi et navnerom!',
+);
+
 /** Low German (Plattdüütsch)
  * @author Slomox
  */
@@ -653,16 +663,6 @@ $messages['nn'] = array(
 	'intersection_toomanycats' => 'Feil: For mange kategoriar!',
 	'intersection_noresults' => 'Feil: Ingen resultat!',
 	'intersection_noincludecats' => 'Feil: Du må inkludera minst éin kategori, eller oppgje eit namnerom!',
-);
-
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
- * @author Jon Harald Søby
- */
-$messages['nb'] = array(
-	'intersection-desc' => 'Gir en punktliste over de nyeste elementene i en kategori, eller elementer som er felles i flere kategorier',
-	'intersection_toomanycats' => 'Dynamisk sideliste: For mange kategorier!',
-	'intersection_noresults' => 'Dynamisk sideliste: Ingen resultater!',
-	'intersection_noincludecats' => 'Dynamisk sideliste: Du må inkludere minst én kategori, eller oppgi et navnerom!',
 );
 
 /** Occitan (Occitan)
