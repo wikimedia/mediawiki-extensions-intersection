@@ -722,6 +722,14 @@ $messages['pnb'] = array(
 	'intersection_noincludecats' => 'غلطی: توانوں کعٹو کعٹ اک گٹھ نوں نال جوڑن دی ضرورت اے، یا اک ناںتھاں دسو!!',
 );
 
+/** Pashto (پښتو)
+ * @author Ahmed-Najib-Biabani-Ibrahimkhel
+ */
+$messages['ps'] = array(
+	'intersection_toomanycats' => 'ستونزه: ګڼ شمېر وېشنيزې!',
+	'intersection_noresults' => 'ستونزه: پايلې نشته!',
+);
+
 /** Portuguese (Português)
  * @author 555
  * @author Hamilton Abreu
