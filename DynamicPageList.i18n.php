@@ -445,6 +445,16 @@ $messages['id'] = array(
 	'intersection_noincludecats' => 'DynamicPageList: Anda perlu mencantumkan paling tidak satu kategori, atau menyebutkan satu ruang nama!',
 );
 
+/** Iloko (Ilokano)
+ * @author Lam-ang
+ */
+$messages['ilo'] = array(
+	'intersection-desc' => 'Agikabil ti napungluan a listaan kadagiti agdama a banag a nagyan iti kategoria, weno nagsabtan dagiti nadumaduma a kategoria',
+	'intersection_toomanycats' => 'Biddut: Adu unay dagiti kategoria!',
+	'intersection_noresults' => 'Biddut: Aan dagiti nagbanagan!',
+	'intersection_noincludecats' => 'Biddut: Masapul nga iraman ti maysa a kategoria, wenno inaganan ti maysa a nagan ti lugar!',
+);
+
 /** Ido (Ido)
  * @author Malafaya
  */
