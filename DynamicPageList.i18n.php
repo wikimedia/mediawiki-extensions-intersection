@@ -310,6 +310,15 @@ $messages['fi'] = array(
 	'intersection_noincludecats' => 'Error: Lisää vähintään yksi luokka tai määritä nimiavaruus.',
 );
 
+/** Faroese (Føroyskt)
+ * @author EileenSanda
+ */
+$messages['fo'] = array(
+	'intersection_toomanycats' => 'Villa: Ov nógvir bólkr!',
+	'intersection_noresults' => 'Villa: Ongi úrslit!',
+	'intersection_noincludecats' => 'Feilur: Tú mást velja í minsta lagi ein bólk ella skriva eitt navnaøki!',
+);
+
 /** French (Français)
  * @author Grondin
  * @author IAlex
