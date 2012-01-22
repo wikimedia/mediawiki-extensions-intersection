@@ -204,10 +204,10 @@ $messages['da'] = array(
  * @author Umherirrender
  */
 $messages['de'] = array(
-	'intersection-desc' => 'Ermöglicht die Ausgabe einer Liste der aktuellsten Einträge in einer Kategorie, oder aus der Schnittmenge mehrerer Kategorien',
+	'intersection-desc' => 'Ermöglicht die Ausgabe einer Liste der aktuellsten Einträge einer oder der Schnittmenge mehrerer Kategorien',
 	'intersection_toomanycats' => 'Fehler: Zu viele Kategorien!',
 	'intersection_noresults' => 'Fehler: Keine Ergebnisse!',
-	'intersection_noincludecats' => 'Fehler: Du musst mindestens eine Kategorie einbinden oder gib einen Namensraum an!',
+	'intersection_noincludecats' => 'Fehler: Es muss mindestens eine Kategorie eingebunden oder ein Namensraum angegeben werden.',
 );
 
 /** German (formal address) (‪Deutsch (Sie-Form)‬)
