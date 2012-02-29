@@ -275,6 +275,7 @@ $messages['es'] = array(
  * @author Pikne
  */
 $messages['et'] = array(
+	'intersection-desc' => 'Väljastab ühe kategooria või mitme kategooria ühistest uusimatest liikmetest koostatud täpploendi.',
 	'intersection_toomanycats' => 'Tõrge: Liiga palju kategooriaid!',
 	'intersection_noresults' => 'Tõrge: Tulemusi pole!',
 	'intersection_noincludecats' => 'Tõrge: Lisa vähemalt üks kategooria või täpsusta nimeruum!',
