@@ -511,10 +511,13 @@ $messages['jv'] = array(
 
 /** Georgian (ქართული)
  * @author BRUTE
+ * @author David1010
  */
 $messages['ka'] = array(
+	'intersection-desc' => 'მარკირებულ სიაში გამოაქვს ბოლო დამატებები კატეგორიაში, ან რამდენიმე კატეგორიის გაერთიანება',
 	'intersection_toomanycats' => 'შეცდომა: ძალიან ბევრი კატეგორიაა!',
 	'intersection_noresults' => 'შეცდომა: შედეგები არ არის!',
+	'intersection_noincludecats' => 'შეცდომა: თქვენ უნდა დაურთოთ ერთი კატეგორია მაინც, ან მიუთითოთ სახელთა სივრცე!',
 );
 
 /** Khmer (ភាសាខ្មែរ)
