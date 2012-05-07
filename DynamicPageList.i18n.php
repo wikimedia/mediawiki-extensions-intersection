@@ -1017,6 +1017,15 @@ $messages['vo'] = array(
 	'intersection_noincludecats' => 'Error: Nedol välön kladi pu bali, u nemaspadi!',
 );
 
+/** Yiddish (ייִדיש)
+ * @author פוילישער
+ */
+$messages['yi'] = array(
+	'intersection_toomanycats' => 'גרייז: צו פיל קאטעגאריעס',
+	'intersection_noresults' => 'גרייז: קיין רעזולטאטן!',
+	'intersection_noincludecats' => 'גרייז: איר דארפט איינשליסן כאטש איין קאטעגאריע, אדער ספעציפיצירן א נאמענטייל!',
+);
+
 /** Yoruba (Yorùbá)
  * @author Demmy
  */
