@@ -869,22 +869,24 @@ $messages['sq'] = array(
 );
 
 /** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
+ * @author FriedrickMILBarbarossa
  * @author Millosh
  */
 $messages['sr-ec'] = array(
 	'intersection-desc' => 'Даје редни списак најскорије додатих чланака у једну или више категорија.',
 	'intersection_toomanycats' => 'Грешка: Превише категорија!',
-	'intersection_noresults' => 'Грешка: Нема резулатата!',
+	'intersection_noresults' => 'Грешка: Нема резултата!',
 	'intersection_noincludecats' => 'Грешка: Потребно је укључити бар једну категорију или одредити именски простор!',
 );
 
 /** Serbian (Latin script) (‪Srpski (latinica)‬)
+ * @author FriedrickMILBarbarossa
  * @author Michaello
  */
 $messages['sr-el'] = array(
 	'intersection-desc' => 'Daje redni spisak najskorije dodatih članaka u jednu ili više kategorija.',
 	'intersection_toomanycats' => 'Greška: Previše kategorija!',
-	'intersection_noresults' => 'Greška: Nema rezulatata!',
+	'intersection_noresults' => 'Greška: Nema rezultata!',
 	'intersection_noincludecats' => 'Greška: Potrebno je uključiti bar jednu kategoriju ili odrediti imenski prostor!',
 );
 
