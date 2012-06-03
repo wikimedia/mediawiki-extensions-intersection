@@ -66,9 +66,12 @@ $messages['arz'] = array(
 
 /** Assamese (অসমীয়া)
  * @author Bishnu Saikia
+ * @author Gitartha.bordoloi
  */
 $messages['as'] = array(
+	'intersection_toomanycats' => 'ত্ৰুটী: বেছি সংখ্যক শ্ৰেণী!',
 	'intersection_noresults' => 'ক্ৰুটি: ফলাফল নাই!',
+	'intersection_noincludecats' => 'ত্ৰুটী: আপুনি অন্ততঃ এটা শ্ৰেণী অন্তৰ্ভুক্ত কৰিব লাগিব, বা এটা নামস্থান নিৰ্দেশ কৰিব লাগিব!',
 );
 
 /** Asturian (Asturianu)
@@ -868,7 +871,7 @@ $messages['sq'] = array(
 	'intersection_noincludecats' => 'Gabim: Ju duhet të përfshini të paktën një kategori, ose të specifikoni një hapësirë!',
 );
 
-/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (‪српски (ћирилица)‬)
  * @author FriedrickMILBarbarossa
  * @author Millosh
  */
@@ -879,7 +882,7 @@ $messages['sr-ec'] = array(
 	'intersection_noincludecats' => 'Грешка: Потребно је укључити бар једну категорију или одредити именски простор!',
 );
 
-/** Serbian (Latin script) (‪Srpski (latinica)‬)
+/** Serbian (Latin script) (‪srpski (latinica)‬)
  * @author FriedrickMILBarbarossa
  * @author Michaello
  */
