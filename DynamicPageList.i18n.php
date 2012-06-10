@@ -497,7 +497,7 @@ $messages['ja'] = array(
 	'intersection-desc' => '単一カテゴリ内または複数カテゴリ内において最近更新された項目を箇条書きで表示',
 	'intersection_toomanycats' => 'エラー：カテゴリ指定が多すぎます！',
 	'intersection_noresults' => 'エラー：最近更新された項目はありません！',
-	'intersection_noincludecats' => 'エラー：1つ以上のカテゴリを含めるか、名前空間を指定する必要があります！',
+	'intersection_noincludecats' => 'エラー：カテゴリを少なくとも1つ含めるか、名前空間を指定する必要があります！',
 );
 
 /** Jutish (Jysk)
