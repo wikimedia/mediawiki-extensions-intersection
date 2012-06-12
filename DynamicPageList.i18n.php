@@ -69,6 +69,7 @@ $messages['arz'] = array(
  * @author Gitartha.bordoloi
  */
 $messages['as'] = array(
+	'intersection-desc' => 'কোনো শ্ৰেণী বা কেইবাটাও শ্ৰেণীৰ সংযোগত থকা শেহতীয়া আইটেমসমূহৰ তালিকা দেখুৱায়',
 	'intersection_toomanycats' => 'ত্ৰুটী: বেছি সংখ্যক শ্ৰেণী!',
 	'intersection_noresults' => 'ক্ৰুটি: ফলাফল নাই!',
 	'intersection_noincludecats' => 'ত্ৰুটী: আপুনি অন্ততঃ এটা শ্ৰেণী অন্তৰ্ভুক্ত কৰিব লাগিব, বা এটা নামস্থান নিৰ্দেশ কৰিব লাগিব!',
