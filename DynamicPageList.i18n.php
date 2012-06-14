@@ -75,7 +75,7 @@ $messages['as'] = array(
 	'intersection_noincludecats' => 'ত্ৰুটী: আপুনি অন্ততঃ এটা শ্ৰেণী অন্তৰ্ভুক্ত কৰিব লাগিব, বা এটা নামস্থান নিৰ্দেশ কৰিব লাগিব!',
 );
 
-/** Asturian (Asturianu)
+/** Asturian (asturianu)
  * @author Esbardu
  */
 $messages['ast'] = array(
@@ -85,7 +85,7 @@ $messages['ast'] = array(
 	'intersection_noincludecats' => 'Error: ¡Necesites amiestar a lo menos una categoría, o especificar un espaciu de nomes!',
 );
 
-/** Azerbaijani (Azərbaycanca)
+/** Azerbaijani (azərbaycanca)
  * @author Wertuose
  */
 $messages['az'] = array(
@@ -124,7 +124,7 @@ $messages['be-tarask'] = array(
 	'intersection_noincludecats' => 'Памылка: Вам неабходна ўключыць хаця б адну катэгорыю альбо ўказаць прастору назваў!',
 );
 
-/** Bulgarian (Български)
+/** Bulgarian (български)
  * @author DCLXVI
  * @author Spiritia
  */
@@ -144,7 +144,7 @@ $messages['bn'] = array(
 	'intersection_noincludecats' => 'ত্রুটি:আপনার অন্তত একটি বিষয়শ্রেণী যুক্ত করতে, অথবা একটি নেমস্পেস দিতে হবে!',
 );
 
-/** Breton (Brezhoneg)
+/** Breton (brezhoneg)
  * @author Fulup
  */
 $messages['br'] = array(
@@ -154,7 +154,7 @@ $messages['br'] = array(
 	'intersection_noincludecats' => "Fazi : Ret eo deoc'h merkañ ur rummad da nebeutañ, pe spisaat un esaouenn anv",
 );
 
-/** Bosnian (Bosanski)
+/** Bosnian (bosanski)
  * @author CERminator
  * @author Seha
  */
@@ -165,7 +165,7 @@ $messages['bs'] = array(
 	'intersection_noincludecats' => 'Greška: Potrebno je da uključite najmanje jednu kategoriju ili odredite imenski prostor!',
 );
 
-/** Catalan (Català)
+/** Catalan (català)
  * @author Paucabot
  * @author SMP
  */
@@ -176,7 +176,7 @@ $messages['ca'] = array(
 	'intersection_noincludecats' => "Error: Heu d'incloure almenys una categoria o especificar un espai de noms!",
 );
 
-/** Czech (Česky)
+/** Czech (česky)
  * @author Li-sung
  * @author Matěj Grabovský
  */
@@ -197,7 +197,7 @@ $messages['cy'] = array(
 	'intersection_noincludecats' => 'Gwall: Mae angen cynnwys un categori o leiaf, neu bennu parth!',
 );
 
-/** Danish (Dansk)
+/** Danish (dansk)
  * @author Peter Alberti
  */
 $messages['da'] = array(
@@ -262,7 +262,7 @@ $messages['eo'] = array(
 	'intersection_noincludecats' => 'Eraro: Vi devas inkluzivi almenaŭ unu kategorion, aŭ specifu nomspacon!',
 );
 
-/** Spanish (Español)
+/** Spanish (español)
  * @author Aleator
  * @author Remember the dot
  * @author Sanbec
@@ -274,7 +274,7 @@ $messages['es'] = array(
 	'intersection_noincludecats' => 'Error: ¡Necesita incluir al menos una categoría, o especificar un espacio de nombres!',
 );
 
-/** Estonian (Eesti)
+/** Estonian (eesti)
  * @author Avjoska
  * @author Pikne
  */
@@ -285,7 +285,7 @@ $messages['et'] = array(
 	'intersection_noincludecats' => 'Tõrge: Lisa vähemalt üks kategooria või täpsusta nimeruum!',
 );
 
-/** Basque (Euskara)
+/** Basque (euskara)
  * @author An13sa
  */
 $messages['eu'] = array(
@@ -305,7 +305,7 @@ $messages['fa'] = array(
 	'intersection_noincludecats' => 'خطا: شما حداقل باید یک رده را وارد کنید، یا یک فضای نام را مشخص کنید!',
 );
 
-/** Finnish (Suomi)
+/** Finnish (suomi)
  * @author Nike
  */
 $messages['fi'] = array(
@@ -315,7 +315,7 @@ $messages['fi'] = array(
 	'intersection_noincludecats' => 'Error: Lisää vähintään yksi luokka tai määritä nimiavaruus.',
 );
 
-/** Faroese (Føroyskt)
+/** Faroese (føroyskt)
  * @author EileenSanda
  */
 $messages['fo'] = array(
@@ -324,7 +324,7 @@ $messages['fo'] = array(
 	'intersection_noincludecats' => 'Feilur: Tú mást velja í minsta lagi ein bólk ella skriva eitt navnaøki!',
 );
 
-/** French (Français)
+/** French (français)
  * @author Grondin
  * @author IAlex
  * @author Urhixidur
@@ -337,7 +337,7 @@ $messages['fr'] = array(
 	'intersection_noincludecats' => 'Erreur : vous devez inclure au moins une catégorie, ou préciser un espace de noms !',
 );
 
-/** Franco-Provençal (Arpetan)
+/** Franco-Provençal (arpetan)
  * @author ChrisPtDe
  */
 $messages['frp'] = array(
@@ -406,7 +406,7 @@ $messages['hi'] = array(
 	'intersection_noincludecats' => 'Error: कमसे कम एक श्रेणी या नामस्थान देना अनिवार्य हैं!',
 );
 
-/** Croatian (Hrvatski)
+/** Croatian (hrvatski)
  * @author Dalibor Bosits
  * @author Dnik
  */
@@ -427,7 +427,7 @@ $messages['hsb'] = array(
 	'intersection_noincludecats' => 'Error: Dyrbiš znajmjeńša kednu kategoriju zapřijeć abo mjenowy rum podać!',
 );
 
-/** Hungarian (Magyar)
+/** Hungarian (magyar)
  * @author Dani
  * @author Gondnok
  * @author KossuthRad
@@ -439,7 +439,7 @@ $messages['hu'] = array(
 	'intersection_noincludecats' => 'Hiba: Legalább egy listázandó kategóriát meg kell adnod, vagy pedig egy névteret!',
 );
 
-/** Interlingua (Interlingua)
+/** Interlingua (interlingua)
  * @author McDutchie
  */
 $messages['ia'] = array(
@@ -478,7 +478,7 @@ $messages['io'] = array(
 	'intersection_noincludecats' => 'Eroro: Vu mustas inkluzar adminime un kategorio, o specigez nomaro!',
 );
 
-/** Italian (Italiano)
+/** Italian (italiano)
  * @author BrokenArrow
  * @author Darth Kule
  */
@@ -501,7 +501,7 @@ $messages['ja'] = array(
 	'intersection_noincludecats' => 'エラー：カテゴリを少なくとも1つ含めるか、名前空間を指定する必要があります！',
 );
 
-/** Jutish (Jysk)
+/** Jutish (jysk)
  * @author Huslåke
  */
 $messages['jut'] = array(
@@ -585,7 +585,7 @@ $messages['li'] = array(
 	'intersection_noincludecats' => 'Error: Geer moet tenminste ein categorie of ein naamruumde opgeve!',
 );
 
-/** Lithuanian (Lietuvių)
+/** Lithuanian (lietuvių)
  * @author Matasg
  */
 $messages['lt'] = array(
@@ -594,7 +594,7 @@ $messages['lt'] = array(
 	'intersection_noincludecats' => 'Error: Jums reikia įtraukti bent vieną kategoriją, arba nurodyti vardų sritį!',
 );
 
-/** Latvian (Latviešu)
+/** Latvian (latviešu)
  * @author GreenZeb
  * @author Xil
  */
@@ -610,7 +610,7 @@ $messages['mg'] = array(
 	'intersection_toomanycats' => 'DynamicPageList : Be loatra ny sokajy',
 );
 
-/** Macedonian (Македонски)
+/** Macedonian (македонски)
  * @author Bjankuloski06
  */
 $messages['mk'] = array(
@@ -683,7 +683,7 @@ $messages['nl'] = array(
 	'intersection_noincludecats' => 'Fout: U moet tenminste een categorie of een naamruimte opgeven!',
 );
 
-/** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
+/** Norwegian Nynorsk (‪norsk (nynorsk)‬)
  * @author Harald Khan
  * @author Njardarlogar
  */
@@ -694,7 +694,7 @@ $messages['nn'] = array(
 	'intersection_noincludecats' => 'Feil: Du må inkludera minst éin kategori, eller oppgje eit namnerom!',
 );
 
-/** Occitan (Occitan)
+/** Occitan (occitan)
  * @author Cedric31
  */
 $messages['oc'] = array(
@@ -721,7 +721,7 @@ $messages['os'] = array(
 	'intersection_toomanycats' => 'Рæдыд: æгæр бирæ категоритæ!',
 );
 
-/** Polish (Polski)
+/** Polish (polski)
  * @author Sp5uhe
  */
 $messages['pl'] = array(
@@ -759,7 +759,7 @@ $messages['ps'] = array(
 	'intersection_noresults' => 'ستونزه: پايلې نشته!',
 );
 
-/** Portuguese (Português)
+/** Portuguese (português)
  * @author 555
  * @author Hamilton Abreu
  * @author Malafaya
@@ -771,7 +771,7 @@ $messages['pt'] = array(
 	'intersection_noincludecats' => 'Erro: Tem de incluir no mínimo uma categoria ou especificar um espaço nominal!',
 );
 
-/** Brazilian Portuguese (Português do Brasil)
+/** Brazilian Portuguese (português do Brasil)
  * @author Eduardo.mps
  */
 $messages['pt-br'] = array(
@@ -781,7 +781,7 @@ $messages['pt-br'] = array(
 	'intersection_noincludecats' => 'Erro: É necessário incluir no mínimo uma categoria ou especificar um espaço nominal!',
 );
 
-/** Romanian (Română)
+/** Romanian (română)
  * @author Mihai
  */
 $messages['ro'] = array(
@@ -791,7 +791,7 @@ $messages['ro'] = array(
 	'intersection_noincludecats' => 'Eroare: Trebuie să incluzi cel puțin o categorie, sau să specifici un spațiu de nume!',
 );
 
-/** Tarandíne (Tarandíne)
+/** tarandíne (tarandíne)
  * @author Joetaras
  */
 $messages['roa-tara'] = array(
@@ -801,7 +801,7 @@ $messages['roa-tara'] = array(
 	'intersection_noincludecats' => "Errore: Tu è abbesogne de 'ngludere ninde ninde 'na categorije, o specificà 'nu namespace!",
 );
 
-/** Russian (Русский)
+/** Russian (русский)
  * @author Putnik
  * @author Александр Сигачёв
  */
@@ -822,7 +822,7 @@ $messages['rue'] = array(
 	'intersection_noincludecats' => 'Хыба: Мусите включіти холем єдну катеґорію або задати простор назв!',
 );
 
-/** Sakha (Саха тыла)
+/** Sakha (саха тыла)
  * @author HalanTul
  */
 $messages['sah'] = array(
@@ -842,7 +842,7 @@ $messages['si'] = array(
 	'intersection_noincludecats' => 'දෝෂය: නාමාවකාශයක් සඳහන් කෙරුම හෝ අවම වශයෙන් එක් ප්‍රවර්ගයක් හෝ ඇතුලත් කිරීමට අවැසිය!',
 );
 
-/** Slovak (Slovenčina)
+/** Slovak (slovenčina)
  * @author Helix84
  */
 $messages['sk'] = array(
@@ -852,7 +852,7 @@ $messages['sk'] = array(
 	'intersection_noincludecats' => 'Error: Musíte uviesť aspoň jednu kategóriu alebo menný priestor!',
 );
 
-/** Slovenian (Slovenščina)
+/** Slovenian (slovenščina)
  * @author Dbc334
  */
 $messages['sl'] = array(
@@ -862,7 +862,7 @@ $messages['sl'] = array(
 	'intersection_noincludecats' => 'Napaka: Vključiti morate vsaj eno kategorijo ali določiti imenski prostor!',
 );
 
-/** Albanian (Shqip)
+/** Albanian (shqip)
  * @author Olsi
  */
 $messages['sq'] = array(
@@ -904,7 +904,7 @@ $messages['stq'] = array(
 	'intersection_noincludecats' => 'Error: Der mout mindestens een Kategorie ienbuunen weese of reek n Noomensruum oun!',
 );
 
-/** Swedish (Svenska)
+/** Swedish (svenska)
  * @author Lejonel
  */
 $messages['sv'] = array(
@@ -932,7 +932,7 @@ $messages['te'] = array(
 	'intersection_noincludecats' => 'Error: మీరు కనీసం ఒక్క వర్గాన్నైనా చేర్చాలి, లేదా ఓ నేమ్&zwnj;స్పేసునైనా ఇవ్వాలి!',
 );
 
-/** Tajik (Cyrillic script) (Тоҷикӣ)
+/** Tajik (Cyrillic script) (тоҷикӣ)
  * @author Ibrahim
  */
 $messages['tg-cyrl'] = array(
@@ -942,7 +942,7 @@ $messages['tg-cyrl'] = array(
 	'intersection_noincludecats' => 'Error: Шумо ҳадди ақал бояд як гурӯҳро ворид кунед, ё як фазои номро мушаххас кунед!',
 );
 
-/** Tajik (Latin script) (Tojikī)
+/** Tajik (Latin script) (tojikī)
  * @author Liangent
  */
 $messages['tg-latn'] = array(
@@ -982,7 +982,7 @@ $messages['tr'] = array(
 	'intersection_noincludecats' => 'Hata: En az bir kategori eklemeli, ya da bir ad alanı belirtmelisiniz!',
 );
 
-/** Ukrainian (Українська)
+/** Ukrainian (українська)
  * @author Ahonc
  */
 $messages['uk'] = array(
@@ -992,7 +992,7 @@ $messages['uk'] = array(
 	'intersection_noincludecats' => 'Error: ви повинні включити хоча б одну категорію або зазначити простір назв!',
 );
 
-/** Vèneto (Vèneto)
+/** vèneto (vèneto)
  * @author Candalua
  */
 $messages['vec'] = array(
@@ -1058,7 +1058,7 @@ $messages['yue'] = array(
 	'intersection_noincludecats' => 'DynamicPageList: 你需要去包含最少一個分類，或者指定一個空間名!',
 );
 
-/** Simplified Chinese (‪中文(简体)‬)
+/** Simplified Chinese (‪中文（简体）‬)
  * @author Shinjiman
  */
 $messages['zh-hans'] = array(
@@ -1068,7 +1068,7 @@ $messages['zh-hans'] = array(
 	'intersection_noincludecats' => 'DynamicPageList: 您需要去包含最少一个分类，或者指定一个空间名!',
 );
 
-/** Traditional Chinese (‪中文(繁體)‬)
+/** Traditional Chinese (‪中文（繁體）‬)
  * @author Mark85296341
  * @author Shinjiman
  */
