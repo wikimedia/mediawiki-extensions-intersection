@@ -33,7 +33,7 @@ $messages['af'] = array(
 	'intersection_noincludecats' => "Fout: U moet ten minste een kategorie insluit, of spesifiseer 'n naamspasie!",
 );
 
-/** Aragonese (Aragonés)
+/** Aragonese (aragonés)
  * @author Juanpabl
  */
 $messages['an'] = array(
@@ -113,7 +113,7 @@ $messages['bcc'] = array(
 	'intersection_noincludecats' => 'لیست صفحات دینامیکی: شما لازمنت حداقل یک دسته هور کنیت یا یک نام فضایی مشخص کنیت!',
 );
 
-/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
  */
@@ -231,7 +231,7 @@ $messages['diq'] = array(
 	'intersection_noincludecats' => 'xeta: tewr tay yew kategori gani têarê bıbo ya zi yew mıntıqaya nameyi diyare bıkerê!',
 );
 
-/** Lower Sorbian (Dolnoserbski)
+/** Lower Sorbian (dolnoserbski)
  * @author Michawiki
  */
 $messages['dsb'] = array(
@@ -347,7 +347,7 @@ $messages['frp'] = array(
 	'intersection_noincludecats' => 'Èrror : vos dête encllure u muens yona catègorie, ou ben spècefiar un èspâço de noms !',
 );
 
-/** Galician (Galego)
+/** Galician (galego)
  * @author Toliño
  * @author Xosé
  */
@@ -417,7 +417,7 @@ $messages['hr'] = array(
 	'intersection_noincludecats' => 'Error: Morate uključiti bar jednu kategoriju, ili odabrati imenski prostor!',
 );
 
-/** Upper Sorbian (Hornjoserbsce)
+/** Upper Sorbian (hornjoserbsce)
  * @author Michawiki
  */
 $messages['hsb'] = array(
@@ -812,7 +812,7 @@ $messages['ru'] = array(
 	'intersection_noincludecats' => 'Ошибка. Вы должны включить хотя бы одну категорию или указать пространство имён!',
 );
 
-/** Rusyn (Русиньскый)
+/** Rusyn (русиньскый)
  * @author Gazeb
  */
 $messages['rue'] = array(
