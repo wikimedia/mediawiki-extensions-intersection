@@ -94,7 +94,7 @@ $messages['az'] = array(
 	'intersection_noincludecats' => 'Xəta: Siz ən azı bir kateqoriya əlavə etməli və ya adlar fəzası müəyyənləşdirməlisiniz!',
 );
 
-/** Bashkir (Башҡортса)
+/** Bashkir (башҡортса)
  * @author Assele
  */
 $messages['ba'] = array(
@@ -652,9 +652,7 @@ $messages['ms'] = array(
 	'intersection_noincludecats' => 'Error: Anda hendaklah memasukkan sekurang-kurangnya sebuah kategori atau menyatakan sebuah ruang nama!',
 );
 
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
- * @author Jon Harald Søby
- */
+/** Norwegian Bokmål (‪norsk (bokmål)‬) */
 $messages['nb'] = array(
 	'intersection-desc' => 'Gir en punktliste over de nyeste elementene i en kategori, eller elementer som er felles i flere kategorier',
 	'intersection_toomanycats' => 'Dynamisk sideliste: For mange kategorier!',
@@ -1002,7 +1000,7 @@ $messages['vec'] = array(
 	'intersection_noincludecats' => 'Error: Te ghè da inclùdar almanco na categoria opure specificar un namespace.',
 );
 
-/** Veps (Vepsän kel’)
+/** Veps (vepsän kel’)
  * @author Игорь Бродский
  */
 $messages['vep'] = array(
