@@ -1,3 +1,13 @@
+######################################################
+#### Warning: run these tests via parserTests.php    #
+####                                                 #
+#### These tests tend to fail when run from phpunit. #
+######################################################
+
+
+
+
+
 # Not clear if this does anything, but other extension do it.
 # However, seems to make this not work, so commenting out for now.
 #!! hooks
@@ -16,6 +26,12 @@
 ## *gallery stuff (lack of images)
 ## *some order methods, due to lack of flexibity in page creation
 ## googlehack (dpl_id) stuff because page_id changes depending on other tests.
+
+!!article
+MediaWiki:Bad_image_list
+!!text
+* [[:File:Bad.jpg]] except [[Nasty page]]
+!!endarticle
 
 !! article
 DPLTest1
@@ -492,7 +508,7 @@ order=descending
 			<div style="height: 150px;"><a href="/wiki/File:Bad.jpg" title="File:Bad.jpg">Bad.jpg</a></div>
 			<div class="gallerytext">
 <p><a href="/wiki/File:Bad.jpg" title="File:Bad.jpg">Bad.jpg</a><br />
-12,345 bytes<br />
+8 KB<br />
 </p>
 			</div>
 		</div></li>
@@ -500,7 +516,7 @@ order=descending
 			<div class="thumb" style="width: 100px;"><div style="margin:71px auto;"><a href="/wiki/File:Foobar.jpg" class="image"><img alt="Foobar.jpg" src="http://example.com/images/3/3a/Foobar.jpg" width="70" height="8" /></a></div></div>
 			<div class="gallerytext">
 <p><a href="/wiki/File:Foobar.jpg" title="File:Foobar.jpg">Foobar.jpg</a><br />
-12,345 bytes<br />
+8 KB<br />
 </p>
 			</div>
 		</div></li>
