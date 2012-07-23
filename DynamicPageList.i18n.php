@@ -217,7 +217,7 @@ $messages['da'] = array(
 $messages['de'] = array(
 	'intersection-desc' => 'Ermöglicht die Ausgabe einer Liste der aktuellsten Einträge einer oder der Schnittmenge mehrerer Kategorien',
 	'intersection_toomanycats' => 'Fehler: Zu viele Kategorien!',
-	'intersection_noresults' => 'Fehler: Keine Ergebnisse!',
+	'intersection_noresults' => 'Keine Seiten entsprechen diesen Kriterien.',
 	'intersection_noincludecats' => 'Fehler: Es muss mindestens eine Kategorie eingebunden oder ein Namensraum angegeben werden.',
 );
 
@@ -301,7 +301,7 @@ $messages['eu'] = array(
 $messages['fa'] = array(
 	'intersection-desc' => 'فهرست گلوله‌ای از صفحه‌هایی به نمایش در می‌آورد که به تازگی در یک یا چند رده وارد شده‌اند',
 	'intersection_toomanycats' => 'خطا: تعداد رده‌ها زیاد است!',
-	'intersection_noresults' => 'خطا: نتیجه‌ای وجود ندارد!',
+	'intersection_noresults' => 'هیچ صفحه‌ای با این معیارها وجود ندارد.',
 	'intersection_noincludecats' => 'خطا: شما حداقل باید یک رده را وارد کنید، یا یک فضای نام را مشخص کنید!',
 );
 
