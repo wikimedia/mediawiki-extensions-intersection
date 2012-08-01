@@ -77,11 +77,12 @@ $messages['as'] = array(
 
 /** Asturian (asturianu)
  * @author Esbardu
+ * @author Xuacu
  */
 $messages['ast'] = array(
 	'intersection-desc' => 'Amuesa una llista de los elementos más recién que tenga una categoría o una xuntanza de varies categoríes',
 	'intersection_toomanycats' => 'Error: ¡Demasiaes categoríes!',
-	'intersection_noresults' => 'Error: ¡Nun hai resultaos!',
+	'intersection_noresults' => 'Denguna páxina cumple estos criterios.',
 	'intersection_noincludecats' => 'Error: ¡Necesites amiestar a lo menos una categoría, o especificar un espaciu de nomes!',
 );
 
@@ -281,7 +282,7 @@ $messages['es'] = array(
 $messages['et'] = array(
 	'intersection-desc' => 'Väljastab ühe kategooria või mitme kategooria ühistest uusimatest liikmetest koostatud täpploendi.',
 	'intersection_toomanycats' => 'Tõrge: Liiga palju kategooriaid!',
-	'intersection_noresults' => 'Tõrge: Tulemusi pole!',
+	'intersection_noresults' => 'Ükski lehekülg ei vasta neile kriteeriumitele.',
 	'intersection_noincludecats' => 'Tõrge: Lisa vähemalt üks kategooria või täpsusta nimeruum!',
 );
 
@@ -445,7 +446,7 @@ $messages['hu'] = array(
 $messages['ia'] = array(
 	'intersection-desc' => 'Face un lista a punctos del elementos le plus recente in un categoria, o un union de plure categorias',
 	'intersection_toomanycats' => 'Error: Troppo de categorias!',
-	'intersection_noresults' => 'Error: Nulle resultato!',
+	'intersection_noresults' => 'Nulle pagina satisface iste criterios.',
 	'intersection_noincludecats' => 'Error: Tu debe includer al minus un categoria, o specificar un spatio de nomines!',
 );
 
@@ -577,11 +578,12 @@ $messages['lb'] = array(
 /** Limburgish (Limburgs)
  * @author Aelske
  * @author Matthias
+ * @author Ooswesthoesbes
  */
 $messages['li'] = array(
 	'intersection-desc' => 'Geeft als uitvoer een ongenummerde lijst met de meest recent toegevoegde items in een categorie, of een combinatie van categorieë',
 	'intersection_toomanycats' => 'Error: Te väöl categorieë!',
-	'intersection_noresults' => 'Error: Gein resultate!',
+	'intersection_noresults' => "Gein inkel pagina's vóldoon aan dees kriteria.",
 	'intersection_noincludecats' => 'Error: Geer moet tenminste ein categorie of ein naamruumde opgeve!',
 );
 
@@ -720,12 +722,13 @@ $messages['os'] = array(
 );
 
 /** Polish (polski)
+ * @author BeginaFelicysym
  * @author Sp5uhe
  */
 $messages['pl'] = array(
 	'intersection-desc' => 'Zwraca listę wypunktowaną najnowszych elementów w jednej kategorii lub części wspólnej kilku kategorii',
 	'intersection_toomanycats' => 'Błąd – zbyt wiele kategorii!',
-	'intersection_noresults' => 'Błąd – brak wyników!',
+	'intersection_noresults' => 'Brak stron spełniających kryteria.',
 	'intersection_noincludecats' => 'Błąd – musisz wybrać co najmniej jedną kategorię lub określić przestrzeń nazw!',
 );
 
@@ -795,7 +798,7 @@ $messages['ro'] = array(
 $messages['roa-tara'] = array(
 	'intersection-desc' => "Fa assè 'na liste cu le palle de le urteme urteme artichele ca stonne jndr'à 'na categorije, o 'n'interseziona de cchiù categorije",
 	'intersection_toomanycats' => 'Errore: Troppe categorije!',
-	'intersection_noresults' => 'Errore: Nisciune resultete!',
+	'intersection_noresults' => 'Nisciuna pàggene soddisfe ste criterie.',
 	'intersection_noincludecats' => "Errore: Tu è abbesogne de 'ngludere ninde ninde 'na categorije, o specificà 'nu namespace!",
 );
 
