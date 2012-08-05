@@ -67,11 +67,12 @@ $messages['arz'] = array(
 /** Assamese (অসমীয়া)
  * @author Bishnu Saikia
  * @author Gitartha.bordoloi
+ * @author Nilamdyuti
  */
 $messages['as'] = array(
 	'intersection-desc' => 'কোনো শ্ৰেণী বা কেইবাটাও শ্ৰেণীৰ সংযোগত থকা শেহতীয়া আইটেমসমূহৰ তালিকা দেখুৱায়',
 	'intersection_toomanycats' => 'ত্ৰুটী: বেছি সংখ্যক শ্ৰেণী!',
-	'intersection_noresults' => 'ক্ৰুটি: ফলাফল নাই!',
+	'intersection_noresults' => 'কোনো পৃষ্ঠায় এই মাপকাঠী পৰিপূৰ্ণ নকৰে।',
 	'intersection_noincludecats' => 'ত্ৰুটী: আপুনি অন্ততঃ এটা শ্ৰেণী অন্তৰ্ভুক্ত কৰিব লাগিব, বা এটা নামস্থান নিৰ্দেশ কৰিব লাগিব!',
 );
 
@@ -859,7 +860,7 @@ $messages['sk'] = array(
 $messages['sl'] = array(
 	'intersection-desc' => 'Izpiše seznam zadnjih predmetov v kategoriji ali presek več kategorij',
 	'intersection_toomanycats' => 'Napaka: Preveč kategorij!',
-	'intersection_noresults' => 'Napaka: Ni zadetkov!',
+	'intersection_noresults' => 'Nobena stran ne ustreza merilom.',
 	'intersection_noincludecats' => 'Napaka: Vključiti morate vsaj eno kategorijo ali določiti imenski prostor!',
 );
 
