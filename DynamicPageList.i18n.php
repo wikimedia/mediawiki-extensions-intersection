@@ -824,6 +824,14 @@ $messages['rue'] = array(
 	'intersection_noincludecats' => 'Хыба: Мусите включіти холем єдну катеґорію або задати простор назв!',
 );
 
+/** Sanskrit (संस्कृतम्)
+ * @author Shubha
+ */
+$messages['sa'] = array(
+	'intersection-desc' => 'एकस्यां श्रेण्यां श्रेणीसमूहे वा विद्यमानाः नवीनतमाः लेखाः दर्श्यन्ताम् ।',
+	'intersection_toomanycats' => 'दोषः: अत्यधिकाः वर्गाः !',
+);
+
 /** Sakha (саха тыла)
  * @author HalanTul
  */
