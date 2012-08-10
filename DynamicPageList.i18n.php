@@ -29,7 +29,7 @@ $messages['qqq'] = array(
  */
 $messages['af'] = array(
 	'intersection_toomanycats' => 'Fout: Te veel kategorieë!',
-	'intersection_noresults' => 'Fout: Geen resultate!',
+	'intersection_noresults' => 'Geen bladsye voldoen aan hierdie kriteria nie.',
 	'intersection_noincludecats' => "Fout: U moet ten minste een kategorie insluit, of spesifiseer 'n naamspasie!",
 );
 
@@ -435,13 +435,14 @@ $messages['hsb'] = array(
 
 /** Hungarian (magyar)
  * @author Dani
+ * @author Dj
  * @author Gondnok
  * @author KossuthRad
  */
 $messages['hu'] = array(
 	'intersection-desc' => 'Megjeleníti egy adott kategóriában, vagy kategóriák uniójában lévő legújabb szócikkek listáját',
 	'intersection_toomanycats' => 'Hiba: Túl sok kategória!',
-	'intersection_noresults' => 'Hiba: Nincs eredmény!',
+	'intersection_noresults' => 'Nincs a feltételnek megfelelő lap.',
 	'intersection_noincludecats' => 'Hiba: Legalább egy listázandó kategóriát meg kell adnod, vagy pedig egy névteret!',
 );
 
@@ -743,7 +744,7 @@ $messages['pl'] = array(
 $messages['pms'] = array(
 	'intersection-desc' => "A visualisa na lista pontà dij pì ressent element anserì ant na categorìa, o ant l'antërsession ëd pì categorìe",
 	'intersection_toomanycats' => 'Eror: tròpe categorìe!',
-	'intersection_noresults' => 'Eror: Gnun arzultà!',
+	'intersection_noresults' => 'Pa gnun-e pagine a cobio sti crìter-sì.',
 	'intersection_noincludecats' => 'Eror: It deuve anserì almanch na categorìa, o spessifié në spassi nominal!',
 );
 
@@ -892,11 +893,12 @@ $messages['sq'] = array(
 /** Serbian (Cyrillic script) (‪српски (ћирилица)‬)
  * @author FriedrickMILBarbarossa
  * @author Millosh
+ * @author Rancher
  */
 $messages['sr-ec'] = array(
 	'intersection-desc' => 'Даје редни списак најскорије додатих чланака у једну или више категорија.',
 	'intersection_toomanycats' => 'Грешка: Превише категорија!',
-	'intersection_noresults' => 'Грешка: Нема резултата!',
+	'intersection_noresults' => 'Ниједна страница не задовољава наведене критеријуме.',
 	'intersection_noincludecats' => 'Грешка: Потребно је укључити бар једну категорију или одредити именски простор!',
 );
 
