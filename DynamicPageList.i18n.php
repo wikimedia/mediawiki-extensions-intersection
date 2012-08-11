@@ -49,7 +49,7 @@ $messages['an'] = array(
 $messages['ar'] = array(
 	'intersection-desc' => 'يخرج قائمة معلمة بأحدث المدخلات الساكنة في تصنيف، أو اتحاد عدة تصنيفات',
 	'intersection_toomanycats' => 'خطأ: تصنيفات كثيرة جدا!',
-	'intersection_noresults' => 'خطأ: لا نتائج!',
+	'intersection_noresults' => 'لا صفحات توافق هذه المعطيات.',
 	'intersection_noincludecats' => 'خطأ: ينبغي أن تضمن تصنيفا واحدا على الأقل، أو تحدد نطاقا!',
 );
 
