@@ -181,11 +181,12 @@ $messages['ca'] = array(
 /** Czech (česky)
  * @author Li-sung
  * @author Matěj Grabovský
+ * @author Mormegil
  */
 $messages['cs'] = array(
 	'intersection-desc' => 'Vypíše seznam nejnovějších položek v kategorii nebo sjednotí několik kategorií',
 	'intersection_toomanycats' => 'Error: Příliš mnoho kategorií!',
-	'intersection_noresults' => 'Error: Žádné výsledky!',
+	'intersection_noresults' => 'Tato kritéria nesplňují žádné stránky.',
 	'intersection_noincludecats' => 'Error: Musíte zahrnout alespoň jednu kategorii nebo určit jmenný prostor!',
 );
 
@@ -226,11 +227,12 @@ $messages['de'] = array(
 
 /** Zazaki (Zazaki)
  * @author Aspar
+ * @author Erdemaslancan
  */
 $messages['diq'] = array(
 	'intersection-desc' => 'yew kategori de, ya zi unsurê ke yew ra zêd pêgınayişê kategoriyan de esti, listeya maddeya nişanbiyayeyanê ıney unsuran vırazeno',
 	'intersection_toomanycats' => 'xeta: kategoriyi zaf zêd ê!',
-	'intersection_noresults' => 'xeta: netice çina!',
+	'intersection_noresults' => 'Xırab: kriter dê şıma deye pela çıniya!',
 	'intersection_noincludecats' => 'xeta: tewr tay yew kategori gani têarê bıbo ya zi yew mıntıqaya nameyi diyare bıkerê!',
 );
 
@@ -240,7 +242,7 @@ $messages['diq'] = array(
 $messages['dsb'] = array(
 	'intersection-desc' => 'Wudawa lisćina nejaktualnjejšych zapiskow w kategoriji abo zgromadneje młogosći někotarych kategorijow',
 	'intersection_toomanycats' => 'Zmólka: Pśewjele kategorijow!',
-	'intersection_noresults' => 'Zmólka: Žedne wuslědki!',
+	'intersection_noresults' => 'Žedne boki njewótpowěduju toś tym kriterijam.',
 	'intersection_noincludecats' => 'Zmólka: Musyš nanejmjenjej jadnu kategoriju zapśěgnuś abo mjenjowy rum pódaś!',
 );
 
@@ -268,13 +270,14 @@ $messages['eo'] = array(
 
 /** Spanish (español)
  * @author Aleator
+ * @author Armando-Martin
  * @author Remember the dot
  * @author Sanbec
  */
 $messages['es'] = array(
 	'intersection-desc' => 'Devuelve una lista de los elementos más recientes que están en una categoría o en una intersección de varias categorías',
 	'intersection_toomanycats' => '¡Error: Demasiadas categorías!',
-	'intersection_noresults' => 'Error: ¡Sin resultados!',
+	'intersection_noresults' => 'Ninguna página cumple estos criterios.',
 	'intersection_noincludecats' => 'Error: ¡Necesita incluir al menos una categoría, o especificar un espacio de nombres!',
 );
 
@@ -301,12 +304,13 @@ $messages['eu'] = array(
 /** Persian (فارسی)
  * @author Huji
  * @author Mjbmr
+ * @author ZxxZxxZ
  */
 $messages['fa'] = array(
 	'intersection-desc' => 'فهرست گلوله‌ای از صفحه‌هایی به نمایش در می‌آورد که به تازگی در یک یا چند رده وارد شده‌اند',
 	'intersection_toomanycats' => 'خطا: تعداد رده‌ها زیاد است!',
-	'intersection_noresults' => 'هیچ صفحه‌ای با این معیارها وجود ندارد.',
-	'intersection_noincludecats' => 'خطا: شما حداقل باید یک رده را وارد کنید، یا یک فضای نام را مشخص کنید!',
+	'intersection_noresults' => 'هیچ صفحه‌ای با این معیارها مطابقت ندارد.',
+	'intersection_noincludecats' => 'خطا: حداقل باید یک رده را وارد کنید یا یک فضای نام را مشخص کنید!',
 );
 
 /** Finnish (suomi)
@@ -330,6 +334,7 @@ $messages['fo'] = array(
 );
 
 /** French (français)
+ * @author Gomoko
  * @author Grondin
  * @author IAlex
  * @author Urhixidur
@@ -338,7 +343,7 @@ $messages['fo'] = array(
 $messages['fr'] = array(
 	'intersection-desc' => 'Affiche une liste, à puces, des articles les plus récents dans une catégorie, ou à partir d’une combinaison de plusieurs catégories.',
 	'intersection_toomanycats' => 'Erreur : trop de catégories !',
-	'intersection_noresults' => 'Erreur : aucun résultat !',
+	'intersection_noresults' => 'Aucune page ne correspond à ces critères.',
 	'intersection_noincludecats' => 'Erreur : vous devez inclure au moins une catégorie, ou préciser un espace de noms !',
 );
 
@@ -357,10 +362,10 @@ $messages['frp'] = array(
  * @author Xosé
  */
 $messages['gl'] = array(
-	'intersection-desc' => 'Devolve unha lista punteada dos elementos máis recentes que están nunha categoría ou nunha unión de varias categorías',
-	'intersection_toomanycats' => 'Erro: demasiadas categorías!',
-	'intersection_noresults' => 'Erro: ningún resultado!',
-	'intersection_noincludecats' => 'Erro: ten que incluír unha categoría polo menos ou especificar un espazo de nomes!',
+	'intersection-desc' => 'Devolve unha lista dos elementos máis recentes que están nunha categoría ou nunha intersección de varias categorías',
+	'intersection_toomanycats' => 'Erro: Demasiadas categorías!',
+	'intersection_noresults' => 'Non hai ningunha páxina que coincida con eses criterios.',
+	'intersection_noincludecats' => 'Erro: Ten que incluír unha categoría polo menos ou especificar un espazo de nomes!',
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
@@ -393,12 +398,13 @@ $messages['gu'] = array(
 );
 
 /** Hebrew (עברית)
+ * @author Amire80
  * @author Rotem Liss
  */
 $messages['he'] = array(
 	'intersection-desc' => 'רשימה עם תבליטים של הפריטים האחרונים המצויים בקטגוריה, או במספר קטגוריות',
 	'intersection_toomanycats' => 'DynamicPageList: קטגוריות רבות מדי!',
-	'intersection_noresults' => 'DynamicPageList: אין תוצאות!',
+	'intersection_noresults' => 'אין דפים שמתאימים לתנאים האלה.',
 	'intersection_noincludecats' => 'DynamicPageList: עליכם לכלול לפחות קטגוריה אחת, או לציין מרחב שם!',
 );
 
@@ -429,7 +435,7 @@ $messages['hr'] = array(
 $messages['hsb'] = array(
 	'intersection-desc' => 'Wudaće lisćiny najaktualnišich zapiskow w jednej kategoriji abo w skupinje kategorijow',
 	'intersection_toomanycats' => 'Error: Přewjele kategorijow!',
-	'intersection_noresults' => 'Error: Žane wuslědki!',
+	'intersection_noresults' => 'Žane strony tutym kriterijam njewotpowěduja.',
 	'intersection_noincludecats' => 'Error: Dyrbiš znajmjeńša kednu kategoriju zapřijeć abo mjenowy rum podać!',
 );
 
@@ -486,13 +492,14 @@ $messages['io'] = array(
 );
 
 /** Italian (italiano)
+ * @author Beta16
  * @author BrokenArrow
  * @author Darth Kule
  */
 $messages['it'] = array(
 	'intersection-desc' => "Visualizza un elenco puntato con gli elementi più recenti inseriti in una categoria o nell'unione di più categorie",
 	'intersection_toomanycats' => 'Errore: Numero di categorie eccessivo.',
-	'intersection_noresults' => 'Errore: Nessun risultato.',
+	'intersection_noresults' => 'Nessuna pagina soddisfa i tuoi criteri.',
 	'intersection_noincludecats' => 'Errore: È necessario includere almeno una categoria oppure specificare un namespace.',
 );
 
@@ -553,11 +560,12 @@ $messages['km'] = array(
  * @author Klutzy
  * @author Kwj2772
  * @author Yknok29
+ * @author 아라
  */
 $messages['ko'] = array(
 	'intersection-desc' => '특정 분류나 여러 분류의 집합에 속한 가장 최근에 쓰인 문서의 목록을 출력',
 	'intersection_toomanycats' => '오류: 분류가 너무 많습니다!',
-	'intersection_noresults' => '오류: 결과가 없습니다!',
+	'intersection_noresults' => '기준을 충족하는 문서가 없습니다.',
 	'intersection_noincludecats' => '오류: 분류를 추가하거나 이름공간을 명시해야 합니다!',
 );
 
@@ -567,7 +575,7 @@ $messages['ko'] = array(
 $messages['ksh'] = array(
 	'intersection-desc' => 'Zeij_en Liß met de neuste Enndrääsch en en Saachjrupp, udder de neuste Enndrääsch, die en alle Jruppe uss_enem Knubbel fun Saachjrupp dren sin.',
 	'intersection_toomanycats' => '<i lang="en">DynamicPageList</i> hät ene Fääler jefonge: Dat sinn_er zo vill Saachjroppe!',
-	'intersection_noresults' => '<i lang="en">DynamicPageList</i> hät ene Fääler jefonge: Do kohm nix bei erus!',
+	'intersection_noresults' => 'Mer han kein zopaß Sigge jefonge.',
 	'intersection_noincludecats' => '<i lang="en">DynamicPageList</i> hät ene Fääler jefonge: Mer bruch winnischßdens ein Saachjrupp. Söns jivv e Appachtemang aan!',
 );
 
@@ -577,7 +585,7 @@ $messages['ksh'] = array(
 $messages['lb'] = array(
 	'intersection-desc' => 'Generéiert eng Lëscht mat de rezentesten Androungen an eng Kategorie, oder an eng Intersektioun vu méi Kategorien',
 	'intersection_toomanycats' => 'Dynamesch Säite-Lëscht: Zevill Kategorien!',
-	'intersection_noresults' => 'Dynamesch Säite-Lëscht: Kee Resultat!',
+	'intersection_noresults' => 'Keng Säiten entspriechen de Critèren.',
 	'intersection_noincludecats' => 'Dynamesch Säite-Lëscht: Dir musst mindestens eng Kategorie abannen, oder de Nummraum uginn!',
 );
 
@@ -624,7 +632,7 @@ $messages['mg'] = array(
 $messages['mk'] = array(
 	'intersection-desc' => 'Дава список со потточки на најскорешните содржини во една категорија, или пак вкрстување на неколку категории.',
 	'intersection_toomanycats' => 'Грешка: Премногу категории!',
-	'intersection_noresults' => 'Грешка: Нема резултати!',
+	'intersection_noresults' => 'Ниедна страница не ги задоволува дадените критериуми.',
 	'intersection_noincludecats' => 'Грешка: Мора да вклучите барем една категорија, или пак да наведете именски простор!',
 );
 
@@ -635,7 +643,7 @@ $messages['mk'] = array(
 $messages['ml'] = array(
 	'intersection-desc' => 'ഒരു വർഗ്ഗത്തിൽ പുതിയതായി വന്ന ഇനങ്ങളുടെ ബുള്ളറ്റ് പട്ടികയോ, അല്ലെങ്കിൽ നിരവധി വർഗ്ഗങ്ങളുടെ കൂട്ടത്തെയോ ഔട്ട് പുട്ടായി കിട്ടുന്നു.',
 	'intersection_toomanycats' => 'പിഴവ്: വളരെയധികം വർഗ്ഗങ്ങൾ!',
-	'intersection_noresults' => 'പിഴവ്: ഫലങ്ങൾ ഒന്നുമില്ല!',
+	'intersection_noresults' => 'ഈ മാനദണ്ഡങ്ങളുമായി ഒത്തുപോകുന്ന താളുകളില്ല.',
 	'intersection_noincludecats' => 'പിഴവ്: ചുരുങ്ങിയത് ഒരു വർഗ്ഗമെങ്കിലും ഉൾപ്പെടുത്തുകയോ അല്ലെങ്കിൽ ഒരു നാമമേഖല എങ്കിലും നിഷ്കർഷിച്ചിരിക്കുകയോ വേണം!',
 );
 
@@ -774,7 +782,7 @@ $messages['ps'] = array(
 $messages['pt'] = array(
 	'intersection-desc' => 'Produz uma lista com marcadores dos elementos mais recentes presentes numa categoria, ou uma intersecção de várias categorias',
 	'intersection_toomanycats' => 'Erro: Demasiadas categorias!',
-	'intersection_noresults' => 'Erro: Não há resultados!',
+	'intersection_noresults' => 'Nenhuma das páginas preenche estes critérios.',
 	'intersection_noincludecats' => 'Erro: Tem de incluir no mínimo uma categoria ou especificar um espaço nominal!',
 );
 
@@ -790,11 +798,12 @@ $messages['pt-br'] = array(
 
 /** Romanian (română)
  * @author Mihai
+ * @author Minisarm
  */
 $messages['ro'] = array(
 	'intersection-desc' => 'Întoarce o lista celor mai recenți itemi care fac parte dintr-o categorie, sau intersecția a mai multor categorii',
 	'intersection_toomanycats' => 'Eroare: Prea multe categorii!',
-	'intersection_noresults' => 'Eroare: Niciun rezultat!',
+	'intersection_noresults' => 'Nicio pagină nu întrunește aceste criterii.',
 	'intersection_noincludecats' => 'Eroare: Trebuie să incluzi cel puțin o categorie, sau să specifici un spațiu de nume!',
 );
 
@@ -987,7 +996,7 @@ $messages['tk'] = array(
 $messages['tl'] = array(
 	'intersection-desc' => 'Naglalabas ng isang tinuldukang talaan ng pinakakamakailang mga bagay-bagay na naninirahan sa loob ng isang kaurian, o isang pinagsangahang daanan ng ilang mga kaurian',
 	'intersection_toomanycats' => 'Kamalian: Napakaraming mga kaurian!',
-	'intersection_noresults' => 'Kaurian: Walang mga kinalabasan/resulta!',
+	'intersection_noresults' => 'Walang mga pahina na umaabot sa ganitong mga kategorya.',
 	'intersection_noincludecats' => 'Kamalian: Kinakailangan mong magsama ng kahit na isang kaurian, o tumukoy ng isang espasyo ng pangalan!',
 );
 
@@ -1055,7 +1064,7 @@ $messages['vo'] = array(
  */
 $messages['yi'] = array(
 	'intersection_toomanycats' => 'גרייז: צו פיל קאטעגאריעס',
-	'intersection_noresults' => 'גרייז: קיין רעזולטאטן!',
+	'intersection_noresults' => 'קיין בלעטער טרעפן אן די קריטעריע.',
 	'intersection_noincludecats' => 'גרייז: איר דארפט איינשליסן כאטש איין קאטעגאריע, אדער ספעציפיצירן א נאמענטייל!',
 );
 
