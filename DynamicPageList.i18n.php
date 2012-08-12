@@ -168,13 +168,14 @@ $messages['bs'] = array(
 );
 
 /** Catalan (català)
+ * @author Arnaugir
  * @author Paucabot
  * @author SMP
  */
 $messages['ca'] = array(
 	'intersection-desc' => "Genera una llista d'elements recents en una categoria o en la intersecció de diverses.",
 	'intersection_toomanycats' => 'Error: Massa categories!',
-	'intersection_noresults' => 'Error: Cap resultat!',
+	'intersection_noresults' => 'Cap pàgina compleix aquests criteris.',
 	'intersection_noincludecats' => "Error: Heu d'incloure almenys una categoria o especificar un espai de noms!",
 );
 
@@ -527,11 +528,12 @@ $messages['jut'] = array(
 
 /** Javanese (Basa Jawa)
  * @author Meursault2004
+ * @author NoiX180
  */
 $messages['jv'] = array(
 	'intersection-desc' => 'Ngasilaké sawijining daftar item paling anyar ing sawijining kategori utawa gabungan sawetara kategori',
 	'intersection_toomanycats' => 'Error: Kakèhan kategori!',
-	'intersection_noresults' => 'Error: Ora ana pituwasé (kasilé)!',
+	'intersection_noresults' => 'Ora ana kaca sing padha karo syarat.',
 	'intersection_noincludecats' => 'Error: Panjenengan perlu minimal mènèhi kategori sawiji, utawa spésifikasi bilik nama sawiji!',
 );
 
@@ -719,12 +721,13 @@ $messages['oc'] = array(
 );
 
 /** Oriya (ଓଡ଼ିଆ)
+ * @author Jnanaranjan Sahu
  * @author Psubhashish
  */
 $messages['or'] = array(
 	'intersection-desc' => 'ଏକ ଶ୍ରେଣିରେ ଥିବା ପ୍ରଧାନ ବିନ୍ଦୁଦିଆ ବସ୍ତୁର ତାଲିକା ତିଆରି କରିଥାଏ, କିମ୍ବା ନାନାଦି ଶ୍ରେଣୀର ଏକ ଅନ୍ତଭାଗ ଦେଖାଇଥାଏ',
 	'intersection_toomanycats' => 'ଭୁଲ: ଅନେକ ଗୁଡ଼ିଏ ଶ୍ରେଣୀ!',
-	'intersection_noresults' => 'ଭୁଲ: କିଛି ମିଳିଲା ନାହିଁ !',
+	'intersection_noresults' => 'ସେହିପରି କୌଣସି ପୃଷ୍ଠା ନାହିଁ ।',
 	'intersection_noincludecats' => 'ଭୁଲ: ଆପଣଙ୍କୁ ଅତି କାମରେ ଗୋଟିଏ ଶ୍ରେଣୀ ଦେବାକୁ ପଡ଼ିବ କିମ୍ବା ଏକ ନେମସ୍ପେସ ଦିଅନ୍ତୁ!',
 );
 
