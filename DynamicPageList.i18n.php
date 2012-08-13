@@ -670,6 +670,15 @@ $messages['ms'] = array(
 	'intersection_noincludecats' => 'Error: Anda hendaklah memasukkan sekurang-kurangnya sebuah kategori atau menyatakan sebuah ruang nama!',
 );
 
+/** Maltese (Malti)
+ * @author Chrisportelli
+ */
+$messages['mt'] = array(
+	'intersection_toomanycats' => "Żball: Numru eċċessiv ta' kategoriji!",
+	'intersection_noresults' => 'L-ebda paġna ma tissodisfa dawn il-kriterji.',
+	'intersection_noincludecats' => 'Żball: Trid tinkludi minn tal-inqas kategorija waħda jew speċifika spazju tal-isem!',
+);
+
 /** Norwegian Bokmål (‪norsk (bokmål)‬) */
 $messages['nb'] = array(
 	'intersection-desc' => 'Gir en punktliste over de nyeste elementene i en kategori, eller elementer som er felles i flere kategorier',
