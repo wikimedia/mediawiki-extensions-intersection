@@ -354,7 +354,7 @@ $messages['fr'] = array(
 $messages['frp'] = array(
 	'intersection-desc' => 'Montre una lista, de puges, des èlèments los ples novéls dens una catègorie, ou ben dês una combinèson d’un mouél de catègories.',
 	'intersection_toomanycats' => 'Èrror : trop de catègories !',
-	'intersection_noresults' => 'Èrror : gins de rèsultat !',
+	'intersection_noresults' => 'Niona pâge corrèspond a cetos critèros.',
 	'intersection_noincludecats' => 'Èrror : vos dête encllure u muens yona catègorie, ou ben spècefiar un èspâço de noms !',
 );
 
@@ -845,7 +845,7 @@ $messages['ru'] = array(
  * @author Gazeb
  */
 $messages['rue'] = array(
-	'intersection-desc' => 'Выпише список найновшых положок в катеґорії або зъєднотить пару катеґорій',
+	'intersection-desc' => 'Выпише список найновшых положок в катеґорії або зъєдинить пару катеґорій',
 	'intersection_toomanycats' => 'Error: дуже много катеґорій!',
 	'intersection_noresults' => 'Тоты крітерії не сповнюють жадны сторінкы.',
 	'intersection_noincludecats' => 'Хыба: Мусите включіти холем єдну катеґорію або задати простор назв!',
