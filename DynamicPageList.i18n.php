@@ -705,7 +705,14 @@ $messages['nl'] = array(
 	'intersection-desc' => 'Geeft als uitvoer een ongenummerde lijst met de meest recent toegevoegde items in een categorie, of een combinatie van categorieën',
 	'intersection_toomanycats' => 'Fout: Te veel categorieën!',
 	'intersection_noresults' => 'Geen enkele pagina voldoet aan deze criteria.',
-	'intersection_noincludecats' => 'Fout: U moet tenminste een categorie of een naamruimte opgeven!',
+	'intersection_noincludecats' => 'Fout: u moet tenminste een categorie of een naamruimte opgeven!',
+);
+
+/** ‪Nederlands (informeel)‬ (‪Nederlands (informeel)‬)
+ * @author Siebrand
+ */
+$messages['nl-informal'] = array(
+	'intersection_noincludecats' => 'Fout: je moet tenminste een categorie of een naamruimte opgeven!',
 );
 
 /** Norwegian Nynorsk (‪norsk (nynorsk)‬)
