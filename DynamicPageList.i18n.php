@@ -766,12 +766,13 @@ $messages['pl'] = array(
 );
 
 /** Piedmontese (Piemontèis)
+ * @author Borichèt
  * @author Dragonòt
  */
 $messages['pms'] = array(
 	'intersection-desc' => "A visualisa na lista pontà dij pì ressent element anserì ant na categorìa, o ant l'antërsession ëd pì categorìe",
 	'intersection_toomanycats' => 'Eror: tròpe categorìe!',
-	'intersection_noresults' => 'Pa gnun-e pagine a cobio sti crìter-sì.',
+	'intersection_noresults' => 'Gnun-e pagine a sodisfo si criteri.',
 	'intersection_noincludecats' => 'Eror: It deuve anserì almanch na categorìa, o spessifié në spassi nominal!',
 );
 
