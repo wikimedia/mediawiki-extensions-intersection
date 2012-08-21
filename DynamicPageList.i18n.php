@@ -679,11 +679,13 @@ $messages['mt'] = array(
 	'intersection_noincludecats' => 'Żball: Trid tinkludi minn tal-inqas kategorija waħda jew speċifika spazju tal-isem!',
 );
 
-/** Norwegian Bokmål (‪norsk (bokmål)‬) */
+/** Norwegian Bokmål (‪norsk (bokmål)‬)
+ * @author Danmichaelo
+ */
 $messages['nb'] = array(
 	'intersection-desc' => 'Gir en punktliste over de nyeste elementene i en kategori, eller elementer som er felles i flere kategorier',
 	'intersection_toomanycats' => 'Dynamisk sideliste: For mange kategorier!',
-	'intersection_noresults' => 'Dynamisk sideliste: Ingen resultater!',
+	'intersection_noresults' => 'Ingen sider oppfyller disse kriteriene.',
 	'intersection_noincludecats' => 'Dynamisk sideliste: Du må inkludere minst én kategori, eller oppgi et navnerom!',
 );
 
