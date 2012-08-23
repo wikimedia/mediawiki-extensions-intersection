@@ -298,7 +298,7 @@ $messages['et'] = array(
  */
 $messages['eu'] = array(
 	'intersection_toomanycats' => 'Errorea: Kategoria gehiegi!',
-	'intersection_noresults' => 'Errorea: Emaitzarik ez!',
+	'intersection_noresults' => 'Kriterio hori betetzen duen orrialderik ez dago.',
 	'intersection_noincludecats' => 'Errorea: Gutxienez kategoria bat gehitu edo izen bat zehaztu behar duzu!',
 );
 
