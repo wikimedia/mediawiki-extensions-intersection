@@ -883,11 +883,12 @@ $messages['sah'] = array(
 
 /** Sinhala (සිංහල)
  * @author Budhajeewa
+ * @author පසිඳු කාවින්ද
  */
 $messages['si'] = array(
 	'intersection-desc' => 'මෙම ප්‍රවර්ගයේ හෝ ප්‍රවර්ග කිහිපයක ඡේදයක මෑත කාලීන අංග කිහිපයක බුලට් ලයිස්තුවක් නිකුත් කරයි',
 	'intersection_toomanycats' => 'දෝෂය: ප්‍රවර්ග ගණන ඉතා වැඩිය!',
-	'intersection_noresults' => 'දෝෂය: ප්‍රතිඵලයක් නැත!',
+	'intersection_noresults' => 'මෙම උපමානය සඳහා ගැලපෙන පිටු කිසිවක් නොමැත.',
 	'intersection_noincludecats' => 'දෝෂය: නාමාවකාශයක් සඳහන් කෙරුම හෝ අවම වශයෙන් එක් ප්‍රවර්ගයක් හෝ ඇතුලත් කිරීමට අවැසිය!',
 );
 
