@@ -793,7 +793,7 @@ $messages['pnb'] = array(
  */
 $messages['ps'] = array(
 	'intersection_toomanycats' => 'ستونزه: ګڼ شمېر وېشنيزې!',
-	'intersection_noresults' => 'ستونزه: پايلې نشته!',
+	'intersection_noresults' => 'هېڅ مخ د دغو شرطونو سره اړخ نه لګوي.',
 );
 
 /** Portuguese (português)
