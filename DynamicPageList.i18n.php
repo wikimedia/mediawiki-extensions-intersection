@@ -957,12 +957,13 @@ $messages['stq'] = array(
 );
 
 /** Swedish (svenska)
+ * @author Ainali
  * @author Lejonel
  */
 $messages['sv'] = array(
 	'intersection-desc' => 'Skapar punktlistor över de nyaste sidorna i en eller flera kategorier',
 	'intersection_toomanycats' => 'Fel: För många kategorier!',
-	'intersection_noresults' => 'Fel: Inga resultat!',
+	'intersection_noresults' => 'Inga sidor uppfyller dessa kriterier.',
 	'intersection_noincludecats' => 'Fel: Du måste inkludera minst en kategori eller ange en namnrymd!',
 );
 
