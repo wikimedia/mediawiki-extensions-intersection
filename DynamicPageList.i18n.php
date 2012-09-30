@@ -115,14 +115,15 @@ $messages['bcc'] = array(
 	'intersection_noincludecats' => 'لیست صفحات دینامیکی: شما لازمنت حداقل یک دسته هور کنیت یا یک نام فضایی مشخص کنیت!',
 );
 
-/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author EugeneZelenko
  * @author Jim-by
+ * @author Wizardist
  */
 $messages['be-tarask'] = array(
 	'intersection-desc' => "Выводзіць у маркіраваны сьпіс апошнія дабаўленьні да катэгорыі альбо аб'ядноўвае некалькі катэгорыяў",
 	'intersection_toomanycats' => 'Памылка: Зашмат катэгорыяў!',
-	'intersection_noresults' => 'Памылка: Няма вынікаў!',
+	'intersection_noresults' => 'Ніводная старонка не адпавядае гэтым крытэрам.',
 	'intersection_noincludecats' => 'Памылка: Вам неабходна ўключыць хаця б адну катэгорыю альбо ўказаць прастору назваў!',
 );
 
