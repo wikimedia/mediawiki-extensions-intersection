@@ -385,7 +385,7 @@ $messages['grc'] = array(
 $messages['gsw'] = array(
 	'intersection-desc' => 'Usgabe vun ere Lischt vu dr aktuällschte Yyträg in ere Kategorii, oder vu dr Schnittmängi vu mehrere Kategorie',
 	'intersection_toomanycats' => 'Fähler: Zvyyl Kategorie!',
-	'intersection_noresults' => 'Fähler: Kei Ergebnis!',
+	'intersection_noresults' => 'Kei Syte mit däne Kriterie.',
 	'intersection_noincludecats' => 'Fähler: S muess zmindescht ei Kategorii yybunde wäre oder gib e Namensruum aa!',
 );
 
