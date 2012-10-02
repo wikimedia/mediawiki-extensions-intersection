@@ -681,7 +681,7 @@ $messages['mt'] = array(
 	'intersection_noincludecats' => 'Żball: Trid tinkludi minn tal-inqas kategorija waħda jew speċifika spazju tal-isem!',
 );
 
-/** Norwegian Bokmål (‪norsk (bokmål)‬)
+/** Norwegian Bokmål (norsk (bokmål)‎)
  * @author Danmichaelo
  */
 $messages['nb'] = array(
@@ -712,14 +712,14 @@ $messages['nl'] = array(
 	'intersection_noincludecats' => 'Fout: u moet tenminste een categorie of een naamruimte opgeven!',
 );
 
-/** ‪Nederlands (informeel)‬ (‪Nederlands (informeel)‬)
+/** Nederlands (informeel)‎ (Nederlands (informeel)‎)
  * @author Siebrand
  */
 $messages['nl-informal'] = array(
 	'intersection_noincludecats' => 'Fout: je moet tenminste een categorie of een naamruimte opgeven!',
 );
 
-/** Norwegian Nynorsk (‪norsk (nynorsk)‬)
+/** Norwegian Nynorsk (norsk (nynorsk)‎)
  * @author Harald Khan
  * @author Njardarlogar
  */
@@ -924,7 +924,7 @@ $messages['sq'] = array(
 	'intersection_noincludecats' => 'Gabim: Ju duhet të përfshini të paktën një kategori, ose të specifikoni një hapësirë!',
 );
 
-/** Serbian (Cyrillic script) (‪српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (српски (ћирилица)‎)
  * @author FriedrickMILBarbarossa
  * @author Millosh
  * @author Rancher
@@ -1112,7 +1112,7 @@ $messages['yue'] = array(
 	'intersection_noincludecats' => 'DynamicPageList: 你需要去包含最少一個分類，或者指定一個空間名!',
 );
 
-/** Simplified Chinese (‪中文（简体）‬)
+/** Simplified Chinese (中文（简体）‎)
  * @author Shinjiman
  * @author Simon Shek
  */
@@ -1123,7 +1123,7 @@ $messages['zh-hans'] = array(
 	'intersection_noincludecats' => 'DynamicPageList: 您需要去包含最少一个分类，或者指定一个空间名!',
 );
 
-/** Traditional Chinese (‪中文（繁體）‬)
+/** Traditional Chinese (中文（繁體）‎)
  * @author Mark85296341
  * @author Shinjiman
  * @author Simon Shek
