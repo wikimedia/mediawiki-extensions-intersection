@@ -41,14 +41,14 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgExtensionCredits['parserhook'][] = array(
 	'path'           => __FILE__,
 	'name'           => 'DynamicPageList',
-	'version'        => '1.5',
+	'version'        => '1.6',
 	'descriptionmsg' => 'intersection-desc',
 	'url'            => 'https://www.mediawiki.org/wiki/Extension:Intersection',
 	'author'         => array( '[http://en.wikinews.org/wiki/User:Amgine Amgine]', '[http://en.wikinews.org/wiki/User:IlyaHaykinson IlyaHaykinson]' ),
 );
 
 // Internationalization file
-$dir = dirname( __FILE__ ) . '/';
+$dir = __DIR__ . '/';
 $wgExtensionMessagesFiles['DynamicPageList'] = $dir . 'DynamicPageList.i18n.php';
 
 // Parser tests
@@ -82,7 +82,7 @@ function wfDynamicPageList( &$parser ) {
 
 // The callback function for converting the input text to HTML output
 function renderDynamicPageList( $input, $args, $mwParser ) {
-	global $wgUser, $wgContLang;
+	global $wgContLang;
 	global $wgDisableCounters; // to determine if to allow sorting by #hits.
 	global $wgDLPmaxCategories, $wgDLPMaxResultCount, $wgDLPMaxCacheTime;
 	global $wgDLPAllowUnlimitedResults, $wgDLPAllowUnlimitedCategories;
@@ -407,7 +407,7 @@ function renderDynamicPageList( $input, $args, $mwParser ) {
 
 	if ( $catCount < 1 && false == $namespaceFiltering ) {
 		if ( $suppressErrors == false ) {
-			return htmlspecialchars( wfMsgForContent( 'intersection_noincludecats' ) ); // "!!no included categories!!";
+			return wfMessage( 'intersection_noincludecats' )->inContentLanguage()->escaped(); // "!!no included categories!!";
 		} else {
 			return '';
 		}
@@ -415,7 +415,7 @@ function renderDynamicPageList( $input, $args, $mwParser ) {
 
 	if ( $totalCatCount > $wgDLPmaxCategories && !$wgDLPAllowUnlimitedCategories ) {
 		if ( $suppressErrors == false ) {
-			return htmlspecialchars( wfMsgForContent( 'intersection_toomanycats' ) ); // "!!too many categories!!";
+			return wfMessage( 'intersection_toomanycats' )->inContentLanguage()->escaped(); // "!!too many categories!!";
 		} else {
 			return '';
 		}
@@ -564,11 +564,10 @@ function renderDynamicPageList( $input, $args, $mwParser ) {
 
 	// process the query
 	$res = $dbr->select( $tables, $fields, $where, __METHOD__, $options, $join );
-	$sk = $wgUser->getSkin();
 
 	if ( $dbr->numRows( $res ) == 0 ) {
 		if ( $suppressErrors == false ) {
-			return htmlspecialchars( wfMsgForContent( 'intersection_noresults' ) );
+			return wfMessage( 'intersection_noresults' )->inContentLanguage()->escaped();
 		} else {
 			return '';
 		}
@@ -605,7 +604,7 @@ function renderDynamicPageList( $input, $args, $mwParser ) {
 				$categoryDate = $wgContLang->date( wfTimestamp( TS_MW, $row->cl_timestamp ) );
 			}
 			if ( !$useGallery ) {
-				$categoryDate .= wfMsgForContent( 'colon-separator' );
+				$categoryDate .= wfMessage( 'colon-separator' )->text();
 			} else {
 				$categoryDate .= ' ';
 			}
@@ -630,7 +629,7 @@ function renderDynamicPageList( $input, $args, $mwParser ) {
 			$gallery->add( $title, $categoryDate );
 		} else {
 			$articleList[] = $categoryDate .
-				$sk->link(
+				Linker::link(
 					$title,
 					htmlspecialchars( $titleText ),
 					$linkOptions,
