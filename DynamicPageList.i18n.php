@@ -7,7 +7,7 @@
  * @ingroup Extensions
  */
 
-$messages= array();
+$messages = array();
 
 $messages['en'] = array(
 	'intersection-desc'          => 'Outputs a bulleted list of the most recent items residing in a category, or an intersection of several categories',
