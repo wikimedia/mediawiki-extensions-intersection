@@ -1038,11 +1038,12 @@ $messages['tr'] = array(
 
 /** Ukrainian (українська)
  * @author Ahonc
+ * @author Base
  */
 $messages['uk'] = array(
 	'intersection-desc' => "Виводить у маркований список останні додавання до категорії або об'єднання кількох категорій",
 	'intersection_toomanycats' => 'Error: дуже багато категорій!',
-	'intersection_noresults' => 'Error: нема результатів!', # Fuzzy
+	'intersection_noresults' => 'Нема сторінок, що відповідають цим критеріям.',
 	'intersection_noincludecats' => 'Error: ви повинні включити хоча б одну категорію або зазначити простір назв!',
 );
 
