@@ -130,11 +130,12 @@ $messages['be-tarask'] = array(
 /** Bulgarian (български)
  * @author DCLXVI
  * @author Spiritia
+ * @author Stanqo
  */
 $messages['bg'] = array(
 	'intersection-desc' => 'Извежда списък на най-скорошните записи в дадена категория или сечение на няколко категории',
 	'intersection_toomanycats' => 'Грешка: Твърде много категории!',
-	'intersection_noresults' => 'Грешка: Няма резултати!', # Fuzzy
+	'intersection_noresults' => 'Няма страници отговарящи на тези критерии.',
 	'intersection_noincludecats' => 'Грешка: Необходимо е да се включи поне една категория или да се посочи именно пространство!',
 );
 
