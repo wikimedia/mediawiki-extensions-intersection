@@ -96,6 +96,15 @@ $messages['az'] = array(
 	'intersection_noincludecats' => 'Xəta: Siz ən azı bir kateqoriya əlavə etməli və ya adlar fəzası müəyyənləşdirməlisiniz!',
 );
 
+/** South Azerbaijani (تورکجه)
+ * @author Amir a57
+ */
+$messages['azb'] = array(
+	'intersection_toomanycats' => 'ختا: بولمه لر سایی حدین‌دن چوخ‌دور!',
+	'intersection_noresults' => 'ختا:هئچ بیر صحیفه بو معیار لار ایله تطبیقی یوخ دور!',
+	'intersection_noincludecats' => 'ختا: سیز ان آزی بیر بولمه لر علاوه ائتمه‌لی و یا آدلار فزاسی مویینلشدیرملیسینیز!',
+);
+
 /** Bashkir (башҡортса)
  * @author Assele
  */
