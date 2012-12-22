@@ -476,12 +476,13 @@ $messages['ia'] = array(
 );
 
 /** Indonesian (Bahasa Indonesia)
+ * @author Farras
  * @author IvanLanin
  */
 $messages['id'] = array(
 	'intersection-desc' => 'Menghasilkan suatu daftar item terbaru pada suatu kategori atau gabungan beberapa kategori',
 	'intersection_toomanycats' => 'DynamicPageList: Terlalu banyak kategori!',
-	'intersection_noresults' => 'DynamicPageList: Tak ada hasil yang sesuai!', # Fuzzy
+	'intersection_noresults' => 'Tidak ada halaman yang memenuhi kriteria ini.',
 	'intersection_noincludecats' => 'DynamicPageList: Anda perlu mencantumkan paling tidak satu kategori, atau menyebutkan satu ruang nama!',
 );
 
