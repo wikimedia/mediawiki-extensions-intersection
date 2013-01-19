@@ -1060,11 +1060,12 @@ $messages['uk'] = array(
 
 /** vèneto (vèneto)
  * @author Candalua
+ * @author GatoSelvadego
  */
 $messages['vec'] = array(
 	'intersection-desc' => "Mostra un elenco puntato coi elementi piassè reçenti inserìi in te na categoria o ne l'union de più categorie",
 	'intersection_toomanycats' => 'Error: Ghe xe massa categorie!',
-	'intersection_noresults' => 'Error: Nissun risultato!', # Fuzzy
+	'intersection_noresults' => 'Nisuna pàjina ła sodisfa i to criteri.',
 	'intersection_noincludecats' => 'Error: Te ghè da inclùdar almanco na categoria opure specificar un namespace.',
 );
 
