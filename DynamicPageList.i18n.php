@@ -747,7 +747,7 @@ $messages['nn'] = array(
 $messages['oc'] = array(
 	'intersection-desc' => 'Aficha una lista, amb de piuses, dels articles mai recents dins una categoria, o a partir d’una combinason de mantuna categoria.',
 	'intersection_toomanycats' => 'Error : Tròp de categorias !',
-	'intersection_noresults' => 'Error : Pas cap de resultat !', # Fuzzy
+	'intersection_noresults' => 'Cap de pagina correspond pas a aquestes critèris !',
 	'intersection_noincludecats' => 'Error : avètz besonh d’inclure almens una categoria, o de precisar un nom d’espaci !',
 );
 
