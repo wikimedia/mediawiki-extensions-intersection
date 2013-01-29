@@ -564,10 +564,11 @@ $messages['ka'] = array(
 /** Khmer (ភាសាខ្មែរ)
  * @author Chhorran
  * @author Thearith
+ * @author គីមស៊្រុន
  */
 $messages['km'] = array(
 	'intersection_toomanycats' => 'កំហុស​៖ ចំណាត់ថ្នាក់ក្រុម​ច្រើនពេក​!',
-	'intersection_noresults' => 'កំហុស​៖ គ្មាន​លទ្ធផល​!', # Fuzzy
+	'intersection_noresults' => 'គ្មាន​ទំព៍រណាដែលត្រូវនឹងលក្ខខណ្ឌទាំងនេះទេ។',
 	'intersection_noincludecats' => 'កំហុស​៖ អ្នក​ត្រូវតែ​មាន​ចំណាត់ថ្នាក់ក្រុម​មួយយ៉ាងតិច ឬ សំដៅ​មួយ​លំហឈ្មោះ​!',
 );
 
