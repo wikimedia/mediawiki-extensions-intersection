@@ -18,10 +18,11 @@ $messages['en'] = array(
 
 /** Message documentation (Message documentation)
  * @author Purodha
+ * @author Shirayuki
  * @author The Evil IP address
  */
 $messages['qqq'] = array(
-	'intersection-desc' => '{{desc}}',
+	'intersection-desc' => '{{desc|name=Intersection|url=http://www.mediawiki.org/wiki/Extension:Intersection}}',
 );
 
 /** Afrikaans (Afrikaans)
