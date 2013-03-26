@@ -23,6 +23,9 @@ $messages['en'] = array(
  */
 $messages['qqq'] = array(
 	'intersection-desc' => '{{desc|name=Intersection|url=http://www.mediawiki.org/wiki/Extension:Intersection}}',
+	'intersection_toomanycats' => 'Used as error message when the number of categories is limited and is too large.',
+	'intersection_noresults' => 'Used when the query returns no result.',
+	'intersection_noincludecats' => 'Used as error message when the number of categories is 0 (and namespace filtering is disabled).',
 );
 
 /** Afrikaans (Afrikaans)
