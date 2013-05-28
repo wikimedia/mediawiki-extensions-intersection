@@ -512,12 +512,13 @@ $messages['io'] = array(
 /** Italian (italiano)
  * @author Beta16
  * @author BrokenArrow
+ * @author Codicorumus
  * @author Darth Kule
  */
 $messages['it'] = array(
-	'intersection-desc' => "Visualizza un elenco puntato con gli elementi più recenti inseriti in una categoria o nell'unione di più categorie",
+	'intersection-desc' => "Visualizza un elenco puntato con gli elementi più recenti inseriti in una categoria o appartenenti all'intersezione di più categorie",
 	'intersection_toomanycats' => 'Errore: Numero di categorie eccessivo.',
-	'intersection_noresults' => 'Nessuna pagina soddisfa i tuoi criteri.',
+	'intersection_noresults' => 'Nessuna pagina soddisfa i criteri di selezione.',
 	'intersection_noincludecats' => 'Errore: È necessario includere almeno una categoria oppure specificare un namespace.',
 );
 
