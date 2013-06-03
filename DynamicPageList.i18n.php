@@ -68,7 +68,7 @@ $messages['arz'] = array(
 	'intersection_noincludecats' => 'غلط: لازم تحط تصنيف واحد على الأقل، أو تحدد نطاق!',
 );
 
-/** Assamese (অসমীয়া)
+/** Assamese (অসমীয়া)
  * @author Bishnu Saikia
  * @author Gitartha.bordoloi
  * @author Nilamdyuti
@@ -698,7 +698,7 @@ $messages['mt'] = array(
 	'intersection_noincludecats' => 'Żball: Trid tinkludi minn tal-inqas kategorija waħda jew speċifika spazju tal-isem!',
 );
 
-/** Norwegian Bokmål (norsk (bokmål)‎)
+/** Norwegian Bokmål (norsk bokmål)
  * @author Danmichaelo
  */
 $messages['nb'] = array(
@@ -736,7 +736,7 @@ $messages['nl-informal'] = array(
 	'intersection_noincludecats' => 'Fout: je moet tenminste een categorie of een naamruimte opgeven!',
 );
 
-/** Norwegian Nynorsk (norsk (nynorsk)‎)
+/** Norwegian Nynorsk (norsk nynorsk)
  * @author Harald Khan
  * @author Njardarlogar
  */
@@ -757,7 +757,7 @@ $messages['oc'] = array(
 	'intersection_noincludecats' => 'Error : avètz besonh d’inclure almens una categoria, o de precisar un nom d’espaci !',
 );
 
-/** Oriya (ଓଡ଼ିଆ)
+/** Oriya (ଓଡ଼ିଆ)
  * @author Jnanaranjan Sahu
  * @author Psubhashish
  */
