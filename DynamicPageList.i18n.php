@@ -346,7 +346,7 @@ $messages['fi'] = array(
  */
 $messages['fo'] = array(
 	'intersection_toomanycats' => 'Villa: Ov nógvir bólkr!',
-	'intersection_noresults' => 'Villa: Ongi úrslit!', # Fuzzy
+	'intersection_noresults' => 'Ongar síður liva upp til hesar treytir.',
 	'intersection_noincludecats' => 'Feilur: Tú mást velja í minsta lagi ein bólk ella skriva eitt navnaøki!',
 );
 
