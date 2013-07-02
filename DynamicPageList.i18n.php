@@ -128,6 +128,16 @@ $messages['bcc'] = array(
 	'intersection_noincludecats' => 'لیست صفحات دینامیکی: شما لازمنت حداقل یک دسته هور کنیت یا یک نام فضایی مشخص کنیت!',
 );
 
+/** Bikol Central (Bikol Central)
+ * @author Geopoet
+ */
+$messages['bcl'] = array(
+	'intersection-desc' => 'Minapaluwas nin sarong pinagtuldukang listahan kan pinakahuring mga aytem na nakababad sa sarong kategoriya, o sarong interseksyon kan nagkapirang mga kategoriya',
+	'intersection_toomanycats' => 'Kasalaan:Grabe kadakulon na mga kategoriya!',
+	'intersection_noresults' => 'Mayong mga pahina an nakatapar kaining mga krayteria.',
+	'intersection_noincludecats' => 'Kasalaan: Ika kaipong mabali nin kisera sarong kategoriya, o magsambit nin sarong espasyong-ngaran!',
+);
+
 /** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author EugeneZelenko
  * @author Jim-by
