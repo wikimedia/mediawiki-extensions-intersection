@@ -507,7 +507,7 @@ $messages['id'] = array(
 $messages['ilo'] = array(
 	'intersection-desc' => 'Agikabil ti napungluan a listaan kadagiti agdama a banag a nagyan iti kategoria, weno nagsabtan dagiti nadumaduma a kategoria',
 	'intersection_toomanycats' => 'Biddut: Adu unay dagiti kategoria!',
-	'intersection_noresults' => 'Biddut: Aan dagiti nagbanagan!', # Fuzzy
+	'intersection_noresults' => 'Awan dagiti panid a makasabat kadagitoy a kriteria!',
 	'intersection_noincludecats' => 'Biddut: Masapul nga iraman ti maysa a kategoria, wenno inaganan ti maysa a nagan ti lugar!',
 );
 
