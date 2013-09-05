@@ -839,12 +839,13 @@ $messages['pt'] = array(
 );
 
 /** Brazilian Portuguese (português do Brasil)
+ * @author Cainamarques
  * @author Eduardo.mps
  */
 $messages['pt-br'] = array(
 	'intersection-desc' => 'Exibe uma lista pontuada dos itens mais recentes presentes numa categoria, ou uma intersecção de várias categorias',
 	'intersection_toomanycats' => 'Erro: Categorias demais!',
-	'intersection_noresults' => 'Erro: Sem resultados!', # Fuzzy
+	'intersection_noresults' => 'Nenhuma página preenche estes critérios.',
 	'intersection_noincludecats' => 'Erro: É necessário incluir no mínimo uma categoria ou especificar um espaço nominal!',
 );
 
