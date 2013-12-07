@@ -206,7 +206,7 @@ $messages['ca'] = array(
 	'intersection_noincludecats' => "Error: Heu d'incloure almenys una categoria o especificar un espai de noms!",
 );
 
-/** Czech (česky)
+/** Czech (čeština)
  * @author Li-sung
  * @author Matěj Grabovský
  * @author Mormegil
