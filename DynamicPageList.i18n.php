@@ -256,12 +256,13 @@ $messages['de'] = array(
 /** Zazaki (Zazaki)
  * @author Aspar
  * @author Erdemaslancan
+ * @author Mirzali
  */
 $messages['diq'] = array(
-	'intersection-desc' => 'yew kategori de, ya zi unsurê ke yew ra zêd pêgınayişê kategoriyan de esti, listeya maddeya nişanbiyayeyanê ıney unsuran vırazeno',
+	'intersection-desc' => 'Yew kategori de ya zi unsurê tewr peyênê ke yew ra zêde pêgınayışê kategoriyan de estê, lista maddeyê nişanbiyayey vırazeno',
 	'intersection_toomanycats' => 'xeta: kategoriyi zaf zêd ê!',
 	'intersection_noresults' => 'Xırab: kriter dê şıma deye pela çıniya!',
-	'intersection_noincludecats' => 'xeta: tewr tay yew kategori gani têarê bıbo ya zi yew mıntıqaya nameyi diyare bıkerê!',
+	'intersection_noincludecats' => 'Xeta: Tewr senık yew kategoriye gani cı bo, ya zi yew mıntıqaya namey kıfş kerê!',
 );
 
 /** Lower Sorbian (dolnoserbski)
