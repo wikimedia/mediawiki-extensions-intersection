@@ -634,6 +634,13 @@ $messages['li'] = array(
 	'intersection_noincludecats' => 'Error: Geer moet tenminste ein categorie of ein naamruumde opgeve!',
 );
 
+/** لوری (لوری)
+ * @author Bonevarluri
+ */
+$messages['lrc'] = array(
+	'intersection_toomanycats' => 'خطا:دسه یا فره زیاد!',
+);
+
 /** Lithuanian (lietuvių)
  * @author Matasg
  */
