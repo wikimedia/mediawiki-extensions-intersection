@@ -1,0 +1,12 @@
+{
+    "@metadata": {
+        "authors": [
+            "Shinjiman",
+            "Simon Shek"
+        ]
+    },
+    "intersection-desc": "输出一个点列最近在分类中的项目，或者系数个分类的一个联系",
+    "intersection_toomanycats": "DynamicPageList: 太多分类!",
+    "intersection_noresults": "没有符合条件的页面。",
+    "intersection_noincludecats": "DynamicPageList: 您需要去包含最少一个分类，或者指定一个空间名!"
+}

@@ -41,7 +41,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgExtensionCredits['parserhook'][] = array(
 	'path'           => __FILE__,
 	'name'           => 'DynamicPageList',
-	'version'        => '1.6',
+	'version'        => '1.7.0',
 	'descriptionmsg' => 'intersection-desc',
 	'url'            => 'https://www.mediawiki.org/wiki/Extension:Intersection',
 	'author'         => array( '[http://en.wikinews.org/wiki/User:Amgine Amgine]', '[http://en.wikinews.org/wiki/User:IlyaHaykinson IlyaHaykinson]' ),
@@ -49,6 +49,7 @@ $wgExtensionCredits['parserhook'][] = array(
 
 // Internationalization file
 $dir = __DIR__ . '/';
+$wgMessagesDirs['DynamicPageList'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['DynamicPageList'] = $dir . 'DynamicPageList.i18n.php';
 
 // Parser tests
