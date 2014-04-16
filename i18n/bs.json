@@ -1,12 +1,12 @@
 {
-    "@metadata": {
-        "authors": [
-            "CERminator",
-            "Seha"
-        ]
-    },
-    "intersection-desc": "Izbacuje listu najčešćih tačaka koje se nalaze u kategoriji ili u sekciji nekoliko kategorija.",
-    "intersection_toomanycats": "Greška: Previše kategorija!",
-    "intersection_noresults": "Greška: Nema rezultata!",
-    "intersection_noincludecats": "Greška: Potrebno je da uključite najmanje jednu kategoriju ili odredite imenski prostor!"
+	"@metadata": {
+		"authors": [
+			"CERminator",
+			"Seha"
+		]
+	},
+	"intersection-desc": "Izbacuje listu najčešćih tačaka koje se nalaze u kategoriji ili u sekciji nekoliko kategorija.",
+	"intersection_toomanycats": "Greška: Previše kategorija!",
+	"intersection_noresults": "Greška: Nema rezultata!",
+	"intersection_noincludecats": "Greška: Potrebno je da uključite najmanje jednu kategoriju ili odredite imenski prostor!"
 }

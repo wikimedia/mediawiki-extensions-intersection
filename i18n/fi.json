@@ -1,12 +1,12 @@
 {
-    "@metadata": {
-        "authors": [
-            "Nike",
-            "Olli"
-        ]
-    },
-    "intersection-desc": "Tulostaa listan luokassa tai useamman luokan yhdisteessä olevista sivuista.",
-    "intersection_toomanycats": "Error: Liian monta luokkaa.",
-    "intersection_noresults": "Näitä kriteerejä täyttäviä sivuja ei ole.",
-    "intersection_noincludecats": "Error: Lisää vähintään yksi luokka tai määritä nimiavaruus."
+	"@metadata": {
+		"authors": [
+			"Nike",
+			"Olli"
+		]
+	},
+	"intersection-desc": "Tulostaa listan luokassa tai useamman luokan yhdisteessä olevista sivuista.",
+	"intersection_toomanycats": "Error: Liian monta luokkaa.",
+	"intersection_noresults": "Näitä kriteerejä täyttäviä sivuja ei ole.",
+	"intersection_noincludecats": "Error: Lisää vähintään yksi luokka tai määritä nimiavaruus."
 }

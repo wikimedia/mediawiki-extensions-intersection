@@ -1,10 +1,10 @@
 {
-    "@metadata": {
-        "authors": [
-            "Matasg"
-        ]
-    },
-    "intersection_toomanycats": "Error: Per daug kategorijų!",
-    "intersection_noresults": "Error: Nėra rezultatų!",
-    "intersection_noincludecats": "Error: Jums reikia įtraukti bent vieną kategoriją, arba nurodyti vardų sritį!"
+	"@metadata": {
+		"authors": [
+			"Matasg"
+		]
+	},
+	"intersection_toomanycats": "Error: Per daug kategorijų!",
+	"intersection_noresults": "Error: Nėra rezultatų!",
+	"intersection_noincludecats": "Error: Jums reikia įtraukti bent vieną kategoriją, arba nurodyti vardų sritį!"
 }
