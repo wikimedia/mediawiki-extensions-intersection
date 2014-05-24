@@ -3,11 +3,12 @@
 		"authors": [
 			"Mark85296341",
 			"Shinjiman",
-			"Simon Shek"
+			"Simon Shek",
+			"Cwlin0416"
 		]
 	},
-	"intersection-desc": "輸出一個點列最近在分類中的項目，或者係數個分類的一個關聯",
-	"intersection_toomanycats": "DynamicPageList：太多分類！",
+	"intersection-desc": "可顯示一個分類或彙總多個分類內最近變更頁面的清單",
+	"intersection_toomanycats": "錯誤：分類過多！",
 	"intersection_noresults": "沒有符合條件的頁面。",
-	"intersection_noincludecats": "DynamicPageList：您需要去包含最少一個分類，或者指定一個空間名！"
+	"intersection_noincludecats": "錯誤：您至少需要指定一個分類或者命名空間！"
 }
