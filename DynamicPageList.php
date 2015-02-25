@@ -207,7 +207,8 @@ function renderDynamicPageList( $input, $args, $mwParser ) {
 				switch ( $arg ) {
 					case 'gallery':
 						$useGallery = true;
-						$gallery = new ImageGallery;
+						$gallery = ImageGallery::factory();
+						$gallery->setParser( $mwParser );
 						$startList = '';
 						$endList = '';
 						$startItem = '';
