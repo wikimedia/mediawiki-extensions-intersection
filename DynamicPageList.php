@@ -48,15 +48,13 @@ $wgExtensionCredits['parserhook'][] = array(
 );
 
 // Internationalization file
-$dir = __DIR__ . '/';
 $wgMessagesDirs['DynamicPageList'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['DynamicPageList'] = $dir . 'DynamicPageList.i18n.php';
 
 // Parser tests
 // Warning, these only work when run with parserTests.php. There will be
 // failures if run via phpunit! (you may want to comment the below line
 // out if you're regularly running phpunit tests)
-$wgParserTestFiles[] = $dir . 'DynamicPageList.tests.txt';
+$wgParserTestFiles[] = __DIR__ . '/DynamicPageList.tests.txt';
 
 # Configuration variables. Warning: These use DLP instead of DPL
 # for historical reasons (pretend Dynamic list of pages)
