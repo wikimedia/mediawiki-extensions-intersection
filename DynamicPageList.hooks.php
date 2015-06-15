@@ -8,7 +8,7 @@ class DynamicPageListHooks {
 	 * @return boolean true
 	 */
 	public static function onParserFirstCallInit( &$parser ) {
-		$parser->setHook( 'DynamicPageList', 'renderDynamicPageList' );
+		$parser->setHook( 'DynamicPageList', 'DynamicPageListHooks::renderDynamicPageList' );
 		return true;
 	}
 
