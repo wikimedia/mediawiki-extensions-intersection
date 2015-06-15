@@ -1,0 +1,36 @@
+{
+	"name": "DynamicPageList",
+	"version": "1.7.0",
+	"author": [
+		"[http://en.wikinews.org/wiki/User:Amgine Amgine]",
+		"[http://en.wikinews.org/wiki/User:IlyaHaykinson IlyaHaykinson]"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:Intersection",
+	"descriptionmsg": "intersection-desc",
+	"type": "parserhook",
+	"license-name": "GPL-2.0+",
+	"AutoloadClasses": {
+		"DynamicPageListHooks": "DynamicPageList.hooks.php"
+	},
+	"MessagesDirs": {
+		"DynamicPageList": [
+			"i18n"
+		]
+	},
+	"Hooks": {
+		"ParserFirstCallInit": [
+			"DynamicPageListHooks::onParserFirstCallInit"
+		]
+	},
+	"ParserTestFiles": [
+		"DynamicPageList.tests.txt"
+	],
+	"config": {
+		"DLPmaxCategories": 6,
+		"DLPMaxResultCount": 200,
+		"DLPAllowUnlimitedResults": false,
+		"DLPAllowUnlimitedCategories": false,
+		"DLPMaxCacheTime": 86400
+	},
+	"manifest_version": 1
+}

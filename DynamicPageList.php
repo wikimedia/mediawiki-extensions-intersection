@@ -1,4 +1,5 @@
 <?php
+
 /*
 
  Purpose:       outputs a bulleted list of most recent
@@ -33,45 +34,15 @@
 
 */
 
-if ( !defined( 'MEDIAWIKI' ) ) {
-	die( 'This is not a valid entry point to MediaWiki.' );
+if ( function_exists( 'wfLoadExtension' ) ) {
+	wfLoadExtension( 'intersection' );
+	// Keep i18n globals so mergeMessageFileList.php doesn't break
+	$wgMessagesDirs['DynamicPageList'] = __DIR__ . '/i18n';
+	/* wfWarn(
+		'Deprecated PHP entry point used for DynamicPageList extension. Please use wfLoadExtension instead, ' .
+		'see https://www.mediawiki.org/wiki/Extension_registration for more details.'
+	); */
+	return;
+} else {
+	die( 'This version of the DynamicPageList extension requires MediaWiki 1.25+' );
 }
-
-// Extension credits that will show up on Special:Version
-$wgExtensionCredits['parserhook'][] = array(
-	'path' => __FILE__,
-	'name' => 'DynamicPageList',
-	'version' => '1.7.0',
-	'descriptionmsg' => 'intersection-desc',
-	'url' => 'https://www.mediawiki.org/wiki/Extension:Intersection',
-	'author' => array(
-		'[https://en.wikinews.org/wiki/User:Amgine Amgine]',
-		'[https://en.wikinews.org/wiki/User:IlyaHaykinson IlyaHaykinson]'
-	),
-	'license-name' => 'GPL-2.0+'
-);
-
-// Internationalization file
-$wgMessagesDirs['DynamicPageList'] = __DIR__ . '/i18n';
-
-// Load classes
-$wgAutoloadClasses['DynamicPageListHooks'] = __DIR__ . '/DynamicPageList.hooks.php';
-
-// Parser tests
-// Warning, these only work when run with parserTests.php. There will be
-// failures if run via phpunit! (you may want to comment the below line
-// out if you're regularly running phpunit tests)
-$wgParserTestFiles[] = __DIR__ . '/DynamicPageList.tests.txt';
-
-# Configuration variables. Warning: These use DLP instead of DPL
-# for historical reasons (pretend Dynamic list of pages)
-$wgDLPmaxCategories = 6;                // Maximum number of categories to look for
-$wgDLPMaxResultCount = 200;             // Maximum number of results to allow
-$wgDLPAllowUnlimitedResults = false;    // Allow unlimited results
-$wgDLPAllowUnlimitedCategories = false; // Allow unlimited categories
-// How long to cache pages using DPL's in seconds. Default to 1 day. Set to
-// false to not decrease cache time (most efficient), Set to 0 to disable
-// cache altogether (inefficient, but results will never be outdated)
-$wgDLPMaxCacheTime = 60*60*24;          // How long to cache pages
-
-$wgHooks['ParserFirstCallInit'][] = 'DynamicPageListHooks::onParserFirstCallInit';
