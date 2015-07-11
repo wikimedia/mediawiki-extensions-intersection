@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"CERminator",
-			"Seha"
+			"Seha",
+			"Semso98"
 		]
 	},
 	"intersection-desc": "Izbacuje listu najčešćih tačaka koje se nalaze u kategoriji ili u sekciji nekoliko kategorija.",
 	"intersection_toomanycats": "Greška: Previše kategorija!",
-	"intersection_noresults": "Greška: Nema rezultata!",
+	"intersection_noresults": "Ni jedna stranica ne zadovoljava ove kriterije.",
 	"intersection_noincludecats": "Greška: Potrebno je da uključite najmanje jednu kategoriju ili odredite imenski prostor!"
 }
