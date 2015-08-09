@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"C.R."
+		]
+	},
+	"intersection-desc": "Fà ascì na lista ch' 'e palline 'e ll'urdeme elemente ca stanno dint'a na categoria, o na nterseziona 'e cchiù categurìe",
+	"intersection_toomanycats": "Errore: Tropp'assaje categurìe!",
+	"intersection_noresults": "Nisciuna paggena soddisfà sti criterie."
+}
