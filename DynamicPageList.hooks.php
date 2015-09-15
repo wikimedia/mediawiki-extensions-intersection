@@ -58,6 +58,7 @@ class DynamicPageListHooks {
 		$suppressErrors = false;
 		$showNamespace = true;
 		$addFirstCategoryDate = false;
+		$ignoreSubpages = false;
 		$dateFormat = '';
 		$stripYear = false;
 
@@ -321,6 +322,9 @@ class DynamicPageListHooks {
 						$showNamespace = true;
 					}
 					break;
+				case 'ignoresubpages':
+					$ignoreSubpages = ( 'true' == $arg );
+					break;
 				case 'googlehack':
 					if ( 'false' == $arg ) {
 						$googleHack = false;
@@ -429,6 +433,11 @@ class DynamicPageListHooks {
 			case 'exclude':
 				$where['page_is_redirect'] = 0;
 				break;
+		}
+
+		if ($ignoreSubpages) {
+			$where[] = "page_title NOT " .
+				$dbr->buildLike( array( $dbr->anyString(), '/', $dbr->anyString() ) );
 		}
 
 		$currentTableNumber = 1;
