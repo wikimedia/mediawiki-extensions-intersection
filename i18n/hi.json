@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kaustubh"
+			"Kaustubh",
+			"Sfic"
 		]
 	},
 	"intersection-desc": "एक श्रेणी या श्रेणीसमूहमें उपलब्ध नवीनतम लेख दर्शायें।",
-	"intersection_toomanycats": "Error: बहुत ज्यादा श्रेणीयां!",
-	"intersection_noresults": "Error: रिज़ल्ट नहीं!",
-	"intersection_noincludecats": "Error: कमसे कम एक श्रेणी या नामस्थान देना अनिवार्य हैं!"
+	"intersection_toomanycats": "त्रुटि: बहुत सारी श्रेणियाँ!",
+	"intersection_noresults": "इस मापदंड पर कोई भी पृष्ठ खरा नहीं उतरा।",
+	"intersection_noincludecats": "त्रुटि: आपको कम से कम एक श्रेणी जोड़ना है या किसी अन्य नामस्थान देना है!"
 }
