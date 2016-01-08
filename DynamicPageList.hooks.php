@@ -69,6 +69,7 @@ class DynamicPageListHooks {
 		$parameters = explode( "\n", $input );
 
 		$parser = new Parser;
+		$parser->setTitle( $mwParser->getTitle() );
 		$poptions = new ParserOptions;
 
 		foreach ( $parameters as $parameter ) {
