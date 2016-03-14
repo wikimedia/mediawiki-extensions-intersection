@@ -6,8 +6,8 @@
                 of several categories.
 
  Contributors: n:en:User:IlyaHaykinson n:en:User:Amgine
- http://en.wikinews.org/wiki/User:Amgine
- http://en.wikinews.org/wiki/User:IlyaHaykinson
+ https://en.wikinews.org/wiki/User:Amgine
+ https://en.wikinews.org/wiki/User:IlyaHaykinson
 
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@
  You should have received a copy of the GNU General Public License along
  with this program; if not, write to the Free Software Foundation, Inc.,
  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
- http://www.gnu.org/copyleft/gpl.html
+ https://www.gnu.org/copyleft/gpl.html
 
  Current feature request list
 	 1. Unset cached of calling page
@@ -39,17 +39,22 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 
 // Extension credits that will show up on Special:Version
 $wgExtensionCredits['parserhook'][] = array(
-	'path'           => __FILE__,
-	'name'           => 'DynamicPageList',
-	'version'        => '1.7.0',
+	'path' => __FILE__,
+	'name' => 'DynamicPageList',
+	'version' => '1.7.0',
 	'descriptionmsg' => 'intersection-desc',
-	'url'            => 'https://www.mediawiki.org/wiki/Extension:Intersection',
-	'author'         => array( '[http://en.wikinews.org/wiki/User:Amgine Amgine]', '[http://en.wikinews.org/wiki/User:IlyaHaykinson IlyaHaykinson]' ),
+	'url' => 'https://www.mediawiki.org/wiki/Extension:Intersection',
+	'author' => array(
+		'[https://en.wikinews.org/wiki/User:Amgine Amgine]',
+		'[https://en.wikinews.org/wiki/User:IlyaHaykinson IlyaHaykinson]'
+	),
+	'license-name' => 'GPL-2.0+'
 );
 
 // Internationalization file
 $wgMessagesDirs['DynamicPageList'] = __DIR__ . '/i18n';
 
+// Load classes
 $wgAutoloadClasses['DynamicPageListHooks'] = __DIR__ . '/DynamicPageList.hooks.php';
 
 // Parser tests
