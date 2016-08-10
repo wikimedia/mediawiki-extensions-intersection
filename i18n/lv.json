@@ -2,9 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"GreenZeb",
-			"Xil"
+			"Xil",
+			"Papuass"
 		]
 	},
 	"intersection_toomanycats": "Kļūda: pārāk daudz kategoriju!",
-	"intersection_noresults": "Kļūda: Nav rezultātu!"
+	"intersection_noresults": "Kritērijiem neatbilst neviena lapa."
 }
