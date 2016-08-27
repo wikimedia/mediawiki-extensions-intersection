@@ -83,7 +83,7 @@ class DynamicPageListHooks {
 				case 'category':
 					$title = Title::makeTitleSafe(
 						NS_CATEGORY,
-						$parser->transformMsg( $arg, $poptions )
+						$parser->transformMsg( $arg, $poptions, $mwParser->getTitle() )
 					);
 					if( is_null( $title ) ) {
 						continue;
@@ -93,7 +93,7 @@ class DynamicPageListHooks {
 				case 'notcategory':
 					$title = Title::makeTitleSafe(
 						NS_CATEGORY,
-						$parser->transformMsg( $arg, $poptions )
+						$parser->transformMsg( $arg, $poptions, $mwParser->getTitle() )
 					);
 					if( is_null( $title ) ) {
 						continue;
@@ -184,7 +184,7 @@ class DynamicPageListHooks {
 				case 'gallerycaption':
 					// Should perhaps actually parse caption instead
 					// as links and what not in caption might be useful.
-					$galleryCaption = $parser->transformMsg( $arg, $poptions );
+					$galleryCaption = $parser->transformMsg( $arg, $poptions, $mwParser->getTitle() );
 					break;
 				case 'galleryshowfilesize':
 					switch ( $arg ) {
