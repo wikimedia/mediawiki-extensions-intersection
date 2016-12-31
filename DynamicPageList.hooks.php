@@ -142,7 +142,7 @@ class DynamicPageListHooks {
 					switch ( $arg ) {
 						case 'gallery':
 							$useGallery = true;
-							$gallery = ImageGallery::factory();
+							$gallery = ImageGalleryBase::factory();
 							$gallery->setParser( $mwParser );
 							$startList = '';
 							$endList = '';
