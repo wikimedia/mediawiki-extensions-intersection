@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Malafaya"
+			"Malafaya",
+			"Lakaoso"
 		]
 	},
 	"intersection_toomanycats": "Eroro: Tro multa kategorii!",
-	"intersection_noresults": "Eroro: Nula rezultaji!",
+	"intersection_noresults": "Nula pagini kongruas ita kriterii.",
 	"intersection_noincludecats": "Eroro: Vu mustas inkluzar adminime un kategorio, o specigez nomaro!"
 }
