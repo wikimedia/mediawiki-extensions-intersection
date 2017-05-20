@@ -62,9 +62,9 @@ class DynamicPageListHooks {
 		$dateFormat = '';
 		$stripYear = false;
 
-		$linkOptions = array();
-		$categories = array();
-		$excludeCategories = array();
+		$linkOptions = [];
+		$categories = [];
+		$excludeCategories = [];
 
 		$parameters = explode( "\n", $input );
 
@@ -74,7 +74,7 @@ class DynamicPageListHooks {
 
 		foreach ( $parameters as $parameter ) {
 			$paramField = explode( '=', $parameter, 2 );
-			if( count( $paramField ) < 2 ) {
+			if ( count( $paramField ) < 2 ) {
 				continue;
 			}
 			$type = trim( $paramField[0] );
@@ -85,7 +85,7 @@ class DynamicPageListHooks {
 						NS_CATEGORY,
 						$parser->transformMsg( $arg, $poptions, $mwParser->getTitle() )
 					);
-					if( is_null( $title ) ) {
+					if ( is_null( $title ) ) {
 						continue;
 					}
 					$categories[] = $title;
@@ -95,7 +95,7 @@ class DynamicPageListHooks {
 						NS_CATEGORY,
 						$parser->transformMsg( $arg, $poptions, $mwParser->getTitle() )
 					);
-					if( is_null( $title ) ) {
+					if ( is_null( $title ) ) {
 						continue;
 					}
 					$excludeCategories[] = $title;
@@ -347,7 +347,8 @@ class DynamicPageListHooks {
 
 		if ( $catCount < 1 && false == $namespaceFiltering ) {
 			if ( $suppressErrors == false ) {
-				return wfMessage( 'intersection_noincludecats' )->inContentLanguage()->escaped(); // "!!no included categories!!";
+				 // "!!no included categories!!"
+				return wfMessage( 'intersection_noincludecats' )->inContentLanguage()->escaped();
 			} else {
 				return '';
 			}
@@ -355,7 +356,8 @@ class DynamicPageListHooks {
 
 		if ( $totalCatCount > $wgDLPmaxCategories && !$wgDLPAllowUnlimitedCategories ) {
 			if ( $suppressErrors == false ) {
-				return wfMessage( 'intersection_toomanycats' )->inContentLanguage()->escaped(); // "!!too many categories!!";
+				 // "!!too many categories!!"
+				return wfMessage( 'intersection_toomanycats' )->inContentLanguage()->escaped();
 			} else {
 				return '';
 			}
@@ -384,11 +386,11 @@ class DynamicPageListHooks {
 
 		// build the SQL query
 		$dbr = wfGetDB( DB_SLAVE );
-		$tables = array( 'page' );
-		$fields = array( 'page_namespace', 'page_title' );
-		$where = array();
-		$join = array();
-		$options = array();
+		$tables = [ 'page' ];
+		$fields = [ 'page_namespace', 'page_title' ];
+		$where = [];
+		$join = [];
+		$options = [];
 
 		if ( $googleHack ) {
 			$fields[] = 'page_id';
@@ -406,9 +408,9 @@ class DynamicPageListHooks {
 		// Check if the extension actually exists before changing the query...
 		if ( $flaggedRevs && defined( 'FLAGGED_REVISIONS' ) ) {
 			$tables[] = 'flaggedpages';
-			$join['flaggedpages'] = array( 'LEFT JOIN', 'page_id = fp_page_id' );
+			$join['flaggedpages'] = [ 'LEFT JOIN', 'page_id = fp_page_id' ];
 
-			switch( $stable ) {
+			switch ( $stable ) {
 				case 'only':
 					$where[] = 'fp_stable IS NOT NULL';
 					break;
@@ -417,7 +419,7 @@ class DynamicPageListHooks {
 					break;
 			}
 
-			switch( $quality ) {
+			switch ( $quality ) {
 				case 'only':
 					$where[] = 'fp_quality >= 1';
 					break;
@@ -436,35 +438,35 @@ class DynamicPageListHooks {
 				break;
 		}
 
-		if ($ignoreSubpages) {
+		if ( $ignoreSubpages ) {
 			$where[] = "page_title NOT " .
-				$dbr->buildLike( array( $dbr->anyString(), '/', $dbr->anyString() ) );
+				$dbr->buildLike( [ $dbr->anyString(), '/', $dbr->anyString() ] );
 		}
 
 		$currentTableNumber = 1;
 		$categorylinks = $dbr->tableName( 'categorylinks' );
 
 		for ( $i = 0; $i < $catCount; $i++ ) {
-			$join["$categorylinks AS c$currentTableNumber"] = array(
+			$join["$categorylinks AS c$currentTableNumber"] = [
 				'INNER JOIN',
-				array(
+				[
 					"page_id = c{$currentTableNumber}.cl_from",
 				 	"c{$currentTableNumber}.cl_to={$dbr->addQuotes( $categories[$i]->getDBKey() )}"
-				)
-			);
+				]
+			];
 			$tables[] = "$categorylinks AS c$currentTableNumber";
 
 			$currentTableNumber++;
 		}
 
 		for ( $i = 0; $i < $excludeCatCount; $i++ ) {
-			$join["$categorylinks AS c$currentTableNumber"] = array(
+			$join["$categorylinks AS c$currentTableNumber"] = [
 				'LEFT OUTER JOIN',
-				array(
+				[
 					"page_id = c{$currentTableNumber}.cl_from",
 					"c{$currentTableNumber}.cl_to={$dbr->addQuotes( $excludeCategories[$i]->getDBKey() )}"
-				)
-			);
+				]
+			];
 			$tables[] = "$categorylinks AS c$currentTableNumber";
 			$where["c{$currentTableNumber}.cl_to"] = null;
 			$currentTableNumber++;
@@ -484,7 +486,7 @@ class DynamicPageListHooks {
 				$sqlSort = 'page_len';
 				break;
 			case 'created':
-				$sqlSort = 'page_id'; # Since they're never reused and increasing
+				$sqlSort = 'page_id'; // Since they're never reused and increasing
 				break;
 			case 'categorysortkey':
 				$sqlSort = "c1.cl_type $sqlOrder, c1.cl_sortkey";
@@ -496,7 +498,7 @@ class DynamicPageListHooks {
 				$sqlSort = 'c1.cl_timestamp';
 				break;
 			default:
-				# Should never reach here
+				// Should never reach here
 				throw new MWException( "Invalid ordermethod $orderMethod" );
 		}
 
@@ -532,21 +534,21 @@ class DynamicPageListHooks {
 		// process results of query, outputing equivalent of <li>[[Article]]</li>
 		// for each result, or something similar if the list uses other
 		// startlist/endlist
-		$articleList = array();
+		$articleList = [];
 		foreach ( $res as $row ) {
 			$title = Title::makeTitle( $row->page_namespace, $row->page_title );
 			if ( true == $addFirstCategoryDate ) {
 				if ( $dateFormat != '' ) {
-					# this is a tad ugly
-					# use DateFormatter, and support disgarding year.
+					// this is a tad ugly
+					// use DateFormatter, and support disgarding year.
 					$categoryDate = wfTimestamp( TS_ISO_8601, $row->cl_timestamp );
 					if ( $stripYear ) {
 						$categoryDate = $wgContLang->getMonthName( substr( $categoryDate, 5, 2 ) )
-							. ' ' . substr ( $categoryDate, 8, 2 );
+							. ' ' . substr( $categoryDate, 8, 2 );
 					} else {
 						$categoryDate = substr( $categoryDate, 0, 10 );
 					}
-					$categoryDate = $df->reformat( $dateFormat, $categoryDate, array( 'match-whole' ) );
+					$categoryDate = $df->reformat( $dateFormat, $categoryDate, [ 'match-whole' ] );
 				} else {
 					$categoryDate = $wgContLang->date( wfTimestamp( TS_MW, $row->cl_timestamp ) );
 				}
@@ -557,7 +559,7 @@ class DynamicPageListHooks {
 				}
 			}
 
-			$query = array();
+			$query = [];
 
 			if ( $googleHack == true ) {
 				$query['dpl_id'] = intval( $row->page_id );
@@ -570,9 +572,9 @@ class DynamicPageListHooks {
 			}
 
 			if ( $useGallery ) {
-				# Note, $categoryDate is treated as raw html
-				# this is safe since the only html present
-				# would come from the dateformatter <span>.
+				// Note, $categoryDate is treated as raw html
+				// this is safe since the only html present
+				// would come from the dateformatter <span>.
 				$gallery->add( $title, $categoryDate );
 			} else {
 				$articleList[] = $categoryDate .
@@ -581,7 +583,7 @@ class DynamicPageListHooks {
 						htmlspecialchars( $titleText ),
 						$linkOptions,
 						$query,
-						array( 'forcearticlepath', 'known' )
+						[ 'forcearticlepath', 'known' ]
 					);
 			}
 		}
@@ -601,7 +603,7 @@ class DynamicPageListHooks {
 				$gallery->setPerRow( $galleryNumbRows );
 			}
 			if ( $galleryCaption != '' ) {
-				$gallery->setCaption( $galleryCaption ); # gallery class escapes string
+				$gallery->setCaption( $galleryCaption ); // gallery class escapes string
 			}
 			$output = $gallery->toHtml();
 		} else {
