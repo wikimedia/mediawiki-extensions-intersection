@@ -114,7 +114,7 @@ class DynamicPageListHooks {
 						// writing things like namespace=main
 						// so be careful when changing this code.
 						$namespaceIndex = intval( $arg );
-						if ( $namespaceIndex >= 0 )	{
+						if ( $namespaceIndex >= 0 ) {
 							$namespaceFiltering = true;
 						} else {
 							$namespaceFiltering = false;
@@ -304,7 +304,7 @@ class DynamicPageListHooks {
 				case 'addfirstcategorydate':
 					if ( $arg == 'true' ) {
 						$addFirstCategoryDate = true;
-					} elseif ( preg_match( '/^(?:[ymd]{2,3}|ISO 8601)$/', $arg ) )  {
+					} elseif ( preg_match( '/^(?:[ymd]{2,3}|ISO 8601)$/', $arg ) ) {
 						// if it more or less is valid dateformat.
 						$addFirstCategoryDate = true;
 						$dateFormat = $arg;
@@ -451,7 +451,7 @@ class DynamicPageListHooks {
 				'INNER JOIN',
 				[
 					"page_id = c{$currentTableNumber}.cl_from",
-				 	"c{$currentTableNumber}.cl_to={$dbr->addQuotes( $categories[$i]->getDBKey() )}"
+					 "c{$currentTableNumber}.cl_to={$dbr->addQuotes( $categories[$i]->getDBKey() )}"
 				]
 			];
 			$tables[] = "$categorylinks AS c$currentTableNumber";
