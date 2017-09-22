@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bunukwiki"
+			"Bunukwiki",
+			"Benel"
 		]
 	},
-	"intersection_toomanycats": "mungangaw: kakuniza mangasiw!"
+	"intersection_toomanycats": "mungangaw: kakuniza mangasiw!",
+	"intersection_noresults": "inayi’ matatungus sakacucekay a kasabelih."
 }
