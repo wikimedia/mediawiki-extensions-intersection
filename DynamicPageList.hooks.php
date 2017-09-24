@@ -385,7 +385,7 @@ class DynamicPageListHooks {
 		}
 
 		// build the SQL query
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$tables = [ 'page' ];
 		$fields = [ 'page_namespace', 'page_title' ];
 		$where = [];
