@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Danmichaelo"
+			"Danmichaelo",
+			"Jon Harald Søby"
 		]
 	},
 	"intersection-desc": "Gir en punktliste over de nyeste elementene i en kategori, eller elementer som er felles i flere kategorier",
