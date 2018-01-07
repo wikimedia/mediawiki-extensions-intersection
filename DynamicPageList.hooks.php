@@ -14,6 +14,10 @@ class DynamicPageListHooks {
 
 	/**
 	 * The callback function for converting the input text to HTML output
+	 * @param string $input
+	 * @param array $args
+	 * @param Parser $mwParser
+	 * @return string
 	 */
 	public static function renderDynamicPageList( $input, $args, $mwParser ) {
 		global $wgContLang;
