@@ -451,27 +451,27 @@ class DynamicPageListHooks {
 		$categorylinks = $dbr->tableName( 'categorylinks' );
 
 		for ( $i = 0; $i < $catCount; $i++ ) {
-			$join["$categorylinks AS c$currentTableNumber"] = [
+			$join["c$currentTableNumber"] = [
 				'INNER JOIN',
 				[
 					"page_id = c{$currentTableNumber}.cl_from",
 					 "c{$currentTableNumber}.cl_to={$dbr->addQuotes( $categories[$i]->getDBKey() )}"
 				]
 			];
-			$tables[] = "$categorylinks AS c$currentTableNumber";
+			$tables["c$currentTableNumber"] = $categorylinks;
 
 			$currentTableNumber++;
 		}
 
 		for ( $i = 0; $i < $excludeCatCount; $i++ ) {
-			$join["$categorylinks AS c$currentTableNumber"] = [
+			$join["c$currentTableNumber"] = [
 				'LEFT OUTER JOIN',
 				[
 					"page_id = c{$currentTableNumber}.cl_from",
 					"c{$currentTableNumber}.cl_to={$dbr->addQuotes( $excludeCategories[$i]->getDBKey() )}"
 				]
 			];
-			$tables[] = "$categorylinks AS c$currentTableNumber";
+			$tables["c$currentTableNumber"] = $categorylinks;
 			$where["c{$currentTableNumber}.cl_to"] = null;
 			$currentTableNumber++;
 		}
