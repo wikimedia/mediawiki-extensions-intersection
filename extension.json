@@ -22,9 +22,6 @@
 			"DynamicPageListHooks::onParserFirstCallInit"
 		]
 	},
-	"ParserTestFiles": [
-		"DynamicPageList.tests.txt"
-	],
 	"config": {
 		"DLPmaxCategories": 6,
 		"DLPMaxResultCount": 200,
