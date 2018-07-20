@@ -448,7 +448,7 @@ class DynamicPageListHooks {
 		}
 
 		$currentTableNumber = 1;
-		$categorylinks = $dbr->tableName( 'categorylinks' );
+		$categorylinks = 'categorylinks';
 
 		for ( $i = 0; $i < $catCount; $i++ ) {
 			$join["c$currentTableNumber"] = [
