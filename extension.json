@@ -2,8 +2,8 @@
 	"name": "DynamicPageList",
 	"version": "1.7.0",
 	"author": [
-		"[http://en.wikinews.org/wiki/User:Amgine Amgine]",
-		"[http://en.wikinews.org/wiki/User:IlyaHaykinson IlyaHaykinson]"
+		"[https://en.wikinews.org/wiki/User:Amgine Amgine]",
+		"[https://en.wikinews.org/wiki/User:IlyaHaykinson IlyaHaykinson]"
 	],
 	"url": "https://www.mediawiki.org/wiki/Extension:Intersection",
 	"descriptionmsg": "intersection-desc",
