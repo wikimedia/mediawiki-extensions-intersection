@@ -581,7 +581,7 @@ class DynamicPageListHooks {
 				// would come from the dateformatter <span>.
 				$gallery->add( $title, $categoryDate );
 			} else {
-				$articleList[] = $categoryDate .
+				$articleList[] = htmlspecialchars( $categoryDate ) .
 					Linker::link(
 						$title,
 						htmlspecialchars( $titleText ),
