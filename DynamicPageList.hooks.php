@@ -168,7 +168,7 @@ class DynamicPageListHooks {
 							$inlineMode = false;
 							break;
 						case 'inline':
-							// aka comma seperated list
+							// aka comma separated list
 							$startList = '';
 							$endList = '';
 							$startItem = '';
