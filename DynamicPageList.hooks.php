@@ -21,7 +21,6 @@ class DynamicPageListHooks {
 	 */
 	public static function renderDynamicPageList( $input, $args, $mwParser ) {
 		global $wgContLang;
-		global $wgDisableCounters; // to determine if to allow sorting by #hits.
 		global $wgDLPmaxCategories, $wgDLPMaxResultCount, $wgDLPMaxCacheTime;
 		global $wgDLPAllowUnlimitedResults, $wgDLPAllowUnlimitedCategories;
 
@@ -240,11 +239,7 @@ class DynamicPageListHooks {
 							$orderMethod = 'categorysortkey';
 							break;
 						case 'popularity':
-							if ( !$wgDisableCounters ) {
-								$orderMethod = 'popularity';
-							} else {
-								$orderMethod = 'categoryadd'; // default if hitcounter disabled.
-							}
+							$orderMethod = 'categoryadd'; // no HitCounters since MW1.25
 							break;
 						case 'categoryadd':
 						default:
