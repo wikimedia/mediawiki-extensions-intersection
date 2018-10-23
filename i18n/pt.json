@@ -6,7 +6,7 @@
 			"555"
 		]
 	},
-	"intersection-desc": "Produz uma lista com marcadores dos elementos mais recentes presentes numa categoria, ou uma intersecção de várias categorias",
+	"intersection-desc": "Produz uma lista com marcadores dos elementos mais recentes presentes numa categoria, ou uma interseção de várias categorias",
 	"intersection_toomanycats": "Erro: Demasiadas categorias!",
 	"intersection_noresults": "Nenhuma das páginas preenche estes critérios.",
 	"intersection_noincludecats": "Erro: Tem de incluir no mínimo uma categoria ou especificar um espaço nominal!"
