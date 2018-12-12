@@ -89,7 +89,7 @@ class DynamicPageListHooks {
 						$parser->transformMsg( $arg, $poptions, $mwParser->getTitle() )
 					);
 					if ( is_null( $title ) ) {
-						continue;
+						break;
 					}
 					$categories[] = $title;
 					break;
@@ -99,7 +99,7 @@ class DynamicPageListHooks {
 						$parser->transformMsg( $arg, $poptions, $mwParser->getTitle() )
 					);
 					if ( is_null( $title ) ) {
-						continue;
+						break;
 					}
 					$excludeCategories[] = $title;
 					break;
