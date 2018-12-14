@@ -105,7 +105,7 @@ class DynamicPageListHooks {
 					break;
 				case 'namespace':
 					$ns = $wgContLang->getNsIndex( $arg );
-					if ( $ns != null ) {
+					if ( $ns !== null ) {
 						$namespaceIndex = $ns;
 						$namespaceFiltering = true;
 					} else {
@@ -301,7 +301,7 @@ class DynamicPageListHooks {
 					}
 					break;
 				case 'addfirstcategorydate':
-					if ( $arg == 'true' ) {
+					if ( $arg === 'true' ) {
 						$addFirstCategoryDate = true;
 					} elseif ( preg_match( '/^(?:[ymd]{2,3}|ISO 8601)$/', $arg ) ) {
 						// if it more or less is valid dateformat.
@@ -316,24 +316,16 @@ class DynamicPageListHooks {
 					}
 					break;
 				case 'shownamespace':
-					if ( 'false' == $arg ) {
-						$showNamespace = false;
-					} else {
-						$showNamespace = true;
-					}
+					$showNamespace = $arg !== 'false';
 					break;
 				case 'ignoresubpages':
-					$ignoreSubpages = ( 'true' == $arg );
+					$ignoreSubpages = ( $arg === 'true' );
 					break;
 				case 'googlehack':
-					if ( 'false' == $arg ) {
-						$googleHack = false;
-					} else {
-						$googleHack = true;
-					}
+					$googleHack = $arg !== 'false';
 					break;
 				case 'nofollow': # bug 6658
-					if ( 'false' != $arg ) {
+					if ( $arg !== 'false' ) {
 						$linkOptions['rel'] = 'nofollow';
 					}
 					break;
@@ -344,22 +336,22 @@ class DynamicPageListHooks {
 		$excludeCatCount = count( $excludeCategories );
 		$totalCatCount = $catCount + $excludeCatCount;
 
-		if ( $catCount < 1 && false == $namespaceFiltering ) {
-			if ( $suppressErrors == false ) {
-				 // "!!no included categories!!"
-				return wfMessage( 'intersection_noincludecats' )->inContentLanguage()->escaped();
-			} else {
+		if ( $catCount < 1 && !$namespaceFiltering ) {
+			if ( $suppressErrors ) {
 				return '';
 			}
+
+			// "!!no included categories!!"
+			return wfMessage( 'intersection_noincludecats' )->inContentLanguage()->escaped();
 		}
 
 		if ( $totalCatCount > $wgDLPmaxCategories && !$wgDLPAllowUnlimitedCategories ) {
-			if ( $suppressErrors == false ) {
-				 // "!!too many categories!!"
-				return wfMessage( 'intersection_toomanycats' )->inContentLanguage()->escaped();
-			} else {
+			if ( $suppressErrors ) {
 				return '';
 			}
+
+			// "!!too many categories!!"
+			return wfMessage( 'intersection_toomanycats' )->inContentLanguage()->escaped();
 		}
 
 		if ( $countSet ) {
@@ -378,7 +370,7 @@ class DynamicPageListHooks {
 		if ( $catCount < 1 ) {
 			$addFirstCategoryDate = false;
 			// don't sort by fields relating to categories if there are no categories.
-			if ( $orderMethod == 'categoryadd' || $orderMethod == 'categorysortkey' ) {
+			if ( $orderMethod === 'categoryadd' || $orderMethod === 'categorysortkey' ) {
 				$orderMethod = 'created';
 			}
 		}
@@ -399,7 +391,7 @@ class DynamicPageListHooks {
 			$fields[] = 'c1.cl_timestamp';
 		}
 
-		if ( $namespaceFiltering == true ) {
+		if ( $namespaceFiltering ) {
 			$where['page_namespace'] = $namespaceIndex;
 		}
 
@@ -445,12 +437,12 @@ class DynamicPageListHooks {
 		$currentTableNumber = 1;
 		$categorylinks = 'categorylinks';
 
-		for ( $i = 0; $i < $catCount; $i++ ) {
+		foreach ( $categories as $cat ) {
 			$join["c$currentTableNumber"] = [
 				'INNER JOIN',
 				[
 					"page_id = c{$currentTableNumber}.cl_from",
-					 "c{$currentTableNumber}.cl_to={$dbr->addQuotes( $categories[$i]->getDBKey() )}"
+					 "c{$currentTableNumber}.cl_to={$dbr->addQuotes( $cat->getDBKey() )}"
 				]
 			];
 			$tables["c$currentTableNumber"] = $categorylinks;
@@ -458,12 +450,12 @@ class DynamicPageListHooks {
 			$currentTableNumber++;
 		}
 
-		for ( $i = 0; $i < $excludeCatCount; $i++ ) {
+		foreach ( $excludeCategories as $cat ) {
 			$join["c$currentTableNumber"] = [
 				'LEFT OUTER JOIN',
 				[
 					"page_id = c{$currentTableNumber}.cl_from",
-					"c{$currentTableNumber}.cl_to={$dbr->addQuotes( $excludeCategories[$i]->getDBKey() )}"
+					"c{$currentTableNumber}.cl_to={$dbr->addQuotes( $cat->getDBKey() )}"
 				]
 			];
 			$tables["c$currentTableNumber"] = $categorylinks;
@@ -471,7 +463,7 @@ class DynamicPageListHooks {
 			$currentTableNumber++;
 		}
 
-		if ( 'descending' == $order ) {
+		if ( $order === 'descending' ) {
 			$sqlOrder = 'DESC';
 		} else {
 			$sqlOrder = 'ASC';
@@ -514,11 +506,11 @@ class DynamicPageListHooks {
 		$res = $dbr->select( $tables, $fields, $where, __METHOD__, $options, $join );
 
 		if ( $dbr->numRows( $res ) == 0 ) {
-			if ( $suppressErrors == false ) {
-				return wfMessage( 'intersection_noresults' )->inContentLanguage()->escaped();
-			} else {
+			if ( $suppressErrors ) {
 				return '';
 			}
+
+			return wfMessage( 'intersection_noresults' )->inContentLanguage()->escaped();
 		}
 
 		// start unordered list
@@ -526,7 +518,7 @@ class DynamicPageListHooks {
 
 		$categoryDate = '';
 		$df = null;
-		if ( $dateFormat != '' && $addFirstCategoryDate ) {
+		if ( $dateFormat !== '' && $addFirstCategoryDate ) {
 			$df = DateFormatter::getInstance();
 		}
 
@@ -536,8 +528,8 @@ class DynamicPageListHooks {
 		$articleList = [];
 		foreach ( $res as $row ) {
 			$title = Title::makeTitle( $row->page_namespace, $row->page_title );
-			if ( true == $addFirstCategoryDate ) {
-				if ( $dateFormat != '' ) {
+			if ( $addFirstCategoryDate ) {
+				if ( $dateFormat !== '' ) {
 					// this is a tad ugly
 					// use DateFormatter, and support disgarding year.
 					$categoryDate = wfTimestamp( TS_ISO_8601, $row->cl_timestamp );
@@ -551,20 +543,20 @@ class DynamicPageListHooks {
 				} else {
 					$categoryDate = $wgContLang->date( wfTimestamp( TS_MW, $row->cl_timestamp ) );
 				}
-				if ( !$useGallery ) {
-					$categoryDate .= wfMessage( 'colon-separator' )->text();
-				} else {
+				if ( $useGallery ) {
 					$categoryDate .= ' ';
+				} else {
+					$categoryDate .= wfMessage( 'colon-separator' )->text();
 				}
 			}
 
 			$query = [];
 
-			if ( $googleHack == true ) {
+			if ( $googleHack ) {
 				$query['dpl_id'] = intval( $row->page_id );
 			}
 
-			if ( $showNamespace == true ) {
+			if ( $showNamespace ) {
 				$titleText = $title->getPrefixedText();
 			} else {
 				$titleText = $title->getText();
@@ -601,7 +593,7 @@ class DynamicPageListHooks {
 			if ( $galleryNumbRows > 0 ) {
 				$gallery->setPerRow( $galleryNumbRows );
 			}
-			if ( $galleryCaption != '' ) {
+			if ( $galleryCaption !== '' ) {
 				$gallery->setCaption( $galleryCaption ); // gallery class escapes string
 			}
 			$output = $gallery->toHtml();
