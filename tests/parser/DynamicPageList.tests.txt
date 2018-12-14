@@ -543,7 +543,7 @@ order=descending
 			<div class="thumb" style="width: 100px;"><div style="margin:48.5px auto;"><a href="/wiki/File:Foobar.svg" class="image"><img alt="Foobar.svg" src="http://example.com/images/thumb/f/ff/Foobar.svg/70px-Foobar.svg.png" width="70" height="53" srcset="http://example.com/images/thumb/f/ff/Foobar.svg/105px-Foobar.svg.png 1.5x, http://example.com/images/thumb/f/ff/Foobar.svg/140px-Foobar.svg.png 2x" /></a></div></div>
 			<div class="gallerytext">
 <p><a href="/wiki/File:Foobar.svg" class="galleryfilename galleryfilename-truncate" title="File:Foobar.svg">Foobar.svg</a>
-240 × 180; 2 KB<br />
+240 × 180; 12 KB<br />
 </p>
 			</div>
 		</div></li>
