@@ -508,7 +508,7 @@ order=descending
 <ul class="gallery mw-gallery-traditional" style="max-width: 791px;_width: 791px;">
 	<li class='gallerycaption'>I love Captions</li>
 		<li class="gallerybox" style="width: 105px"><div style="width: 105px">
-			<div class="thumb" style="width: 100px;"><div style="margin:25.5px auto;"><a href="/wiki/File:LoremIpsum.djvu" class="image"><img alt="LoremIpsum.djvu" src="http://example.com/images/thumb/5/5f/LoremIpsum.djvu/page1-70px-LoremIpsum.djvu.jpg" width="70" height="99" srcset="http://example.com/images/thumb/5/5f/LoremIpsum.djvu/page1-105px-LoremIpsum.djvu.jpg 1.5x, http://example.com/images/thumb/5/5f/LoremIpsum.djvu/page1-140px-LoremIpsum.djvu.jpg 2x" /></a></div></div>
+			<div class="thumb" style="width: 100px;"><div style="margin:25.5px auto;"><a href="/wiki/File:LoremIpsum.djvu" class="image"><img alt="LoremIpsum.djvu" src="http://example.com/images/thumb/5/5f/LoremIpsum.djvu/page1-70px-LoremIpsum.djvu.jpg" decoding="async" width="70" height="99" srcset="http://example.com/images/thumb/5/5f/LoremIpsum.djvu/page1-105px-LoremIpsum.djvu.jpg 1.5x, http://example.com/images/thumb/5/5f/LoremIpsum.djvu/page1-140px-LoremIpsum.djvu.jpg 2x" /></a></div></div>
 			<div class="gallerytext">
 <p><a href="/wiki/File:LoremIpsum.djvu" class="galleryfilename galleryfilename-truncate" title="File:LoremIpsum.djvu">LoremIpsum.djvu</a>
 2,480 × 3,508, 5 pages; 3 KB<br />
@@ -516,7 +516,7 @@ order=descending
 			</div>
 		</div></li>
 		<li class="gallerybox" style="width: 105px"><div style="width: 105px">
-			<div class="thumb" style="width: 100px;"><div style="margin:15px auto;"><a href="/wiki/File:Audio.oga" class="image"><img alt="Audio.oga" src="/resources/assets/file-type-icons/fileicon.png" width="120" height="120" /></a></div></div>
+			<div class="thumb" style="width: 100px;"><div style="margin:15px auto;"><a href="/wiki/File:Audio.oga" class="image"><img alt="Audio.oga" src="/resources/assets/file-type-icons/fileicon.png" decoding="async" width="120" height="120" /></a></div></div>
 			<div class="gallerytext">
 <p><a href="/wiki/File:Audio.oga" class="galleryfilename galleryfilename-truncate" title="File:Audio.oga">Audio.oga</a>
 </p>
@@ -524,7 +524,7 @@ order=descending
 			</div>
 		</div></li>
 		<li class="gallerybox" style="width: 105px"><div style="width: 105px">
-			<div class="thumb" style="width: 100px;"><div style="margin:15px auto;"><a href="/wiki/File:Video.ogv" class="image"><img alt="Video.ogv" src="/resources/assets/file-type-icons/fileicon-ogg.png" width="120" height="120" /></a></div></div>
+			<div class="thumb" style="width: 100px;"><div style="margin:15px auto;"><a href="/wiki/File:Video.ogv" class="image"><img alt="Video.ogv" src="/resources/assets/file-type-icons/fileicon-ogg.png" decoding="async" width="120" height="120" /></a></div></div>
 			<div class="gallerytext">
 <p><a href="/wiki/File:Video.ogv" class="galleryfilename galleryfilename-truncate" title="File:Video.ogv">Video.ogv</a>
 </p>
@@ -540,7 +540,7 @@ order=descending
 			</div>
 		</div></li>
 		<li class="gallerybox" style="width: 105px"><div style="width: 105px">
-			<div class="thumb" style="width: 100px;"><div style="margin:48.5px auto;"><a href="/wiki/File:Foobar.svg" class="image"><img alt="Foobar.svg" src="http://example.com/images/thumb/f/ff/Foobar.svg/70px-Foobar.svg.png" width="70" height="53" srcset="http://example.com/images/thumb/f/ff/Foobar.svg/105px-Foobar.svg.png 1.5x, http://example.com/images/thumb/f/ff/Foobar.svg/140px-Foobar.svg.png 2x" /></a></div></div>
+			<div class="thumb" style="width: 100px;"><div style="margin:48.5px auto;"><a href="/wiki/File:Foobar.svg" class="image"><img alt="Foobar.svg" src="http://example.com/images/thumb/f/ff/Foobar.svg/70px-Foobar.svg.png" decoding="async" width="70" height="53" srcset="http://example.com/images/thumb/f/ff/Foobar.svg/105px-Foobar.svg.png 1.5x, http://example.com/images/thumb/f/ff/Foobar.svg/140px-Foobar.svg.png 2x" /></a></div></div>
 			<div class="gallerytext">
 <p><a href="/wiki/File:Foobar.svg" class="galleryfilename galleryfilename-truncate" title="File:Foobar.svg">Foobar.svg</a>
 240 × 180; 12 KB<br />
@@ -548,7 +548,7 @@ order=descending
 			</div>
 		</div></li>
 		<li class="gallerybox" style="width: 105px"><div style="width: 105px">
-			<div class="thumb" style="width: 100px;"><div style="margin:40px auto;"><a href="/wiki/File:Thumb.png" class="image"><img alt="Thumb.png" src="http://example.com/images/thumb/e/ea/Thumb.png/70px-Thumb.png" width="70" height="70" srcset="http://example.com/images/thumb/e/ea/Thumb.png/105px-Thumb.png 1.5x, http://example.com/images/e/ea/Thumb.png 2x" /></a></div></div>
+			<div class="thumb" style="width: 100px;"><div style="margin:40px auto;"><a href="/wiki/File:Thumb.png" class="image"><img alt="Thumb.png" src="http://example.com/images/thumb/e/ea/Thumb.png/70px-Thumb.png" decoding="async" width="70" height="70" srcset="http://example.com/images/thumb/e/ea/Thumb.png/105px-Thumb.png 1.5x, http://example.com/images/e/ea/Thumb.png 2x" /></a></div></div>
 			<div class="gallerytext">
 <p><a href="/wiki/File:Thumb.png" class="galleryfilename galleryfilename-truncate" title="File:Thumb.png">Thumb.png</a>
 135 × 135; 22 KB<br />
@@ -556,7 +556,7 @@ order=descending
 			</div>
 		</div></li>
 		<li class="gallerybox" style="width: 105px"><div style="width: 105px">
-			<div class="thumb" style="width: 100px;"><div style="margin:71px auto;"><a href="/wiki/File:Foobar.jpg" class="image"><img alt="Foobar.jpg" src="http://example.com/images/thumb/3/3a/Foobar.jpg/70px-Foobar.jpg" width="70" height="8" srcset="http://example.com/images/thumb/3/3a/Foobar.jpg/105px-Foobar.jpg 1.5x, http://example.com/images/thumb/3/3a/Foobar.jpg/140px-Foobar.jpg 2x" /></a></div></div>
+			<div class="thumb" style="width: 100px;"><div style="margin:71px auto;"><a href="/wiki/File:Foobar.jpg" class="image"><img alt="Foobar.jpg" src="http://example.com/images/thumb/3/3a/Foobar.jpg/70px-Foobar.jpg" decoding="async" width="70" height="8" srcset="http://example.com/images/thumb/3/3a/Foobar.jpg/105px-Foobar.jpg 1.5x, http://example.com/images/thumb/3/3a/Foobar.jpg/140px-Foobar.jpg 2x" /></a></div></div>
 			<div class="gallerytext">
 <p><a href="/wiki/File:Foobar.jpg" class="galleryfilename galleryfilename-truncate" title="File:Foobar.jpg">Foobar.jpg</a>
 1,941 × 220; 8 KB<br />
