@@ -431,7 +431,7 @@ class DynamicPageListHooks {
 
 		if ( $ignoreSubpages ) {
 			$where[] = "page_title NOT " .
-				$dbr->buildLike( [ $dbr->anyString(), '/', $dbr->anyString() ] );
+				$dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() );
 		}
 
 		$currentTableNumber = 1;
