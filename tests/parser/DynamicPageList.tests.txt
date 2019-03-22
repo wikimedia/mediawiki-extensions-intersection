@@ -449,7 +449,6 @@ File missing<br />
 			</div>
 		</div></li>
 </ul>
-
 !!end
 
 !!test
@@ -486,7 +485,6 @@ File missing<br />
 			</div>
 		</div></li>
 </ul>
-
 !!end
 
 !!test
@@ -564,7 +562,6 @@ order=descending
 			</div>
 		</div></li>
 </ul>
-
 !!end
 
 !!test
@@ -600,7 +597,6 @@ galleryshowfilename=no
 			</div>
 		</div></li>
 </ul>
-
 !!end
 
 
