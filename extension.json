@@ -10,7 +10,7 @@
 	"type": "parserhook",
 	"license-name": "GPL-2.0-or-later",
 	"AutoloadClasses": {
-		"DynamicPageListHooks": "DynamicPageList.hooks.php"
+		"DynamicPageListHooks": "includes/DynamicPageListHooks.php"
 	},
 	"MessagesDirs": {
 		"DynamicPageList": [
