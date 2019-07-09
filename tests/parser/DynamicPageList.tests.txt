@@ -533,7 +533,7 @@ order=descending
 			<div class="thumb" style="height: 150px;"><a href="/wiki/File:Bad.jpg" title="File:Bad.jpg">Bad.jpg</a></div>
 			<div class="gallerytext">
 <p><a href="/wiki/File:Bad.jpg" class="galleryfilename galleryfilename-truncate" title="File:Bad.jpg">Bad.jpg</a>
-1,941 × 220; 8 KB<br />
+320 × 240; 12 KB<br />
 </p>
 			</div>
 		</div></li>
