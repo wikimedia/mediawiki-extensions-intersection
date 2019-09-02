@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 class DynamicPageListHooks {
 
 	/**
@@ -20,9 +22,8 @@ class DynamicPageListHooks {
 	 * @return string
 	 */
 	public static function renderDynamicPageList( $input, $args, $mwParser ) {
-		global $wgContLang;
-		global $wgDLPmaxCategories, $wgDLPMaxResultCount, $wgDLPMaxCacheTime;
-		global $wgDLPAllowUnlimitedResults, $wgDLPAllowUnlimitedCategories;
+		global $wgDLPmaxCategories, $wgDLPMaxResultCount, $wgDLPMaxCacheTime,
+			$wgDLPAllowUnlimitedResults, $wgDLPAllowUnlimitedCategories;
 
 		if ( $wgDLPMaxCacheTime !== false ) {
 			$mwParser->getOutput()->updateCacheExpiry( $wgDLPMaxCacheTime );
@@ -75,6 +76,7 @@ class DynamicPageListHooks {
 		$parser->setTitle( $mwParser->getTitle() );
 		$poptions = new ParserOptions;
 
+		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
 		foreach ( $parameters as $parameter ) {
 			$paramField = explode( '=', $parameter, 2 );
 			if ( count( $paramField ) < 2 ) {
@@ -104,7 +106,7 @@ class DynamicPageListHooks {
 					$excludeCategories[] = $title;
 					break;
 				case 'namespace':
-					$ns = $wgContLang->getNsIndex( $arg );
+					$ns = $contLang->getNsIndex( $arg );
 					if ( $ns !== null ) {
 						$namespaceIndex = $ns;
 						$namespaceFiltering = true;
@@ -534,14 +536,14 @@ class DynamicPageListHooks {
 					// use DateFormatter, and support disgarding year.
 					$categoryDate = wfTimestamp( TS_ISO_8601, $row->cl_timestamp );
 					if ( $stripYear ) {
-						$categoryDate = $wgContLang->getMonthName( substr( $categoryDate, 5, 2 ) )
+						$categoryDate = $contLang->getMonthName( substr( $categoryDate, 5, 2 ) )
 							. ' ' . substr( $categoryDate, 8, 2 );
 					} else {
 						$categoryDate = substr( $categoryDate, 0, 10 );
 					}
 					$categoryDate = $df->reformat( $dateFormat, $categoryDate, [ 'match-whole' ] );
 				} else {
-					$categoryDate = $wgContLang->date( wfTimestamp( TS_MW, $row->cl_timestamp ) );
+					$categoryDate = $contLang->date( wfTimestamp( TS_MW, $row->cl_timestamp ) );
 				}
 				if ( $useGallery ) {
 					$categoryDate .= ' ';
@@ -600,7 +602,7 @@ class DynamicPageListHooks {
 		} else {
 			$output .= $startItem;
 			if ( $inlineMode ) {
-				$output .= $wgContLang->commaList( $articleList );
+				$output .= $contLang->commaList( $articleList );
 			} else {
 				$output .= implode( "$endItem \n$startItem", $articleList );
 			}
