@@ -399,7 +399,7 @@ class DynamicPageListHooks {
 
 		// Bug 14943 - Allow filtering based on FlaggedRevs stability.
 		// Check if the extension actually exists before changing the query...
-		if ( $flaggedRevs && defined( 'FLAGGED_REVISIONS' ) ) {
+		if ( $flaggedRevs && ExtensionRegistry::getInstance()->isLoaded( 'FlaggedRevs' ) ) {
 			$tables[] = 'flaggedpages';
 			$join['flaggedpages'] = [ 'LEFT JOIN', 'page_id = fp_page_id' ];
 
