@@ -20,6 +20,7 @@ class DynamicPageListHooks {
 	 * @param array $args
 	 * @param Parser $mwParser
 	 * @return string
+	 * @suppress PhanUndeclaredClassConstant
 	 */
 	public static function renderDynamicPageList( $input, $args, $mwParser ) {
 		global $wgDLPmaxCategories, $wgDLPMaxResultCount, $wgDLPMaxCacheTime,
@@ -38,6 +39,7 @@ class DynamicPageListHooks {
 		$inlineMode = false;
 
 		$useGallery = false;
+		$pageImagesEnabled = ExtensionRegistry::getInstance()->isLoaded( 'PageImages' );
 		$galleryFileSize = false;
 		$galleryFileName = true;
 		$galleryImageHeight = 0;
@@ -439,12 +441,34 @@ class DynamicPageListHooks {
 		$currentTableNumber = 1;
 		$categorylinks = 'categorylinks';
 
+		if ( $useGallery && $pageImagesEnabled ) {
+			$tables['pp1'] = 'page_props';
+			$join['pp1'] = [
+				'LEFT JOIN',
+				[
+					'pp1.pp_propname' => PageImages::PROP_NAME_FREE,
+					'page_id = pp1.pp_page'
+				]
+			];
+			$fields['pageimage_free'] = 'pp1.pp_value';
+
+			$tables['pp2'] = 'page_props';
+			$join['pp2'] = [
+				'LEFT JOIN',
+				[
+					'pp2.pp_propname' => PageImages::PROP_NAME,
+					'page_id = pp2.pp_page'
+				]
+			];
+			$fields['pageimage_nonfree'] = 'pp2.pp_value';
+		}
+
 		foreach ( $categories as $cat ) {
 			$join["c$currentTableNumber"] = [
 				'INNER JOIN',
 				[
 					"page_id = c{$currentTableNumber}.cl_from",
-					 "c{$currentTableNumber}.cl_to={$dbr->addQuotes( $cat->getDBKey() )}"
+					"c{$currentTableNumber}.cl_to={$dbr->addQuotes( $cat->getDBKey() )}"
 				]
 			];
 			$tables["c$currentTableNumber"] = $categorylinks;
@@ -528,6 +552,7 @@ class DynamicPageListHooks {
 		// for each result, or something similar if the list uses other
 		// startlist/endlist
 		$articleList = [];
+		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
 		foreach ( $res as $row ) {
 			$title = Title::makeTitle( $row->page_namespace, $row->page_title );
 			if ( $addFirstCategoryDate ) {
@@ -565,10 +590,37 @@ class DynamicPageListHooks {
 			}
 
 			if ( $useGallery ) {
+				$file = null;
+				$link = '';
+				if ( $galleryFileName ) {
+					$link = $linkRenderer->makeKnownLink(
+						$title,
+						$titleText,
+						[ 'class' => 'galleryfilename galleryfilename-truncate' ]
+					) . "\n";
+				}
+
+				if ( $title->getNamespace() !== NS_FILE && $pageImagesEnabled ) {
+					$file = $row->pageimage_free ?: $row->pageimage_nonfree;
+				}
+
 				// Note, $categoryDate is treated as raw html
 				// this is safe since the only html present
 				// would come from the dateformatter <span>.
-				$gallery->add( $title, $categoryDate );
+				if ( $file !== null ) {
+					$gallery->add(
+						Title::makeTitle( NS_FILE, $file ),
+						$link . $categoryDate,
+						$file,
+						$title->getLinkURL()
+					);
+				} else {
+					$gallery->add(
+						$title,
+						$link . $categoryDate,
+						$title->getText()
+					);
+				}
 			} else {
 				$articleList[] = htmlspecialchars( $categoryDate ) .
 					Linker::link(
@@ -584,7 +636,7 @@ class DynamicPageListHooks {
 		// end unordered list
 		if ( $useGallery ) {
 			$gallery->setHideBadImages();
-			$gallery->setShowFilename( $galleryFileName );
+			$gallery->setShowFilename( false );
 			$gallery->setShowBytes( $galleryFileSize );
 			if ( $galleryImageHeight > 0 ) {
 				$gallery->setHeights( $galleryImageHeight );
