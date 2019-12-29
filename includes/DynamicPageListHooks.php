@@ -20,7 +20,6 @@ class DynamicPageListHooks {
 	 * @param array $args
 	 * @param Parser $mwParser
 	 * @return string
-	 * @suppress PhanUndeclaredClassConstant
 	 */
 	public static function renderDynamicPageList( $input, $args, $mwParser ) {
 		global $wgDLPmaxCategories, $wgDLPMaxResultCount, $wgDLPMaxCacheTime,
