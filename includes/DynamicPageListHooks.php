@@ -561,7 +561,7 @@ class DynamicPageListHooks {
 					// use DateFormatter, and support disgarding year.
 					$categoryDate = wfTimestamp( TS_ISO_8601, $row->cl_timestamp );
 					if ( $stripYear ) {
-						$categoryDate = $contLang->getMonthName( substr( $categoryDate, 5, 2 ) )
+						$categoryDate = $contLang->getMonthName( (int)substr( $categoryDate, 5, 2 ) )
 							. ' ' . substr( $categoryDate, 8, 2 );
 					} else {
 						$categoryDate = substr( $categoryDate, 0, 10 );
@@ -639,10 +639,10 @@ class DynamicPageListHooks {
 			$gallery->setShowFilename( false );
 			$gallery->setShowBytes( $galleryFileSize );
 			if ( $galleryImageHeight > 0 ) {
-				$gallery->setHeights( $galleryImageHeight );
+				$gallery->setHeights( (string)$galleryImageHeight );
 			}
 			if ( $galleryImageWidth > 0 ) {
-				$gallery->setWidths( $galleryImageWidth );
+				$gallery->setWidths( (string)$galleryImageWidth );
 			}
 			if ( $galleryNumbRows > 0 ) {
 				$gallery->setPerRow( $galleryNumbRows );
