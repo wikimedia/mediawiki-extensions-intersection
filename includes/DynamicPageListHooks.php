@@ -91,7 +91,7 @@ class DynamicPageListHooks {
 						NS_CATEGORY,
 						$parser->transformMsg( $arg, $poptions, $mwParser->getTitle() )
 					);
-					if ( is_null( $title ) ) {
+					if ( $title === null ) {
 						break;
 					}
 					$categories[] = $title;
@@ -101,7 +101,7 @@ class DynamicPageListHooks {
 						NS_CATEGORY,
 						$parser->transformMsg( $arg, $poptions, $mwParser->getTitle() )
 					);
-					if ( is_null( $title ) ) {
+					if ( $title === null ) {
 						break;
 					}
 					$excludeCategories[] = $title;
