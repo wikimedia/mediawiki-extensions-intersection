@@ -30,6 +30,7 @@ class DynamicPageListHooks {
 		}
 
 		$countSet = false;
+		$count = 0;
 
 		$startList = '<ul>';
 		$endList = '</ul>';
