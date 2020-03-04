@@ -76,7 +76,7 @@ class DynamicPageListHooks {
 
 		$parser = new Parser;
 		$parser->setTitle( $mwParser->getTitle() );
-		$poptions = new ParserOptions;
+		$poptions = new ParserOptions( $mwParser->getUser() );
 
 		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
 		foreach ( $parameters as $parameter ) {
