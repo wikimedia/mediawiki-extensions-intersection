@@ -21,9 +21,7 @@
 		]
 	},
 	"Hooks": {
-		"ParserFirstCallInit": [
-			"DynamicPageListHooks::onParserFirstCallInit"
-		]
+		"ParserFirstCallInit": "DynamicPageListHooks::onParserFirstCallInit"
 	},
 	"config": {
 		"DLPmaxCategories": 6,
