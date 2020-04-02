@@ -1,3 +1,5 @@
+!! Version 2
+
 ######################################################
 #### Warning: run these tests via parserTests.php    #
 ####                                                 #
@@ -27,11 +29,11 @@
 ## *some order methods, due to lack of flexibity in page creation
 ## googlehack (dpl_id) stuff because page_id changes depending on other tests.
 
-!!article
+!! article
 MediaWiki:Bad_image_list
-!!text
+!! text
 * [[:File:Bad.jpg]] except [[Nasty page]]
-!!endarticle
+!! endarticle
 
 !! article
 DPLTest1
@@ -76,35 +78,33 @@ DPLRedir
 !! endarticle
 
 # start actual tests.
-!!test
+!! test
 basic, single category list, ordered by cat add, desc.
-!!input
+!! wikitext
 <DynamicPageList>
 category=DPLtest
 </DynamicPageList>
-!!result
+!! html
 <ul>
 <li><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a></li> 
 <li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a></li> 
 <li><a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a></li></ul>
+!! end
 
-!!end
 
-
-!!test
+!! test
 basic, single category list, but ascending
-!!input
+!! wikitext
 <DynamicPageList>
 order =   ascending
 category=DPLtest
 </DynamicPageList>
-!!result
+!! html
 <ul>
 <li><a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a></li> 
 <li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a></li> 
 <li><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a></li></ul>
-
-!!end
+!! end
 
 # Depnds on page id of other pages
 # so could break depending on other tests
@@ -127,24 +127,23 @@ category=DPLtest
 #!!end
 
 
-!!test
+!! test
 nofollow
-!!input
+!! wikitext
 <DynamicPageList>
 category=DPLtest
 nofollow=true
 </DynamicPageList>
-!!result
+!! html
 <ul>
 <li><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!" rel="nofollow">Yet another DPL test page!</a></li> 
 <li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2" rel="nofollow">Talk:DPLTest2</a></li> 
 <li><a href="/wiki/DPLTest1" title="DPLTest1" rel="nofollow">DPLTest1</a></li></ul>
+!! end
 
-!!end
-
-!!test
+!! test
 supresserrors
-!!input
+!! wikitext
 <DynamicPageList>
 category=DPLtest
 category=DPLtest1
@@ -159,9 +158,9 @@ category=DPLtest9
 category=DPLtest10
 suppresserrors=true
 </DynamicPageList>
-!!result
+!! html
 
-!!end
+!! end
 
 ## BROKEN!! mysql doesn't like using self-joins on temporary tables
 ## which breaks this test.
@@ -194,224 +193,211 @@ suppresserrors=true
 #
 #!!end
 
-!!test
+!! test
 Negation with namespace.
-!!input
+!! wikitext
 <DynamicPageList>
 namespace=talk
 notcategory=DPLtest3
 </DynamicPageList>
-!!result
+!! html
 <ul>
 <li><a href="/wiki/Talk:No_Categories" title="Talk:No Categories">Talk:No Categories</a></li></ul>
+!! end
 
-!!end
-
-!!test
+!! test
 Namespace limited to category.
-!!input
+!! wikitext
 <DynamicPageList>
 category=DPLtest
 namespace=talk
 </DynamicPageList>
-!!result
+!! html
 <ul>
 <li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a></li></ul>
+!! end
 
-!!end
-
-!!test
+!! test
 Namespace no category.
-!!input
+!! wikitext
 <DynamicPageList>
 namespace=help
 </DynamicPageList>
-!!result
+!! html
 <ul>
 <li><a href="/wiki/Help:DPLTest3" title="Help:DPLTest3">Help:DPLTest3</a></li></ul>
+!! end
 
-!!end
-
-!!test
+!! test
 Don't show namespace name. (shownamespace=false)
-!!input
+!! wikitext
 <DynamicPageList>
 namespace=help
 shownamespace=false
 </DynamicPageList>
-!!result
+!! html
 <ul>
 <li><a href="/wiki/Help:DPLTest3" title="Help:DPLTest3">DPLTest3</a></li></ul>
-
-!!end
+!! end
 
 # This one has count=1 to avoid articles from other tests.
-!!test
+!! test
 Invalid ns treated as main namespace
-!!input
+!! wikitext
 <DynamicPageList>
 namespace=Look mummy, this totally isn't a namespace
 count=2
 </DynamicPageList>
-!!result
+!! html
 <ul>
 <li><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a></li> 
 <li><a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a></li></ul>
+!! end
 
-!!end
-
-!!test
+!! test
 count and offset combined.
-!!input
+!! wikitext
 <DynamicPageList>
 category=DPLtest
 count=1
 offset=1
 </DynamicPageList>
-!!result
+!! html
 <ul>
 <li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a></li></ul>
+!! end
 
-!!end
-
-!!test
+!! test
 include redirects
-!!input
+!! wikitext
 <DynamicPageList>
 category=DPLtest
 redirects=include
 </DynamicPageList>
-!!result
+!! html
 <ul>
 <li><a href="/wiki/DPLRedir" class="mw-redirect" title="DPLRedir">DPLRedir</a></li> 
 <li><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a></li> 
 <li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a></li> 
 <li><a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a></li></ul>
+!! end
 
-!!end
-
-!!test
+!! test
 only redirect
-!!input
+!! wikitext
 <DynamicPageList>
 category=DPLtest
 redirects=only
 </DynamicPageList>
-!!result
+!! html
 <ul>
 <li><a href="/wiki/DPLRedir" class="mw-redirect" title="DPLRedir">DPLRedir</a></li></ul>
-
-!!end
+!! end
 
 
 # Should behave like false.
 # Can't actually test true, since the date would vary.
-!!test
+!! test
 addfirstcategorydate=INVALID
-!!input
+!! wikitext
 <DynamicPageList>
 category=DPLtest
 addfirstcategorydate=INVALID
 </DynamicPageList>
-!!result
+!! html
 <ul>
 <li><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a></li> 
 <li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a></li> 
 <li><a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a></li></ul>
+!! end
 
-!!end
-
-!!test
+!! test
 addfirstcategorydate=false
-!!input
+!! wikitext
 <DynamicPageList>
 category=DPLtest
 addfirstcategorydate=false
 </DynamicPageList>
-!!result
+!! html
 <ul>
 <li><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a></li> 
 <li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a></li> 
 <li><a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a></li></ul>
+!! end
 
-!!end
 
-
-!!test
+!! test
 mode=unordered (default)
-!!input
+!! wikitext
 <DynamicPageList>
 category=DPLtest
 mode=unordered
 </DynamicPageList>
-!!result
+!! html
 <ul>
 <li><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a></li> 
 <li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a></li> 
 <li><a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a></li></ul>
-
-!!end
-!!test
+!! end
+!! test
 mode=INVALID
-!!input
+!! wikitext
 <DynamicPageList>
 category=DPLtest
 mode=INVALID
 </DynamicPageList>
-!!result
+!! html
 <ul>
 <li><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a></li> 
 <li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a></li> 
 <li><a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a></li></ul>
+!! end
 
-!!end
-
-!!test
+!! test
 mode=ordered
-!!input
+!! wikitext
 <DynamicPageList>
 category=DPLtest
 mode=ordered
 </DynamicPageList>
-!!result
+!! html
 <ol>
 <li><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a></li> 
 <li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a></li> 
 <li><a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a></li></ol>
-
-!!end
+!! end
 
 # This is broken 
-!!test
+!! test
 mode=none (line breaks)
-!!input
+!! wikitext
 <DynamicPageList>
 category=DPLtest
 mode=none
 </DynamicPageList>
-!!result
+!! html
 <p><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a><br /> 
 <a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a><br /> 
 <a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a><br />
 </p>
-!!end
+!! end
 
-!!test
+!! test
 mode=inline (comma list)
-!!input
+!! wikitext
 <DynamicPageList>
 category=DPLtest
 mode=inline
 </DynamicPageList>
-!!result
+!! html
 <p><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a>, <a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a>, <a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a>
 </p>
-!!end
+!! end
 
 # None of these are images, so crappy test.
-!!test
+!! test
 mode=gallery (complex, no image)
-!!input
+!! wikitext
 <DynamicPageList>
 category=DPLtest
 imagewidth=70
@@ -421,9 +407,9 @@ imagesperrow=7
 gallerycaption=Look at my pretty gallery. {{SERVER}}
 mode=gallery
 </DynamicPageList>
-!!result
+!! html
 <ul class="gallery mw-gallery-traditional" style="max-width: 791px;_width: 791px;">
-	<li class='gallerycaption'>Look at my pretty gallery. http://example.org</li>
+	<li class="gallerycaption">Look at my pretty gallery. http://example.org</li>
 		<li class="gallerybox" style="width: 105px"><div style="width: 105px">
 			<div class="thumb" style="height: 150px;">Yet another DPL test page!</div>
 			<div class="gallerytext">
@@ -449,16 +435,16 @@ File missing<br />
 			</div>
 		</div></li>
 </ul>
-!!end
+!! end
 
-!!test
+!! test
 mode=gallery (simple, no image)
-!!input
+!! wikitext
 <DynamicPageList>
 category=DPLtest
 mode=gallery
 </DynamicPageList>
-!!result
+!! html
 <ul class="gallery mw-gallery-traditional">
 		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
 			<div class="thumb" style="height: 150px;">Yet another DPL test page!</div>
@@ -485,11 +471,11 @@ File missing<br />
 			</div>
 		</div></li>
 </ul>
-!!end
+!! end
 
-!!test
+!! test
 mode=gallery (complex, with image + bad image)
-!!input
+!! wikitext
 <DynamicPageList>
 mode=gallery
 namespace=file
@@ -502,9 +488,9 @@ gallerycaption=I love Captions
 ordermethod=sortkey
 order=descending
 </DynamicPageList>
-!!result
+!! html
 <ul class="gallery mw-gallery-traditional" style="max-width: 791px;_width: 791px;">
-	<li class='gallerycaption'>I love Captions</li>
+	<li class="gallerycaption">I love Captions</li>
 		<li class="gallerybox" style="width: 105px"><div style="width: 105px">
 			<div class="thumb" style="width: 100px;"><div style="margin:25.5px auto;"><a href="/wiki/File:LoremIpsum.djvu" class="image"><img alt="LoremIpsum.djvu" src="http://example.com/images/thumb/5/5f/LoremIpsum.djvu/page1-70px-LoremIpsum.djvu.jpg" decoding="async" width="70" height="99" srcset="http://example.com/images/thumb/5/5f/LoremIpsum.djvu/page1-105px-LoremIpsum.djvu.jpg 1.5x, http://example.com/images/thumb/5/5f/LoremIpsum.djvu/page1-140px-LoremIpsum.djvu.jpg 2x" /></a></div></div>
 			<div class="gallerytext">
@@ -562,18 +548,18 @@ order=descending
 			</div>
 		</div></li>
 </ul>
-!!end
+!! end
 
-!!test
+!! test
 mode=gallery (simple showfilesize, no image)
-!!input
+!! wikitext
 <DynamicPageList>
 category=DPLtest
 mode=gallery
 galleryshowfilesize=yes
 galleryshowfilename=no
 </DynamicPageList>
-!!result
+!! html
 <ul class="gallery mw-gallery-traditional">
 		<li class="gallerybox" style="width: 155px"><div style="width: 155px">
 			<div class="thumb" style="height: 150px;">Yet another DPL test page!</div>
@@ -597,25 +583,24 @@ galleryshowfilename=no
 			</div>
 		</div></li>
 </ul>
-!!end
+!! end
 
 
 # This is a crappy test since creation and categoryadd are the
 # same for parser tests.
-!!test
+!! test
 ordermethod=created (by article id)
-!!input
+!! wikitext
 <DynamicPageList>
 category=DPLtest
 ordermethod=created
 </DynamicPageList>
-!!result
+!! html
 <ul>
 <li><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a></li> 
 <li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a></li> 
 <li><a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a></li></ul>
-
-!!end
+!! end
 
 # This one is BROKEN! I'm not sure why.
 # Seems to order it in opposite order. Maybe timestamp isn't
@@ -636,52 +621,49 @@ ordermethod=created
 #!!end
 
 
-!!test
+!! test
 ordermethod=length
-!!input
+!! wikitext
 <DynamicPageList>
 category=DPLtest
 ordermethod=length
 </DynamicPageList>
-!!result
+!! html
 <ul>
 <li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a></li> 
 <li><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a></li> 
 <li><a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a></li></ul>
+!! end
 
-!!end
-
-!!test
+!! test
 ordermethod=sortkey
-!!input
+!! wikitext
 <DynamicPageList>
 category=DPLtest
 ordermethod=sortkey
 </DynamicPageList>
-!!result
+!! html
 <ul>
 <li><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a></li> 
 <li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a></li> 
 <li><a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a></li></ul>
-
-!!end
+!! end
 
 #check to make sure the alias works.
-!!test
+!! test
 ordermethod=categorysortkey
-!!input
+!! wikitext
 <DynamicPageList>
 category=DPLtest
 ordermethod=categorysortkey
 order=ascending
 </DynamicPageList>
-!!result
+!! html
 <ul>
 <li><a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a></li> 
 <li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a></li> 
 <li><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a></li></ul>
-
-!!end
+!! end
 
 # Check {{PAGENAME}} in category clause (dates variables are somewhat more common, but
 # this is easier to check.
@@ -689,16 +671,15 @@ order=ascending
 # using {{PAGENAME:DPLtest}} because dpl uses a weird (and probably wrong way) of
 # expanding {{PAGENAME}} and friends, which doesn't work with parsertests and
 # the title= option.
-!!test
+!! test
 Magic word in category clause
-!!input
+!! wikitext
 <DynamicPageList>
 category={{PAGENAME:DPLtest}}
 </DynamicPageList>
-!!result
+!! html
 <ul>
 <li><a href="/wiki/Yet_another_DPL_test_page!" title="Yet another DPL test page!">Yet another DPL test page!</a></li> 
 <li><a href="/wiki/Talk:DPLTest2" title="Talk:DPLTest2">Talk:DPLTest2</a></li> 
 <li><a href="/wiki/DPLTest1" title="DPLTest1">DPLTest1</a></li></ul>
-
-!!end
+!! end
