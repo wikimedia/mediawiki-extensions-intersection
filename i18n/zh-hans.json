@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"Liuxinyu970226",
 			"Shinjiman",
-			"Simon Shek",
-			"Liuxinyu970226"
+			"Simon Shek"
 		]
 	},
 	"intersection-desc": "输出一个点列最近在分类中的项目，或者系数个分类的一个联系",

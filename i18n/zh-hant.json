@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Cwlin0416",
+			"EagerLin",
 			"Mark85296341",
 			"Shinjiman",
-			"Simon Shek",
-			"Cwlin0416",
-			"EagerLin"
+			"Simon Shek"
 		]
 	},
 	"intersection-desc": "可顯示一個分類或彙總多個分類內最近更改頁面的清單",

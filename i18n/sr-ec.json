@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"BadDog",
 			"FriedrickMILBarbarossa",
 			"Millosh",
-			"Rancher",
-			"BadDog"
+			"Rancher"
 		]
 	},
 	"intersection-desc": "Избације листу са знаковима за набрајање недавих ставки које се налазе у категорији или пресеку неколико категорија",
