@@ -74,11 +74,12 @@ class DynamicPageListHooks {
 
 		$parameters = explode( "\n", $input );
 
-		$parser = new Parser;
+		$services = MediaWikiServices::getInstance();
+		$parser = $services->getParserFactory()->create();
 		$parser->setTitle( $mwParser->getTitle() );
 		$poptions = new ParserOptions( $mwParser->getUser() );
 
-		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
+		$contLang = $services->getContentLanguage();
 		foreach ( $parameters as $parameter ) {
 			$paramField = explode( '=', $parameter, 2 );
 			if ( count( $paramField ) < 2 ) {
