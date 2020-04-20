@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use PageImages\PageImages;
 
 class DynamicPageListHooks {
 
