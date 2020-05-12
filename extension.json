@@ -24,11 +24,21 @@
 		"ParserFirstCallInit": "DynamicPageListHooks::onParserFirstCallInit"
 	},
 	"config": {
-		"DLPmaxCategories": 6,
-		"DLPMaxResultCount": 200,
-		"DLPAllowUnlimitedResults": false,
-		"DLPAllowUnlimitedCategories": false,
-		"DLPMaxCacheTime": 86400
+		"DLPmaxCategories": {
+			"value": 6
+		},
+		"DLPMaxResultCount": {
+			"value": 200
+		},
+		"DLPAllowUnlimitedResults": {
+			"value": false
+		},
+		"DLPAllowUnlimitedCategories": {
+			"value": false
+		},
+		"DLPMaxCacheTime": {
+			"value": 86400
+		}
 	},
-	"manifest_version": 1
+	"manifest_version": 2
 }
