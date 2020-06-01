@@ -408,7 +408,7 @@ gallerycaption=Look at my pretty gallery. {{SERVER}}
 mode=gallery
 </DynamicPageList>
 !! html
-<ul class="gallery mw-gallery-traditional" style="max-width: 791px;_width: 791px;">
+<ul class="gallery mw-gallery-traditional" style="max-width: 791px;">
 	<li class="gallerycaption">Look at my pretty gallery. http://example.org</li>
 		<li class="gallerybox" style="width: 105px"><div style="width: 105px">
 			<div class="thumb" style="height: 150px;">Yet another DPL test page!</div>
@@ -489,7 +489,7 @@ ordermethod=sortkey
 order=descending
 </DynamicPageList>
 !! html
-<ul class="gallery mw-gallery-traditional" style="max-width: 791px;_width: 791px;">
+<ul class="gallery mw-gallery-traditional" style="max-width: 791px;">
 	<li class="gallerycaption">I love Captions</li>
 		<li class="gallerybox" style="width: 105px"><div style="width: 105px">
 			<div class="thumb" style="width: 100px;"><div style="margin:25.5px auto;"><a href="/wiki/File:LoremIpsum.djvu" class="image"><img alt="LoremIpsum.djvu" src="http://example.com/images/thumb/5/5f/LoremIpsum.djvu/page1-70px-LoremIpsum.djvu.jpg" decoding="async" width="70" height="99" srcset="http://example.com/images/thumb/5/5f/LoremIpsum.djvu/page1-105px-LoremIpsum.djvu.jpg 1.5x, http://example.com/images/thumb/5/5f/LoremIpsum.djvu/page1-140px-LoremIpsum.djvu.jpg 2x" /></a></div></div>
