@@ -560,7 +560,7 @@ class DynamicPageListHooks {
 			if ( $addFirstCategoryDate ) {
 				if ( $dateFormat !== '' ) {
 					// this is a tad ugly
-					// use DateFormatter, and support disgarding year.
+					// use DateFormatter, and support discarding year.
 					$categoryDate = wfTimestamp( TS_ISO_8601, $row->cl_timestamp );
 					if ( $stripYear ) {
 						$categoryDate = $contLang->getMonthName( (int)substr( $categoryDate, 5, 2 ) )
