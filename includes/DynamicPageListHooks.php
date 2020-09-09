@@ -52,7 +52,8 @@ class DynamicPageListHooks {
 		$orderMethod = 'categoryadd';
 		$order = 'descending';
 		$redirects = 'exclude';
-		$stable = $quality = 'include';
+		$stable = 'include';
+		$quality = 'include';
 		$flaggedRevs = false;
 
 		$namespaceFiltering = false;
@@ -73,14 +74,14 @@ class DynamicPageListHooks {
 		$categories = [];
 		$excludeCategories = [];
 
-		$parameters = explode( "\n", $input );
-
 		$services = MediaWikiServices::getInstance();
 		$parser = $services->getParserFactory()->create();
 		$parser->setTitle( $mwParser->getTitle() );
 		$poptions = new ParserOptions( $mwParser->getUser() );
 
 		$contLang = $services->getContentLanguage();
+
+		$parameters = explode( "\n", $input );
 		foreach ( $parameters as $parameter ) {
 			$paramField = explode( '=', $parameter, 2 );
 			if ( count( $paramField ) < 2 ) {
@@ -94,20 +95,18 @@ class DynamicPageListHooks {
 						NS_CATEGORY,
 						$parser->transformMsg( $arg, $poptions, $mwParser->getTitle() )
 					);
-					if ( $title === null ) {
-						break;
+					if ( $title !== null ) {
+						$categories[] = $title;
 					}
-					$categories[] = $title;
 					break;
 				case 'notcategory':
 					$title = Title::makeTitleSafe(
 						NS_CATEGORY,
 						$parser->transformMsg( $arg, $poptions, $mwParser->getTitle() )
 					);
-					if ( $title === null ) {
-						break;
+					if ( $title !== null ) {
+						$excludeCategories[] = $title;
 					}
-					$excludeCategories[] = $title;
 					break;
 				case 'namespace':
 					$ns = $contLang->getNsIndex( $arg );
@@ -123,11 +122,7 @@ class DynamicPageListHooks {
 						// writing things like namespace=main
 						// so be careful when changing this code.
 						$namespaceIndex = intval( $arg );
-						if ( $namespaceIndex >= 0 ) {
-							$namespaceFiltering = true;
-						} else {
-							$namespaceFiltering = false;
-						}
+						$namespaceFiltering = ( $namespaceIndex >= 0 );
 					}
 					break;
 				case 'count':
@@ -196,37 +191,23 @@ class DynamicPageListHooks {
 					$galleryCaption = $parser->transformMsg( $arg, $poptions, $mwParser->getTitle() );
 					break;
 				case 'galleryshowfilesize':
-					switch ( $arg ) {
-						case 'no':
-						case 'false':
-							$galleryFileSize = false;
-							break;
-						case 'true':
-						default:
-							$galleryFileSize = true;
+					if ( $arg == 'no' || $arg == 'false' ) {
+						$galleryFileSize = false;
+					} else {
+						$galleryFileSize = true;
 					}
 					break;
 				case 'galleryshowfilename':
-					switch ( $arg ) {
-						case 'no':
-						case 'false':
-							$galleryFileName = false;
-							break;
-						case 'true':
-						default:
-							$galleryFileName = true;
-							break;
+					if ( $arg == 'no' || $arg == 'false' ) {
+						$galleryFileName = false;
+					} else {
+						$galleryFileName = true;
 					}
-					break;
 				case 'order':
-					switch ( $arg ) {
-						case 'ascending':
-							$order = 'ascending';
-							break;
-						case 'descending':
-						default:
-							$order = 'descending';
-							break;
+					if ( $arg == 'ascending' ) {
+						$order = 'ascending';
+					} else {
+						$order = 'descending';
 					}
 					break;
 				case 'ordermethod':
@@ -300,11 +281,7 @@ class DynamicPageListHooks {
 					}
 					break;
 				case 'suppresserrors':
-					if ( $arg == 'true' ) {
-						$suppressErrors = true;
-					} else {
-						$suppressErrors = false;
-					}
+					$suppressErrors = ( $arg == 'true' );
 					break;
 				case 'addfirstcategorydate':
 					if ( $arg === 'true' ) {
@@ -407,41 +384,29 @@ class DynamicPageListHooks {
 			$tables[] = 'flaggedpages';
 			$join['flaggedpages'] = [ 'LEFT JOIN', 'page_id = fp_page_id' ];
 
-			switch ( $stable ) {
-				case 'only':
-					$where[] = 'fp_stable IS NOT NULL';
-					break;
-				case 'exclude':
-					$where['fp_stable'] = null;
-					break;
+			if ( $stable == 'only' ) {
+				$where[] = 'fp_stable IS NOT NULL';
+			} elseif ( $stable == 'exclude' ) {
+				$where['fp_stable'] = null;
 			}
 
-			switch ( $quality ) {
-				case 'only':
-					$where[] = 'fp_quality >= 1';
-					break;
-				case 'exclude':
-					$where[] = 'fp_quality = 0 OR fp_quality IS NULL';
-					break;
+			if ( $quality == 'only' ) {
+				$where[] = 'fp_quality >= 1';
+			} elseif ( $quality == 'exclude' ) {
+				$where[] = 'fp_quality = 0 OR fp_quality IS NULL';
 			}
 		}
 
-		switch ( $redirects ) {
-			case 'only':
-				$where['page_is_redirect'] = 1;
-				break;
-			case 'exclude':
-				$where['page_is_redirect'] = 0;
-				break;
+		if ( $redirects == 'only' ) {
+			$where['page_is_redirect'] = 1;
+		} elseif ( $redirects == 'exclude' ) {
+			$where['page_is_redirect'] = 0;
 		}
 
 		if ( $ignoreSubpages ) {
 			$where[] = "page_title NOT " .
 				$dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() );
 		}
-
-		$currentTableNumber = 1;
-		$categorylinks = 'categorylinks';
 
 		if ( $useGallery && $pageImagesEnabled ) {
 			$tables['pp1'] = 'page_props';
@@ -465,6 +430,9 @@ class DynamicPageListHooks {
 			$fields['pageimage_nonfree'] = 'pp2.pp_value';
 		}
 
+		// Alias each category as c1, c2, etc.
+		$currentTableNumber = 1;
+		$categorylinks = 'categorylinks';
 		foreach ( $categories as $cat ) {
 			$join["c$currentTableNumber"] = [
 				'INNER JOIN',
@@ -510,9 +478,6 @@ class DynamicPageListHooks {
 			case 'categorysortkey':
 				$sqlSort = "c1.cl_type $sqlOrder, c1.cl_sortkey";
 				break;
-			case 'popularity':
-				$sqlSort = 'page_counter';
-				break;
 			case 'categoryadd':
 				$sqlSort = 'c1.cl_timestamp';
 				break;
@@ -541,10 +506,6 @@ class DynamicPageListHooks {
 			return wfMessage( 'intersection_noresults' )->inContentLanguage()->escaped();
 		}
 
-		// start unordered list
-		$output = $startList . "\n";
-
-		$categoryDate = '';
 		$df = null;
 		if ( $dateFormat !== '' && $addFirstCategoryDate ) {
 			$df = DateFormatter::getInstance();
@@ -554,9 +515,10 @@ class DynamicPageListHooks {
 		// for each result, or something similar if the list uses other
 		// startlist/endlist
 		$articleList = [];
-		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
+		$linkRenderer = $services->getLinkRenderer();
 		foreach ( $res as $row ) {
 			$title = Title::makeTitle( $row->page_namespace, $row->page_title );
+			$categoryDate = '';
 			if ( $addFirstCategoryDate ) {
 				if ( $dateFormat !== '' ) {
 					// this is a tad ugly
@@ -580,7 +542,6 @@ class DynamicPageListHooks {
 			}
 
 			$query = [];
-
 			if ( $googleHack ) {
 				$query['dpl_id'] = intval( $row->page_id );
 			}
@@ -592,7 +553,6 @@ class DynamicPageListHooks {
 			}
 
 			if ( $useGallery ) {
-				$file = null;
 				$link = '';
 				if ( $galleryFileName ) {
 					$link = $linkRenderer->makeKnownLink(
@@ -602,6 +562,7 @@ class DynamicPageListHooks {
 					) . "\n";
 				}
 
+				$file = null;
 				if ( $title->getNamespace() !== NS_FILE && $pageImagesEnabled ) {
 					$file = $row->pageimage_free ?: $row->pageimage_nonfree;
 				}
@@ -635,7 +596,6 @@ class DynamicPageListHooks {
 			}
 		}
 
-		// end unordered list
 		if ( $useGallery ) {
 			$gallery->setHideBadImages();
 			$gallery->setShowFilename( false );
@@ -652,17 +612,18 @@ class DynamicPageListHooks {
 			if ( $galleryCaption !== '' ) {
 				$gallery->setCaption( $galleryCaption ); // gallery class escapes string
 			}
-			$output = $gallery->toHtml();
-		} else {
-			$output .= $startItem;
-			if ( $inlineMode ) {
-				$output .= $contLang->commaList( $articleList );
-			} else {
-				$output .= implode( "$endItem \n$startItem", $articleList );
-			}
-			$output .= $endItem;
-			$output .= $endList . "\n";
+			return $gallery->toHtml();
 		}
+
+		// start unordered list
+		$output = $startList . "\n" . $startItem;
+		if ( $inlineMode ) {
+			$output .= $contLang->commaList( $articleList );
+		} else {
+			$output .= implode( "$endItem \n$startItem", $articleList );
+		}
+		$output .= $endItem . $endList . "\n";
+		// end unordered list
 
 		return $output;
 	}
