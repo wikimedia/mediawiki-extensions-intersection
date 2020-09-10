@@ -38,6 +38,10 @@
 		},
 		"DLPMaxCacheTime": {
 			"value": 86400
+		},
+		"DLPQueryCacheTime": {
+			"value": 0,
+			"description": "This is the query cache. It can help with situations where you have a template with the same query used on a large number of pages all being refreshed at once. The query cache cannot be purged. Suggested value between 30 to 600."
 		}
 	},
 	"manifest_version": 2
