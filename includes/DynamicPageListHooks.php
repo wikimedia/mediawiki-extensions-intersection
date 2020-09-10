@@ -2,6 +2,7 @@
 
 use MediaWiki\MediaWikiServices;
 use PageImages\PageImages;
+use Wikimedia\Rdbms\IDatabase;
 
 class DynamicPageListHooks {
 
@@ -495,10 +496,12 @@ class DynamicPageListHooks {
 			$options['OFFSET'] = $offset;
 		}
 
-		// process the query
-		$res = $dbr->select( $tables, $fields, $where, __METHOD__, $options, $join );
+		// To track down what page offending queries are on.
+		// For some reason, $fname doesn't get escaped by our code?!
+		$pageName = str_replace( [ '*', '/' ], '-', $parser->getTitle()->getPrefixedDBkey() );
+		$rows = self::processQuery( $pageName, $dbr, $tables, $fields, $where, $options, $join );
 
-		if ( $dbr->numRows( $res ) == 0 ) {
+		if ( count( $rows ) == 0 ) {
 			if ( $suppressErrors ) {
 				return '';
 			}
@@ -516,7 +519,7 @@ class DynamicPageListHooks {
 		// startlist/endlist
 		$articleList = [];
 		$linkRenderer = $services->getLinkRenderer();
-		foreach ( $res as $row ) {
+		foreach ( $rows as $row ) {
 			$title = Title::makeTitle( $row->page_namespace, $row->page_title );
 			$categoryDate = '';
 			if ( $addFirstCategoryDate ) {
@@ -626,5 +629,56 @@ class DynamicPageListHooks {
 		// end unordered list
 
 		return $output;
+	}
+
+	/**
+	 * @param string $pageName Name of page (for logging purposes)
+	 * @param IDatabase $dbr
+	 * @param array $tables
+	 * @param array $fields
+	 * @param array $where
+	 * @param array $options
+	 * @param array $join
+	 * @return array
+	 */
+	public static function processQuery(
+		string $pageName,
+		IDatabase $dbr,
+		array $tables,
+		array $fields,
+		array $where,
+		array $options,
+		array $join
+	) {
+		global $wgDLPQueryCacheTime;
+		$qname = __METHOD__ . ' - ' . $pageName;
+		$doQuery = function () use ( $qname, $dbr, $tables, $fields, $where, $options, $join ) {
+			$res = $dbr->select( $tables, $fields, $where, $qname, $options, $join );
+			// Serializing a ResultWrapper doesn't work.
+			return iterator_to_array( $res );
+		};
+		if ( $wgDLPQueryCacheTime <= 0 ) {
+			return $doQuery();
+		}
+		// This is meant to guard against the case where a lot of pages get parsed at once
+		// all with the same query. See T262240. This should be a short cache, e.g. 120 seconds.
+		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+		// Don't use actual input as hash, because some per-page parsing can happen to options.
+		$query = $dbr->selectSQLText( $tables, $fields, $where, '', $options, $join );
+		return $cache->getWithSetCallback(
+			$cache->makeKey( "DPLQuery", hash( "sha256", $query ) ),
+			$wgDLPQueryCacheTime,
+			function ( $oldVal, &$ttl, &$setOpts ) use ( $doQuery, $dbr ){
+				// TODO: Maybe could do something like check max(cl_timestamp) in
+				// category and the count in category.cat_pages, and invalidate if
+				// it appears like someone added or removed something from the category.
+				$setOpts += Database::getCacheSetOptions( $dbr );
+				return $doQuery();
+			},
+			[
+				'lowTTL' => min( $cache::TTL_MINUTE, floor( $wgDLPQueryCacheTime * 0.75 ) ),
+				'pcTTL' => min( $cache::TTL_PROC_LONG, $wgDLPQueryCacheTime )
+			]
+		);
 	}
 }
