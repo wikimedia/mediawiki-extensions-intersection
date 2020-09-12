@@ -65,6 +65,7 @@ class DynamicPageListHooks {
 		$googleHack = false;
 
 		$suppressErrors = false;
+		$suppressPCErrors = false;
 		$showNamespace = true;
 		$addFirstCategoryDate = false;
 		$ignoreSubpages = false;
@@ -282,7 +283,14 @@ class DynamicPageListHooks {
 					}
 					break;
 				case 'suppresserrors':
-					$suppressErrors = ( $arg == 'true' );
+					if ( $arg == 'true' || $arg === 'all' ) {
+						$suppressErrors = true;
+						if ( $arg === 'all' ) {
+							$suppressPCErrors = true;
+						}
+					} else {
+						$suppressErrors = false;
+					}
 					break;
 				case 'addfirstcategorydate':
 					if ( $arg === 'true' ) {
@@ -498,9 +506,18 @@ class DynamicPageListHooks {
 
 		// To track down what page offending queries are on.
 		// For some reason, $fname doesn't get escaped by our code?!
-		$pageName = str_replace( [ '*', '/' ], '-', $parser->getTitle()->getPrefixedDBkey() );
+		$pageName = str_replace( [ '*', '/' ], '-', $mwParser->getTitle()->getPrefixedDBkey() );
 		$rows = self::processQuery( $pageName, $dbr, $tables, $fields, $where, $options, $join );
-
+		if ( $rows === false ) {
+			// This error path is very fast (We exit immediately if poolcounter is full)
+			// Thus it should be safe to try again in ~5 minutes.
+			$mwParser->getOutput()->updateCacheExpiry( 4 * 60 + mt_rand( 0, 120 ) );
+			// Pool counter all threads in use.
+			if ( $suppressPCErrors ) {
+				return '';
+			}
+			return wfMessage( 'intersection_pcerror' )->inContentLanguage()->escaped();
+		}
 		if ( count( $rows ) == 0 ) {
 			if ( $suppressErrors ) {
 				return '';
@@ -639,7 +656,7 @@ class DynamicPageListHooks {
 	 * @param array $where
 	 * @param array $options
 	 * @param array $join
-	 * @return array
+	 * @return array|bool List of stdObj's or false on poolcounter being full
 	 */
 	public static function processQuery(
 		string $pageName,
@@ -652,14 +669,31 @@ class DynamicPageListHooks {
 	) {
 		global $wgDLPQueryCacheTime;
 		$qname = __METHOD__ . ' - ' . $pageName;
+
 		$doQuery = function () use ( $qname, $dbr, $tables, $fields, $where, $options, $join ) {
 			$res = $dbr->select( $tables, $fields, $where, $qname, $options, $join );
 			// Serializing a ResultWrapper doesn't work.
 			return iterator_to_array( $res );
 		};
+
+		// We're probably already inside a pool-counter lock due to parse, so nowait.
+		$poolCounterKey = "nowait:dpl-query:" . WikiMap::getCurrentWikiId();
+		// The goal here is to have an emergency shutoff break to prevent a query
+		// pile-up if a large number of slow DPL queries are run at once.
+		// This is meant to be in total across the wiki. The WANObjectCache stuff below this
+		// is meant to make the somewhat common case of the same DPL query being run multiple
+		// times due to template usage fast, where this is not meant to speed things up, but
+		// to have an emergency stop before things get out of hand.
+		// Recommended config is probably something like 15 workers normally and
+		// 5 workers if DB seems to have excessive load.
+		$worker = new PoolCounterWorkViaCallback( 'DPL', $poolCounterKey, [
+			'doWork' => $doQuery,
+		] );
+
 		if ( $wgDLPQueryCacheTime <= 0 ) {
-			return $doQuery();
+			return $worker->execute();
 		}
+
 		// This is meant to guard against the case where a lot of pages get parsed at once
 		// all with the same query. See T262240. This should be a short cache, e.g. 120 seconds.
 		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
@@ -668,12 +702,21 @@ class DynamicPageListHooks {
 		return $cache->getWithSetCallback(
 			$cache->makeKey( "DPLQuery", hash( "sha256", $query ) ),
 			$wgDLPQueryCacheTime,
-			function ( $oldVal, &$ttl, &$setOpts ) use ( $doQuery, $dbr ){
+			function ( $oldVal, &$ttl, &$setOpts ) use ( $worker, $dbr ){
 				// TODO: Maybe could do something like check max(cl_timestamp) in
 				// category and the count in category.cat_pages, and invalidate if
 				// it appears like someone added or removed something from the category.
 				$setOpts += Database::getCacheSetOptions( $dbr );
-				return $doQuery();
+				$res = $worker->execute();
+				if ( $res === false ) {
+					// Do not cache errors.
+					$ttl = WANObjectCache::TTL_UNCACHEABLE;
+					// If we have oldVal, prefer it to error
+					if ( is_array( $oldVal ) ) {
+						return $oldVal;
+					}
+				}
+				return $res;
 			},
 			[
 				'lowTTL' => min( $cache::TTL_MINUTE, floor( $wgDLPQueryCacheTime * 0.75 ) ),
