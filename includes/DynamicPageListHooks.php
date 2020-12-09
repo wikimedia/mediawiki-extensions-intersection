@@ -300,7 +300,7 @@ class DynamicPageListHooks {
 						$addFirstCategoryDate = true;
 						$dateFormat = $arg;
 						if ( strlen( $dateFormat ) == 2 ) {
-							$dateFormat = $dateFormat . 'y'; # DateFormatter does not support no year. work around
+							$dateFormat .= 'y'; # DateFormatter does not support no year. work around
 							$stripYear = true;
 						}
 					} else {
