@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\DynamicPageList;
 use DateFormatter;
 use ExtensionRegistry;
 use ImageGalleryBase;
-use Linker;
 use MediaWiki\MediaWikiServices;
 use MWException;
 use PageImages\PageImages;
@@ -621,13 +620,16 @@ class Hooks {
 					);
 				}
 			} else {
+				// FIXME: per T17739 and T22818, forcearticlepath
+				// was used, this may be unnecessary nowadays
+				// depending on a full rollout of GoogleNewsSitemap
 				$articleList[] = htmlspecialchars( $categoryDate ) .
-					Linker::link(
-						$title,
-						htmlspecialchars( $titleText ),
-						$linkOptions,
-						$query,
-						[ 'forcearticlepath', 'known' ]
+					MediaWikiServices::getInstance()->getLinkRendererFactory()
+						->createFromLegacyOptions( [ 'forcearticlepath' ] )->makeKnownLink(
+							$title,
+							$titleText,
+							$linkOptions,
+							$query
 					);
 			}
 		}
