@@ -670,7 +670,7 @@ class DynamicPageListHooks {
 		global $wgDLPQueryCacheTime;
 		$qname = __METHOD__ . ' - ' . $pageName;
 
-		$doQuery = function () use ( $qname, $dbr, $tables, $fields, $where, $options, $join ) {
+		$doQuery = static function () use ( $qname, $dbr, $tables, $fields, $where, $options, $join ) {
 			$res = $dbr->select( $tables, $fields, $where, $qname, $options, $join );
 			// Serializing a ResultWrapper doesn't work.
 			return iterator_to_array( $res );
@@ -702,7 +702,7 @@ class DynamicPageListHooks {
 		return $cache->getWithSetCallback(
 			$cache->makeKey( "DPLQuery", hash( "sha256", $query ) ),
 			$wgDLPQueryCacheTime,
-			function ( $oldVal, &$ttl, &$setOpts ) use ( $worker, $dbr ){
+			static function ( $oldVal, &$ttl, &$setOpts ) use ( $worker, $dbr ){
 				// TODO: Maybe could do something like check max(cl_timestamp) in
 				// category and the count in category.cat_pages, and invalidate if
 				// it appears like someone added or removed something from the category.
