@@ -30,6 +30,7 @@ class DynamicPageListHooks {
 		if ( $wgDLPMaxCacheTime !== false ) {
 			$mwParser->getOutput()->updateCacheExpiry( $wgDLPMaxCacheTime );
 		}
+		$mwParser->addTrackingCategory( 'intersection-category' );
 
 		$countSet = false;
 		$count = 0;
