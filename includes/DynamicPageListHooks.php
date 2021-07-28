@@ -369,7 +369,7 @@ class DynamicPageListHooks {
 		}
 
 		// build the SQL query
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = wfGetDB( DB_REPLICA, 'vslow' );
 		$tables = [ 'page' ];
 		$fields = [ 'page_namespace', 'page_title' ];
 		$where = [];
