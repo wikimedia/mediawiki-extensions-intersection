@@ -23,6 +23,9 @@
 	"Hooks": {
 		"ParserFirstCallInit": "DynamicPageListHooks::onParserFirstCallInit"
 	},
+	"TrackingCategories": [
+		"intersection-category"
+	],
 	"config": {
 		"DLPmaxCategories": {
 			"value": 6
