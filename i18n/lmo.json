@@ -8,5 +8,6 @@
 	"intersection_toomanycats": "Erorː Trope categorieǃ",
 	"intersection_noresults": "A gh'è n'è minga de pagine che sodisfen sti criteri chì.",
 	"intersection_noincludecats": "Errore: A gh'è besogn de includ almanch una categoria opur specificà un spazzi di nom.",
-	"intersection_pcerror": "La lista la po vesser minga visualizzada perchè el server l'è stracaregh. Per piesè, prova anmò pussee tard."
+	"intersection_pcerror": "La lista la po vesser minga visualizzada perchè el server l'è stracaregh. Per piesè, prova anmò pussee tard.",
+	"intersection-category": "Pagine che droven la DynamicPageList"
 }
