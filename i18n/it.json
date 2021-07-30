@@ -10,5 +10,6 @@
 	"intersection-desc": "Visualizza un elenco puntato con gli elementi più recenti inseriti in una categoria o appartenenti all'intersezione di più categorie",
 	"intersection_toomanycats": "Errore: Numero di categorie eccessivo.",
 	"intersection_noresults": "Nessuna pagina soddisfa i criteri di selezione.",
-	"intersection_noincludecats": "Errore: È necessario includere almeno una categoria oppure specificare un namespace."
+	"intersection_noincludecats": "Errore: È necessario includere almeno una categoria oppure specificare un namespace.",
+	"intersection-category-desc": "La pagina include un tag <code><nowiki><DynamicPageList></nowiki></code>"
 }
