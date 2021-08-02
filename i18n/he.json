@@ -11,5 +11,6 @@
 	"intersection_noresults": "אין דפים שמתאימים לתנאים האלה.",
 	"intersection_noincludecats": "שגיאה: יש לכלול לפחות קטגוריה אחת, או לציין מרחב שם!",
 	"intersection_pcerror": "הרשימה הזאת אינה יכולה להיות מוצגת כי השרתים עמוסים מדי. נא לנסות שוב מאוחר יותר.",
-	"intersection-category": "דפים המשתמשים ברשימות הדפים הדינמיות"
+	"intersection-category": "דפים המשתמשים ברשימות הדפים הדינמיות",
+	"intersection-category-desc": "הדף הזה מכיל תג <code><nowiki><DynamicPageList></nowiki></code>"
 }
