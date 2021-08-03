@@ -3,6 +3,7 @@
 		"authors": [
 			"Beta16",
 			"BrokenArrow",
+			"Candalua",
 			"Codicorumus",
 			"Darth Kule"
 		]
@@ -11,5 +12,6 @@
 	"intersection_toomanycats": "Errore: Numero di categorie eccessivo.",
 	"intersection_noresults": "Nessuna pagina soddisfa i criteri di selezione.",
 	"intersection_noincludecats": "Errore: È necessario includere almeno una categoria oppure specificare un namespace.",
+	"intersection-category": "Pagine che usano DynamicPageList",
 	"intersection-category-desc": "La pagina include un tag <code><nowiki><DynamicPageList></nowiki></code>"
 }
