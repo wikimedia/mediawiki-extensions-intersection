@@ -79,8 +79,8 @@ class DynamicPageListHooks {
 
 		$services = MediaWikiServices::getInstance();
 		$parser = $services->getParserFactory()->create();
-		$parser->setTitle( $mwParser->getTitle() );
-		$poptions = new ParserOptions( $mwParser->getUser() );
+		$parser->setPage( $mwParser->getPage() );
+		$poptions = new ParserOptions( $mwParser->getUserIdentity() );
 
 		$contLang = $services->getContentLanguage();
 
