@@ -3,11 +3,13 @@
 		"authors": [
 			"Li-sung",
 			"Matěj Grabovský",
-			"Mormegil"
+			"Mormegil",
+			"Robins7"
 		]
 	},
 	"intersection-desc": "Vypíše seznam nejnovějších položek v kategorii nebo sjednotí několik kategorií",
 	"intersection_toomanycats": "Error: Příliš mnoho kategorií!",
 	"intersection_noresults": "Tato kritéria nesplňují žádné stránky.",
-	"intersection_noincludecats": "Error: Musíte zahrnout alespoň jednu kategorii nebo určit jmenný prostor!"
+	"intersection_noincludecats": "Error: Musíte zahrnout alespoň jednu kategorii nebo určit jmenný prostor!",
+	"intersection-category": "Stránky používající DynamicPageList"
 }
