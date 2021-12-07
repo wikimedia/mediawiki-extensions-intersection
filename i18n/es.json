@@ -5,11 +5,13 @@
 			"Armando-Martin",
 			"Macofe",
 			"Remember the dot",
-			"Sanbec"
+			"Sanbec",
+			"MarcoAurelio"
 		]
 	},
 	"intersection-desc": "Devuelve una lista de los elementos más recientes que están en una categoría o en una intersección de varias categorías",
 	"intersection_toomanycats": "Error: demasiadas categorías",
 	"intersection_noresults": "Ninguna página cumple estos criterios.",
-	"intersection_noincludecats": "Error: debes incluir al menos una categoría, o especificar un espacio de nombres"
+	"intersection_noincludecats": "Error: debes incluir al menos una categoría, o especificar un espacio de nombres",
+	"intersection_pcerror": "No se puede mostrar la lista porque nuestros servidores se encuentran sobrecargados. Por favor, inténtalo más tarde."
 }
