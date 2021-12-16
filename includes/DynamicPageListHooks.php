@@ -668,8 +668,11 @@ class DynamicPageListHooks {
 		array $options,
 		array $join
 	) {
-		global $wgDLPQueryCacheTime;
+		global $wgDLPQueryCacheTime, $wgDLPMaxQueryTime;
 		$qname = __METHOD__ . ' - ' . $pageName;
+		if ( $wgDLPMaxQueryTime ) {
+			$options['MAX_EXECUTION_TIME'] = $wgDLPMaxQueryTime;
+		}
 
 		$doQuery = static function () use ( $qname, $dbr, $tables, $fields, $where, $options, $join ) {
 			$res = $dbr->select( $tables, $fields, $where, $qname, $options, $join );
