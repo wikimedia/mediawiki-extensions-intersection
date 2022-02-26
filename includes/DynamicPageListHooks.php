@@ -2,6 +2,7 @@
 
 use MediaWiki\MediaWikiServices;
 use PageImages\PageImages;
+use Wikimedia\Rdbms\Database;
 use Wikimedia\Rdbms\IDatabase;
 
 class DynamicPageListHooks {
