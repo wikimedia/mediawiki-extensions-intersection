@@ -12,8 +12,8 @@
 		"MediaWiki": ">= 1.37.0"
 	},
 	"license-name": "GPL-2.0-or-later",
-	"AutoloadClasses": {
-		"DynamicPageListHooks": "includes/DynamicPageListHooks.php"
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\DynamicPageList\\": "includes/"
 	},
 	"MessagesDirs": {
 		"DynamicPageList": [
@@ -21,7 +21,7 @@
 		]
 	},
 	"Hooks": {
-		"ParserFirstCallInit": "DynamicPageListHooks::onParserFirstCallInit"
+		"ParserFirstCallInit": "MediaWiki\\Extension\\DynamicPageList\\Hooks::onParserFirstCallInit"
 	},
 	"TrackingCategories": [
 		"intersection-category"

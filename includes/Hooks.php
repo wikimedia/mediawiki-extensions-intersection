@@ -1,11 +1,24 @@
 <?php
 
+namespace MediaWiki\Extension\DynamicPageList;
+
+use DateFormatter;
+use ExtensionRegistry;
+use ImageGalleryBase;
+use Linker;
 use MediaWiki\MediaWikiServices;
+use MWException;
 use PageImages\PageImages;
+use Parser;
+use ParserOptions;
+use PoolCounterWorkViaCallback;
+use Title;
+use WANObjectCache;
+use WikiMap;
 use Wikimedia\Rdbms\Database;
 use Wikimedia\Rdbms\IDatabase;
 
-class DynamicPageListHooks {
+class Hooks {
 
 	/**
 	 * Set up the <DynamicPageList> tag.
@@ -13,7 +26,7 @@ class DynamicPageListHooks {
 	 * @return bool true
 	 */
 	public static function onParserFirstCallInit( Parser $parser ) {
-		$parser->setHook( 'DynamicPageList', 'DynamicPageListHooks::renderDynamicPageList' );
+		$parser->setHook( 'DynamicPageList', [ self::class, 'renderDynamicPageList' ] );
 		return true;
 	}
 
