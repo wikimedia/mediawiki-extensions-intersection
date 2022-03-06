@@ -207,6 +207,7 @@ class DynamicPageListHooks {
 					} else {
 						$galleryFileName = true;
 					}
+					break;
 				case 'order':
 					if ( $arg == 'ascending' ) {
 						$order = 'ascending';
