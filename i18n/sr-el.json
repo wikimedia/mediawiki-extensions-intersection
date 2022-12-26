@@ -5,7 +5,7 @@
 			"Michaello"
 		]
 	},
-	"intersection-desc": "Daje redni spisak najskorije dodatih članaka u jednu ili više kategorija.",
+	"intersection-desc": "Izbacije listu sa znakovima za nabrajanje nedavih stavki koje se nalaze u kategoriji ili preseku nekoliko kategorija",
 	"intersection_toomanycats": "Greška: Previše kategorija!",
 	"intersection_noresults": "Nijedna stranica ne zadovoljava navedene kriterijume.",
 	"intersection_noincludecats": "Greška: Potrebno je uključiti bar jednu kategoriju ili odrediti imenski prostor!"
