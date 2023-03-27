@@ -5,11 +5,12 @@
 			"Grondin",
 			"IAlex",
 			"Urhixidur",
-			"Verdy p"
+			"Verdy p",
+			"Florian COLLIN"
 		]
 	},
-	"intersection-desc": "Affiche une liste, à puces, des articles les plus récents dans une catégorie, ou à partir d’une combinaison de plusieurs catégories.",
-	"intersection_toomanycats": "Erreur : trop de catégories !",
+	"intersection-desc": "Affiche une liste à puces des articles les plus récents qui sont membres d’une catégorie ou d’une intersection de plusieurs catégories.",
+	"intersection_toomanycats": "Erreur : trop de catégories !",
 	"intersection_noresults": "Aucune page ne correspond à ces critères.",
-	"intersection_noincludecats": "Erreur : vous devez inclure au moins une catégorie, ou préciser un espace de noms !"
+	"intersection_noincludecats": "Erreur : vous devez inclure au moins une catégorie ou bien préciser un espace de noms !"
 }
