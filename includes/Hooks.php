@@ -745,4 +745,13 @@ class Hooks {
 			]
 		);
 	}
+
+	/**
+	 * Use legacy gallery syntax in tests.
+	 * FIXME the tests should be updated instead
+	 * @param array &$globals
+	 */
+	public static function onParserTestGlobals( array &$globals ) {
+		$globals['wgParserEnableLegacyMediaDOM'] = true;
+	}
 }
