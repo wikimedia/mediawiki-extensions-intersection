@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Dbc334"
+			"Dbc334",
+			"Eleassar"
 		]
 	},
 	"intersection-desc": "Izpiše seznam zadnjih predmetov v kategoriji ali presek več kategorij",
 	"intersection_toomanycats": "Napaka: Preveč kategorij!",
-	"intersection_noresults": "Nobena stran ne ustreza merilom.",
+	"intersection_noresults": "Tem merilom ne ustreza nobena stran.",
 	"intersection_noincludecats": "Napaka: Vključiti morate vsaj eno kategorijo ali določiti imenski prostor!"
 }
