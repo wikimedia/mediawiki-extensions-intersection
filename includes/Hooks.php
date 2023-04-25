@@ -6,6 +6,7 @@ use DateFormatter;
 use ExtensionRegistry;
 use ImageGalleryBase;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\WikiMap\WikiMap;
 use MWException;
 use PageImages\PageImages;
 use Parser;
@@ -13,7 +14,6 @@ use ParserOptions;
 use PoolCounterWorkViaCallback;
 use Title;
 use WANObjectCache;
-use WikiMap;
 use Wikimedia\Rdbms\Database;
 use Wikimedia\Rdbms\IDatabase;
 
