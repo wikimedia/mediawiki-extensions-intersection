@@ -2,11 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"Albertas",
-			"Matasg"
+			"Matasg",
+			"Nokeoo"
 		]
 	},
 	"intersection-desc": "Išveda suženklintą sąrašą naujausių elementų, slypinčių kategorijoje arba kelių kategorijų sankirtoje",
 	"intersection_toomanycats": "Error: Per daug kategorijų!",
 	"intersection_noresults": "Nėra puslapių, kurie atitiktų šiuos kriterijus.",
-	"intersection_noincludecats": "Error: Jums reikia įtraukti bent vieną kategoriją, arba nurodyti vardų sritį!"
+	"intersection_noincludecats": "Error: Jums reikia įtraukti bent vieną kategoriją, arba nurodyti vardų sritį!",
+	"intersection_pcerror": "Šio sąrašo negalima parodyti, nes serveriai perkrauti. Pabandykite dar kartą vėliau.",
+	"intersection-category": "Puslapiai, naudojantys DynamicPageList",
+	"intersection-category-desc": "Puslapyje yra <code><nowiki><DynamicPageList></nowiki></code> žyma"
 }
