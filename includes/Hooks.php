@@ -7,12 +7,12 @@ use ExtensionRegistry;
 use ImageGalleryBase;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\WikiMap\WikiMap;
-use MWException;
 use PageImages\PageImages;
 use Parser;
 use ParserOptions;
 use PoolCounterWorkViaCallback;
 use Title;
+use UnexpectedValueException;
 use WANObjectCache;
 use Wikimedia\Rdbms\Database;
 use Wikimedia\Rdbms\IDatabase;
@@ -507,7 +507,7 @@ class Hooks {
 				break;
 			default:
 				// Should never reach here
-				throw new MWException( "Invalid ordermethod $orderMethod" );
+				throw new UnexpectedValueException( "Invalid ordermethod $orderMethod" );
 		}
 
 		$options['ORDER BY'] = "$sqlSort $sqlOrder";
