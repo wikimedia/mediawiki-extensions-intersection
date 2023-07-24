@@ -1,8 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
-			"Shinjiman",
-			"Yueman"
+			"Winston Sung"
 		]
 	},
 	"intersection-desc": "輸出一個點列最近響分類嘅項目，或者係幾個分類嘅一個聯繫",
