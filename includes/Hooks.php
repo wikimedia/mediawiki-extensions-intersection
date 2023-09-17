@@ -5,6 +5,8 @@ namespace MediaWiki\Extension\DynamicPageList;
 use DateFormatter;
 use ExtensionRegistry;
 use ImageGalleryBase;
+use MediaWiki\Hook\ParserFirstCallInitHook;
+use MediaWiki\Hook\ParserTestGlobalsHook;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
@@ -17,16 +19,17 @@ use WANObjectCache;
 use Wikimedia\Rdbms\Database;
 use Wikimedia\Rdbms\IDatabase;
 
-class Hooks {
+class Hooks implements
+	ParserFirstCallInitHook,
+	ParserTestGlobalsHook
+{
 
 	/**
 	 * Set up the <DynamicPageList> tag.
 	 * @param Parser $parser
-	 * @return bool true
 	 */
-	public static function onParserFirstCallInit( Parser $parser ) {
+	public function onParserFirstCallInit( $parser ) {
 		$parser->setHook( 'DynamicPageList', [ self::class, 'renderDynamicPageList' ] );
-		return true;
 	}
 
 	/**
@@ -751,7 +754,7 @@ class Hooks {
 	 * FIXME the tests should be updated instead
 	 * @param array &$globals
 	 */
-	public static function onParserTestGlobals( array &$globals ) {
+	public function onParserTestGlobals( &$globals ) {
 		$globals['wgParserEnableLegacyMediaDOM'] = true;
 	}
 }

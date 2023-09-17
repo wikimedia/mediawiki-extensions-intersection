@@ -21,8 +21,13 @@
 		]
 	},
 	"Hooks": {
-		"ParserFirstCallInit": "MediaWiki\\Extension\\DynamicPageList\\Hooks::onParserFirstCallInit",
-		"ParserTestGlobals": "MediaWiki\\Extension\\DynamicPageList\\Hooks::onParserTestGlobals"
+		"ParserFirstCallInit": "main",
+		"ParserTestGlobals": "main"
+	},
+	"HookHandlers": {
+		"main": {
+			"class": "MediaWiki\\Extension\\DynamicPageList\\Hooks"
+		}
 	},
 	"TrackingCategories": [
 		"intersection-category"
