@@ -3,7 +3,8 @@
 		"authors": [
 			"Mainframe98",
 			"SPQRobin",
-			"Siebrand"
+			"Siebrand",
+			"McDutchie"
 		]
 	},
 	"intersection-desc": "Geeft als uitvoer een ongenummerde lijst met de meest recent toegevoegde items in een categorie, of een combinatie van categorieën",
@@ -11,5 +12,6 @@
 	"intersection_noresults": "Geen enkele pagina voldoet aan deze criteria.",
 	"intersection_noincludecats": "Fout: u moet ten minste een categorie of een naamruimte opgeven!",
 	"intersection_pcerror": "Deze lijst kan niet worden weergegeven omdat de servers overbelast zijn. Probeer het later opnieuw.",
-	"intersection-category": "Pagina's die DynamicPageList gebruiken"
+	"intersection-category": "Pagina's die DynamicPageList gebruiken",
+	"intersection-category-desc": "De pagina bevat een <code><nowiki><DynamicPageList></nowiki></code>-tag."
 }
