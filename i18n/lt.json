@@ -12,5 +12,5 @@
 	"intersection_noincludecats": "Error: Jums reikia įtraukti bent vieną kategoriją, arba nurodyti vardų sritį!",
 	"intersection_pcerror": "Šio sąrašo negalima parodyti, nes serveriai perkrauti. Pabandykite dar kartą vėliau.",
 	"intersection-category": "Puslapiai, naudojantys DynamicPageList",
-	"intersection-category-desc": "Puslapyje yra <code><nowiki><DynamicPageList></nowiki></code> žyma"
+	"intersection-category-desc": "Puslapyje yra <code>&lt;DynamicPageList&gt;</code> žyma"
 }

@@ -15,5 +15,5 @@
 	"intersection_noincludecats": "错误：需要包含至少一个分类，或指定一个命名空间！",
 	"intersection_pcerror": "由于服务器过载，无法显示此列表。请稍后再试。",
 	"intersection-category": "使用DynamicPageList的页面",
-	"intersection-category-desc": "页面包含<code><nowiki><DynamicPageList></nowiki></code>标签。"
+	"intersection-category-desc": "页面包含<code>&lt;DynamicPageList&gt;</code>标签。"
 }

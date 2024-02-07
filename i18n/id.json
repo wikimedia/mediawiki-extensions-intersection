@@ -12,5 +12,5 @@
 	"intersection_noincludecats": "DynamicPageList: Anda perlu mencantumkan paling tidak satu kategori, atau menyebutkan satu ruang nama!",
 	"intersection_pcerror": "Daftar ini tidak bisa ditampilkan karena peladen sedang sibuk. Tolong coba lagi nanti.",
 	"intersection-category": "Halaman yang menggunakan DynamicPageList",
-	"intersection-category-desc": "Halaman yang menyertakan tag <code><nowiki><DynamicPageList></nowiki></code>."
+	"intersection-category-desc": "Halaman yang menyertakan tag <code>&lt;DynamicPageList&gt;</code>."
 }

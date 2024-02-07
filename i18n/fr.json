@@ -15,5 +15,5 @@
 	"intersection_noincludecats": "Erreur : vous devez inclure au moins une catégorie ou bien préciser un espace de noms !",
 	"intersection_pcerror": "Cette liste ne peut pas être affichée car les serveurs sont surchargés. Veuillez réessayer plus tard.",
 	"intersection-category": "Pages utilisant DynamicPageList",
-	"intersection-category-desc": "La page inclut une balise <code><nowiki><DynamicPageList></nowiki></code>"
+	"intersection-category-desc": "La page inclut une balise <code>&lt;DynamicPageList&gt;</code>"
 }

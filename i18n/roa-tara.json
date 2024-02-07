@@ -10,5 +10,5 @@
 	"intersection_noincludecats": "Errore: Tu è abbesogne de 'ngludere ninde ninde 'na categorije, o specificà 'nu namespace!",
 	"intersection_pcerror": "L'elenghe non ge pò essere 'ndrucate purcé le server stonne troppe careche. Pruève arrete.",
 	"intersection-category": "Pàggene ca ausane DynamicPageList",
-	"intersection-category-desc": "Sta pàgene tène 'nu tag <code><nowiki><DynamicPageList></nowiki></code>"
+	"intersection-category-desc": "Sta pàgene tène 'nu tag <code>&lt;DynamicPageList&gt;</code>"
 }

@@ -12,5 +12,5 @@
 	"intersection_noincludecats": "Dynamisk sideliste: Du må inkludere minst én kategori, eller oppgi et navnerom!",
 	"intersection_pcerror": "Denne listen kan ikke vises fordi tjenerne er overbelastet for øyeblikket. Prøv igjen senere.",
 	"intersection-category": "Sider som bruker DynamicPageList",
-	"intersection-category-desc": "Denne siden inneholder en <code><nowiki><DynamicPageList></nowiki></code>-tagg"
+	"intersection-category-desc": "Denne siden inneholder en <code>&lt;DynamicPageList&gt;</code>-tagg"
 }

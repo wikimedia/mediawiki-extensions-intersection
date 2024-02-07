@@ -13,5 +13,5 @@
 	"intersection_noincludecats": "Błąd – musisz wybrać co najmniej jedną kategorię lub określić przestrzeń nazw!",
 	"intersection_pcerror": "Ta lista nie może zostać wyświetlona z racji na przeciążenie serwerów. Spróbuj ponownie później.",
 	"intersection-category": "Strony używające DynamicPageList",
-	"intersection-category-desc": "Strona zawiera znacznik <code><nowiki><DynamicPageList></nowiki></code>"
+	"intersection-category-desc": "Strona zawiera znacznik <code>&lt;DynamicPageList&gt;</code>"
 }

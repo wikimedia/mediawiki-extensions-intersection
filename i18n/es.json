@@ -15,5 +15,5 @@
 	"intersection_noincludecats": "Error: debes incluir al menos una categoría, o especificar un espacio de nombres",
 	"intersection_pcerror": "No se puede mostrar la lista porque nuestros servidores se encuentran sobrecargados. Por favor, inténtalo más tarde.",
 	"intersection-category": "Páginas que usan DynamicPageList",
-	"intersection-category-desc": "La página tiene una etiqueta <code><nowiki><DynamicPageList></nowiki></code>"
+	"intersection-category-desc": "La página tiene una etiqueta <code>&lt;DynamicPageList&gt;</code>"
 }

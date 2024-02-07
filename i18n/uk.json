@@ -13,5 +13,5 @@
 	"intersection_noincludecats": "Помилка: ви повинні включити хоча б одну категорію або зазначити простір назв!",
 	"intersection_pcerror": "Цей список не може бути показано, оскільки сервери перевантажені. Будь ласка, спробуйте пізніше.",
 	"intersection-category": "Сторінки, що використовують DynamicPageList",
-	"intersection-category-desc": "Сторінка містить тег <code><nowiki><DynamicPageList></nowiki></code>"
+	"intersection-category-desc": "Сторінка містить тег <code>&lt;DynamicPageList&gt;</code>"
 }

@@ -11,5 +11,5 @@
 	"intersection_noincludecats": "Napaka: Vključiti morate vsaj eno kategorijo ali določiti imenski prostor!",
 	"intersection_pcerror": "Tega seznama ni mogoče prikazati, ker so strežniki preobremenjeni. Poskusite znova pozneje.",
 	"intersection-category": "Strani, ki uporabljajo DynamicPageList",
-	"intersection-category-desc": "Ta stran vključuje značko <code><nowiki><DynamicPageList></nowiki></code>"
+	"intersection-category-desc": "Ta stran vključuje značko <code>&lt;DynamicPageList&gt;</code>"
 }

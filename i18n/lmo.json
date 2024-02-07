@@ -10,5 +10,5 @@
 	"intersection_noincludecats": "Errore: A gh'è besogn de includ almanch una categoria opur specificà un spazzi di nom.",
 	"intersection_pcerror": "La lista la po vesser minga visualizzada perchè el server l'è stracaregh. Per piesè, prova anmò pussee tard.",
 	"intersection-category": "Pagine che droven la DynamicPageList",
-	"intersection-category-desc": "La pagina la gh'ha dent un'eticheta <code><nowiki><DynamicPageList></nowiki></code>"
+	"intersection-category-desc": "La pagina la gh'ha dent un'eticheta <code>&lt;DynamicPageList&gt;</code>"
 }

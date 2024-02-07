@@ -10,5 +10,5 @@
 	"intersection_noincludecats": "Грешка: Мора да вклучите барем една категорија, или пак да наведете именски простор!",
 	"intersection_pcerror": "Списокот не може да се прикаже бидејќи опслужувачите се преоптоварени. Обидете се подоцна.",
 	"intersection-category": "Страници што користат Список на динамички страници",
-	"intersection-category-desc": "Страницава содржи ознака <code><nowiki><DynamicPageList></nowiki></code>"
+	"intersection-category-desc": "Страницава содржи ознака <code>&lt;DynamicPageList&gt;</code>"
 }

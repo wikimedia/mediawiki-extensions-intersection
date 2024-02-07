@@ -12,5 +12,5 @@
 	"intersection_noincludecats": "Error: Anda hendaklah memasukkan sekurang-kurangnya sebuah kategori atau menyatakan sebuah ruang nama!",
 	"intersection_pcerror": "Senarai ini tidak boleh dipaparkan kerana pelayan terlebih muatan. Sila cuba sebentar lagi.",
 	"intersection-category": "Halaman menggunakan DynamicPageList",
-	"intersection-category-desc": "Halaman tersebut termasuk sebuah teg <code><nowiki><DynamicPageList></nowiki></code>"
+	"intersection-category-desc": "Halaman tersebut termasuk sebuah teg <code>&lt;DynamicPageList&gt;</code>"
 }

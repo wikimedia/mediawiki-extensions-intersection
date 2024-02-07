@@ -12,5 +12,5 @@
 	"intersection_noincludecats": "त्रुटि: आपको कम-से-कम एक श्रेणी जोड़नी होगी, या कोई नामस्थान निर्दिष्ट करना होगा।",
 	"intersection_pcerror": "इस सूची को दिखाया नहीं जा सकता क्योंकि सर्वरों पर बोझ बहुत ज़्यादा है। कृपया बाद में पुनः प्रयास करें।",
 	"intersection-category": "DynamicPageList का इस्तेमाल कर रहे पृष्ठ",
-	"intersection-category-desc": "इस पृष्ठ पर एक <code><nowiki><DynamicPageList></nowiki></code> टैग मौजूद है"
+	"intersection-category-desc": "इस पृष्ठ पर एक <code>&lt;DynamicPageList&gt;</code> टैग मौजूद है"
 }
