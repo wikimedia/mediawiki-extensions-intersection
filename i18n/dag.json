@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Kalakpagh"
 		]
 	},
-	"intersection-category-desc": "Yaɣili ŋɔ nyɛ <code>&It;DynamicPageList&GT;</code> mamii"
+	"intersection-category-desc": "Yaɣili ŋɔ nyɛ <code>&lt;DynamicPageList&gt;</code> mamii"
 }
