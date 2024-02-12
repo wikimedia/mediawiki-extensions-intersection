@@ -11,5 +11,5 @@
 	"intersection_toomanycats": "خطا: تعداد رده‌ها زیاد است!",
 	"intersection_noresults": "هیچ صفحه‌ای با این معیارها مطابقت ندارد.",
 	"intersection_noincludecats": "خطا: حداقل باید یک رده را وارد کنید یا یک فضای نام را مشخص کنید!",
-	"intersection-category-desc": "صفحه حاوی برچسب <code>&lt;DynamicPageList&gt;</code> است"
+	"intersection-category-desc": "این صفحه حاوی برچسب <code>&lt;DynamicPageList&gt;</code> است"
 }

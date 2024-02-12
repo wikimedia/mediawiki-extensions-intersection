@@ -6,7 +6,8 @@
 			"Kly",
 			"Mark85296341",
 			"Shinjiman",
-			"Simon Shek"
+			"Simon Shek",
+			"Winston Sung"
 		]
 	},
 	"intersection-desc": "可顯示一個分類或彙總多個分類內最近更改頁面的清單",
@@ -15,5 +16,5 @@
 	"intersection_noincludecats": "錯誤：您至少需要指定一個分類或者命名空間！",
 	"intersection_pcerror": "因為伺服器超載，導致無法顯示此清單。請稍後再試。",
 	"intersection-category": "使用 DynamicPageList 的頁面",
-	"intersection-category-desc": "頁面包含 <code>&lt;DynamicPageList&gt;</code> 標籤"
+	"intersection-category-desc": "頁面含有 <code>&lt;DynamicPageList&gt;</code> 標籤"
 }
