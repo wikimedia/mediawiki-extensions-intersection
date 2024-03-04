@@ -4,11 +4,14 @@
 			"BadDog",
 			"FriedrickMILBarbarossa",
 			"Millosh",
-			"Rancher"
+			"Rancher",
+			"Kizule"
 		]
 	},
 	"intersection-desc": "Избације листу са знаковима за набрајање недавих ставки које се налазе у категорији или пресеку неколико категорија",
 	"intersection_toomanycats": "Грешка: Превише категорија!",
 	"intersection_noresults": "Ниједна страница не задовољава наведене критеријуме.",
-	"intersection_noincludecats": "Грешка: Потребно је укључити бар једну категорију или одредити именски простор!"
+	"intersection_noincludecats": "Грешка: Потребно је укључити бар једну категорију или одредити именски простор!",
+	"intersection_pcerror": "Овај списак не може бити приказан зато што су сервери преоптерећени. Покушајте поново касније.",
+	"intersection-category": "Странице које користе DynamicPageList"
 }

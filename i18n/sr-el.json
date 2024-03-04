@@ -2,11 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"FriedrickMILBarbarossa",
-			"Michaello"
+			"Michaello",
+			"Kizule"
 		]
 	},
 	"intersection-desc": "Izbacije listu sa znakovima za nabrajanje nedavih stavki koje se nalaze u kategoriji ili preseku nekoliko kategorija",
 	"intersection_toomanycats": "Greška: Previše kategorija!",
 	"intersection_noresults": "Nijedna stranica ne zadovoljava navedene kriterijume.",
-	"intersection_noincludecats": "Greška: Potrebno je uključiti bar jednu kategoriju ili odrediti imenski prostor!"
+	"intersection_noincludecats": "Greška: Potrebno je uključiti bar jednu kategoriju ili odrediti imenski prostor!",
+	"intersection_pcerror": "Ovaj spisak ne može biti prikazan zato što su serveri preopterećeni. Pokušajte ponovo kasnije.",
+	"intersection-category": "Stranice koje koriste DynamicPageList"
 }
