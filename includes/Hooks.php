@@ -386,7 +386,7 @@ class Hooks implements
 		}
 
 		// build the SQL query
-		$dbr = wfGetDB( DB_REPLICA, 'vslow' );
+		$dbr = $services->getDBLoadBalancer()->getMaintenanceConnectionRef( DB_REPLICA, 'vslow' );
 		$tables = [ 'page' ];
 		$fields = [ 'page_namespace', 'page_title' ];
 		$where = [];
