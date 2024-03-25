@@ -17,7 +17,7 @@ use ParserOptions;
 use UnexpectedValueException;
 use WANObjectCache;
 use Wikimedia\Rdbms\Database;
-use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\IReadableDatabase;
 
 class Hooks implements
 	ParserFirstCallInitHook,
@@ -386,7 +386,7 @@ class Hooks implements
 		}
 
 		// build the SQL query
-		$dbr = $services->getDBLoadBalancer()->getMaintenanceConnectionRef( DB_REPLICA, 'vslow' );
+		$dbr = $services->getConnectionProvider()->getReplicaDatabase( false, 'vslow' );
 		$tables = [ 'page' ];
 		$fields = [ 'page_namespace', 'page_title' ];
 		$where = [];
@@ -671,7 +671,7 @@ class Hooks implements
 
 	/**
 	 * @param string $pageName Name of page (for logging purposes)
-	 * @param IDatabase $dbr
+	 * @param IReadableDatabase $dbr
 	 * @param array $tables
 	 * @param array $fields
 	 * @param array $where
@@ -681,7 +681,7 @@ class Hooks implements
 	 */
 	public static function processQuery(
 		string $pageName,
-		IDatabase $dbr,
+		IReadableDatabase $dbr,
 		array $tables,
 		array $fields,
 		array $where,
