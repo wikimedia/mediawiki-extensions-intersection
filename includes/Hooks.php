@@ -17,7 +17,10 @@ use ParserOptions;
 use UnexpectedValueException;
 use WANObjectCache;
 use Wikimedia\Rdbms\Database;
+use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\IReadableDatabase;
+use Wikimedia\Rdbms\LikeValue;
+use Wikimedia\Rdbms\SelectQueryBuilder;
 
 class Hooks implements
 	ParserFirstCallInitHook,
@@ -387,145 +390,122 @@ class Hooks implements
 
 		// build the SQL query
 		$dbr = $services->getConnectionProvider()->getReplicaDatabase( false, 'vslow' );
-		$tables = [ 'page' ];
-		$fields = [ 'page_namespace', 'page_title' ];
-		$where = [];
-		$join = [];
-		$options = [];
+		$queryBuilder = $dbr->newSelectQueryBuilder()
+			->select( [ 'page_namespace', 'page_title' ] )
+			->from( 'page' );
 
 		if ( $googleHack ) {
-			$fields[] = 'page_id';
+			$queryBuilder->field( 'page_id' );
 		}
 
 		if ( $addFirstCategoryDate ) {
-			$fields[] = 'c1.cl_timestamp';
+			$queryBuilder->field( 'c1.cl_timestamp' );
 		}
 
 		if ( $namespaceFiltering ) {
-			$where['page_namespace'] = $namespaceIndex;
+			$queryBuilder->where( [ 'page_namespace' => $namespaceIndex ] );
 		}
 
 		// Bug 14943 - Allow filtering based on FlaggedRevs stability.
 		// Check if the extension actually exists before changing the query...
 		if ( $flaggedRevs && ExtensionRegistry::getInstance()->isLoaded( 'FlaggedRevs' ) ) {
-			$tables[] = 'flaggedpages';
-			$join['flaggedpages'] = [ 'LEFT JOIN', 'page_id = fp_page_id' ];
+			$queryBuilder->leftJoin( 'flaggedpages', null, 'page_id = fp_page_id' );
 
 			if ( $stable == 'only' ) {
-				$where[] = 'fp_stable IS NOT NULL';
+				$queryBuilder->where( $dbr->expr( 'fp_stable', '!=', null ) );
 			} elseif ( $stable == 'exclude' ) {
-				$where['fp_stable'] = null;
+				$queryBuilder->where( [ 'fp_stable' => null ] );
 			}
 
 			if ( $quality == 'only' ) {
-				$where[] = 'fp_quality >= 1';
+				$queryBuilder->where( $dbr->expr( 'fp_quality', '>=', 1 ) );
 			} elseif ( $quality == 'exclude' ) {
-				$where[] = 'fp_quality = 0 OR fp_quality IS NULL';
+				$queryBuilder->where( $dbr->expr( 'fp_quality', '=', 0 )->or( 'fp_quality', '=', null ) );
 			}
 		}
 
 		if ( $redirects == 'only' ) {
-			$where['page_is_redirect'] = 1;
+			$queryBuilder->where( [ 'page_is_redirect' => 1 ] );
 		} elseif ( $redirects == 'exclude' ) {
-			$where['page_is_redirect'] = 0;
+			$queryBuilder->where( [ 'page_is_redirect' => 0 ] );
 		}
 
 		if ( $ignoreSubpages ) {
-			$where[] = "page_title NOT " .
-				$dbr->buildLike( $dbr->anyString(), '/', $dbr->anyString() );
+			$queryBuilder->where( $dbr->expr( 'page_title', IExpression::NOT_LIKE,
+				new LikeValue( $dbr->anyString(), '/', $dbr->anyString() ) ) );
 		}
 
 		if ( $useGallery && $pageImagesEnabled ) {
-			$tables['pp1'] = 'page_props';
-			$join['pp1'] = [
-				'LEFT JOIN',
-				[
-					'pp1.pp_propname' => PageImages::PROP_NAME_FREE,
-					'page_id = pp1.pp_page'
-				]
-			];
-			$fields['pageimage_free'] = 'pp1.pp_value';
+			$queryBuilder->leftJoin( 'page_props', 'pp1', [
+				'pp1.pp_propname' => PageImages::PROP_NAME_FREE,
+				'page_id = pp1.pp_page'
+			] );
+			$queryBuilder->field( 'pp1.pp_value', 'pageimage_free' );
 
-			$tables['pp2'] = 'page_props';
-			$join['pp2'] = [
-				'LEFT JOIN',
-				[
-					'pp2.pp_propname' => PageImages::PROP_NAME,
-					'page_id = pp2.pp_page'
-				]
-			];
-			$fields['pageimage_nonfree'] = 'pp2.pp_value';
+			$queryBuilder->leftJoin( 'page_props', 'pp2', [
+				'pp2.pp_propname' => PageImages::PROP_NAME,
+				'page_id = pp2.pp_page'
+			] );
+			$queryBuilder->field( 'pp2.pp_value', 'pageimage_nonfree' );
 		}
 
 		// Alias each category as c1, c2, etc.
 		$currentTableNumber = 1;
-		$categorylinks = 'categorylinks';
 		foreach ( $categories as $cat ) {
-			$join["c$currentTableNumber"] = [
-				'INNER JOIN',
-				[
-					"page_id = c{$currentTableNumber}.cl_from",
-					"c{$currentTableNumber}.cl_to={$dbr->addQuotes( $cat->getDBKey() )}"
-				]
-			];
-			$tables["c$currentTableNumber"] = $categorylinks;
-
+			$queryBuilder->join( 'categorylinks', "c$currentTableNumber", [
+				"page_id = c{$currentTableNumber}.cl_from",
+				"c{$currentTableNumber}.cl_to" => $cat->getDBKey(),
+			] );
 			$currentTableNumber++;
 		}
 
 		foreach ( $excludeCategories as $cat ) {
-			$join["c$currentTableNumber"] = [
-				'LEFT OUTER JOIN',
-				[
-					"page_id = c{$currentTableNumber}.cl_from",
-					"c{$currentTableNumber}.cl_to={$dbr->addQuotes( $cat->getDBKey() )}"
-				]
-			];
-			$tables["c$currentTableNumber"] = $categorylinks;
-			$where["c{$currentTableNumber}.cl_to"] = null;
+			$queryBuilder->leftJoin( 'categorylinks', "c$currentTableNumber", [
+				"page_id = c{$currentTableNumber}.cl_from",
+				"c{$currentTableNumber}.cl_to" => $cat->getDBKey(),
+			] );
+			$queryBuilder->where( [ "c{$currentTableNumber}.cl_to" => null ] );
 			$currentTableNumber++;
 		}
 
 		if ( $order === 'descending' ) {
-			$sqlOrder = 'DESC';
+			$sqlOrder = SelectQueryBuilder::SORT_DESC;
 		} else {
-			$sqlOrder = 'ASC';
+			$sqlOrder = SelectQueryBuilder::SORT_ASC;
 		}
 
 		switch ( $orderMethod ) {
 			case 'lastedit':
-				$sqlSort = 'page_touched';
+				$queryBuilder->orderBy( 'page_touched', $sqlOrder );
 				break;
 			case 'length':
-				$sqlSort = 'page_len';
+				$queryBuilder->orderBy( 'page_len', $sqlOrder );
 				break;
 			case 'created':
-				$sqlSort = 'page_id'; // Since they're never reused and increasing
+				$queryBuilder->orderBy( 'page_id', $sqlOrder ); // Since they're never reused and increasing
 				break;
 			case 'categorysortkey':
-				$sqlSort = "c1.cl_type $sqlOrder, c1.cl_sortkey";
+				$queryBuilder->orderBy( [ 'c1.cl_type', 'c1.cl_sortkey' ], $sqlOrder );
 				break;
 			case 'categoryadd':
-				$sqlSort = 'c1.cl_timestamp';
+				$queryBuilder->orderBy( 'c1.cl_timestamp', $sqlOrder );
 				break;
 			default:
 				// Should never reach here
 				throw new UnexpectedValueException( "Invalid ordermethod $orderMethod" );
 		}
 
-		$options['ORDER BY'] = "$sqlSort $sqlOrder";
-
 		if ( $countSet ) {
-			$options['LIMIT'] = $count;
+			$queryBuilder->limit( $count );
 		}
 		if ( $offset > 0 ) {
-			$options['OFFSET'] = $offset;
+			$queryBuilder->offset( $offset );
 		}
 
 		// To track down what page offending queries are on.
 		// For some reason, $fname doesn't get escaped by our code?!
 		$pageName = str_replace( [ '*', '/' ], '-', $mwParser->getTitle()->getPrefixedDBkey() );
-		$rows = self::processQuery( $pageName, $dbr, $tables, $fields, $where, $options, $join );
+		$rows = self::processQuery( $pageName, $dbr, $queryBuilder );
 		if ( $rows === false ) {
 			// This error path is very fast (We exit immediately if poolcounter is full)
 			// Thus it should be safe to try again in ~5 minutes.
@@ -672,30 +652,22 @@ class Hooks implements
 	/**
 	 * @param string $pageName Name of page (for logging purposes)
 	 * @param IReadableDatabase $dbr
-	 * @param array $tables
-	 * @param array $fields
-	 * @param array $where
-	 * @param array $options
-	 * @param array $join
+	 * @param SelectQueryBuilder $queryBuilder
 	 * @return array|bool List of stdObj's or false on poolcounter being full
 	 */
 	public static function processQuery(
 		string $pageName,
 		IReadableDatabase $dbr,
-		array $tables,
-		array $fields,
-		array $where,
-		array $options,
-		array $join
+		SelectQueryBuilder $queryBuilder
 	) {
 		global $wgDLPQueryCacheTime, $wgDLPMaxQueryTime;
 		$qname = __METHOD__ . ' - ' . $pageName;
 		if ( $wgDLPMaxQueryTime ) {
-			$options['MAX_EXECUTION_TIME'] = $wgDLPMaxQueryTime;
+			$queryBuilder->setMaxExecutionTime( $wgDLPMaxQueryTime );
 		}
 
-		$doQuery = static function () use ( $qname, $dbr, $tables, $fields, $where, $options, $join ) {
-			$res = $dbr->select( $tables, $fields, $where, $qname, $options, $join );
+		$doQuery = static function () use ( $qname, $queryBuilder ) {
+			$res = $queryBuilder->caller( $qname )->fetchResultSet();
 			// Serializing a ResultWrapper doesn't work.
 			return iterator_to_array( $res );
 		};
@@ -722,7 +694,7 @@ class Hooks implements
 		// all with the same query. See T262240. This should be a short cache, e.g. 120 seconds.
 		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
 		// Don't use actual input as hash, because some per-page parsing can happen to options.
-		$query = $dbr->selectSQLText( $tables, $fields, $where, '', $options, $join );
+		$query = ( clone $queryBuilder )->getSQL();
 		return $cache->getWithSetCallback(
 			$cache->makeKey( "DPLQuery", hash( "sha256", $query ) ),
 			$wgDLPQueryCacheTime,
