@@ -505,6 +505,13 @@ order=descending
 </div>
 		</div></li>
 		<li class="gallerybox" style="width: 105px"><div style="width: 105px">
+			<div class="thumb" style="width: 100px;"><div style="margin:71px auto;"><a href="/wiki/File:Hi-ho.jpg" class="image"><img alt="Hi-ho.jpg" src="http://example.com/images/thumb/9/9d/Hi-ho.jpg/70px-Hi-ho.jpg" decoding="async" width="70" height="8" srcset="http://example.com/images/thumb/9/9d/Hi-ho.jpg/105px-Hi-ho.jpg 1.5x, http://example.com/images/thumb/9/9d/Hi-ho.jpg/140px-Hi-ho.jpg 2x" /></a></div></div>
+			<div class="gallerytext"><a href="/wiki/File:Hi-ho.jpg" class="galleryfilename galleryfilename-truncate" title="File:Hi-ho.jpg">File:Hi-ho.jpg</a>
+<p>1,941 × 220; 8 KB<br />
+</p>
+</div>
+		</div></li>
+		<li class="gallerybox" style="width: 105px"><div style="width: 105px">
 			<div class="thumb" style="height: 150px;"><a href="/wiki/File:Bad.jpg" title="File:Bad.jpg">Bad.jpg</a></div>
 			<div class="gallerytext"><a href="/wiki/File:Bad.jpg" class="galleryfilename galleryfilename-truncate" title="File:Bad.jpg">File:Bad.jpg</a>
 <p>320 × 240; 12 KB<br />
