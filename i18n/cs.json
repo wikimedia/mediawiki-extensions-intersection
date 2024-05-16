@@ -11,5 +11,7 @@
 	"intersection_toomanycats": "Error: Příliš mnoho kategorií!",
 	"intersection_noresults": "Tato kritéria nesplňují žádné stránky.",
 	"intersection_noincludecats": "Error: Musíte zahrnout alespoň jednu kategorii nebo určit jmenný prostor!",
-	"intersection-category": "Stránky používající DynamicPageList"
+	"intersection_pcerror": "Tento seznam nelze zobrazit, protože servery jsou přetíženy. Zkuste to prosím později.",
+	"intersection-category": "Stránky používající DynamicPageList",
+	"intersection-category-desc": "Tato stránka obsahuje značku <code>&lt;DynamicPageList&gt;</code>"
 }
