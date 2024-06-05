@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			555,
 			"Hamilton Abreu",
-			"Malafaya",
-			555
+			"Malafaya"
 		]
 	},
 	"intersection-desc": "Produz uma lista com marcadores dos elementos mais recentes presentes numa categoria, ou uma interseção de várias categorias",
