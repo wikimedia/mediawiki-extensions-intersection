@@ -7,6 +7,6 @@
 	"intersection_noresults": "No pages meet these criteria.",
 	"intersection_noincludecats": "Error: You need to include at least one category, or specify a namespace!",
 	"intersection_pcerror": "This list cannot be displayed because the servers are overloaded. Please try again later.",
-	"intersection-category": "Pages using DynamicPageList",
+	"intersection-category": "Pages using the DynamicPageList extension",
 	"intersection-category-desc": "The page includes a <code>&lt;DynamicPageList&gt;</code> tag"
 }
