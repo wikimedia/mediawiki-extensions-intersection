@@ -5,7 +5,7 @@
 		"[https://en.wikinews.org/wiki/User:Amgine Amgine]",
 		"[https://en.wikinews.org/wiki/User:IlyaHaykinson IlyaHaykinson]"
 	],
-	"url": "https://www.mediawiki.org/wiki/Extension:DynamicPageList_(Wikimedia)",
+	"url": "https://www.mediawiki.org/wiki/Extension:DynamicPageList",
 	"descriptionmsg": "intersection-desc",
 	"type": "parserhook",
 	"requires": {
