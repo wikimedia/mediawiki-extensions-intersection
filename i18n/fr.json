@@ -3,6 +3,7 @@
 		"authors": [
 			"Florian COLLIN",
 			"Gomoko",
+			"Goombiis",
 			"Grondin",
 			"IAlex",
 			"Urhixidur",
@@ -14,6 +15,6 @@
 	"intersection_noresults": "Aucune page ne correspond à ces critères.",
 	"intersection_noincludecats": "Erreur : vous devez inclure au moins une catégorie ou bien préciser un espace de noms !",
 	"intersection_pcerror": "Cette liste ne peut pas être affichée car les serveurs sont surchargés. Veuillez réessayer plus tard.",
-	"intersection-category": "Pages utilisant DynamicPageList",
+	"intersection-category": "Pages utilisant l'extension DynamicPageList",
 	"intersection-category-desc": "La page inclut une balise <code>&lt;DynamicPageList&gt;</code>"
 }
