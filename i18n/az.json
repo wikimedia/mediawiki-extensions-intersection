@@ -2,10 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"NMW03",
-			"Wertuose"
+			"Wertuose",
+			"Nemoralis"
 		]
 	},
+	"intersection-desc": "Kateqoriyada olan ən son elementlərin markerli siyahısını və ya bir neçə kateqoriyanın kəsişməsini çıxarır",
 	"intersection_toomanycats": "Xəta: Kateqoriya sayı həddindən çoxdur!",
 	"intersection_noresults": "Heç bir səhifə bu kriteriyaya cavab vermir.",
-	"intersection_noincludecats": "Xəta: Siz ən azı bir kateqoriya əlavə etməli və ya adlar fəzası müəyyənləşdirməlisiniz!"
+	"intersection_noincludecats": "Xəta: Siz ən azı bir kateqoriya əlavə etməli və ya adlar fəzası müəyyənləşdirməlisiniz!",
+	"intersection_pcerror": "Bu siyahı göstərilə bilməz, çünki serverlər həddən artıq yüklənir. Lütfən, sonra yenidən cəhd edin.",
+	"intersection-category-desc": "Səhifədə <code>&lt;DynamicPageList&gt;</code> teqi var"
 }
