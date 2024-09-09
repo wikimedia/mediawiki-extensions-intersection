@@ -9,6 +9,6 @@
 	"intersection_noresults": "Nulle pagina satisface iste criterios.",
 	"intersection_noincludecats": "Error: Tu debe includer al minus un categoria, o specificar un spatio de nomines!",
 	"intersection_pcerror": "Iste lista non pote esser monstrate perque le servitores es in supercarga. Per favor tenta lo de novo plus tarde.",
-	"intersection-category": "Paginas que usa DynamicPageList",
+	"intersection-category": "Paginas que usa le extension DynamicPageList",
 	"intersection-category-desc": "Le pagina include un etiquetta <code>&lt;DynamicPageList&gt;</code>"
 }

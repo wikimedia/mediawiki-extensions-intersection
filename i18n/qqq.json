@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"McDutchie",
 			"Purodha",
 			"Shirayuki",
 			"The Evil IP address",
@@ -12,6 +13,6 @@
 	"intersection_noresults": "Used when the query returns no result.",
 	"intersection_noincludecats": "Used as error message when the number of categories is 0 (and namespace filtering is disabled).",
 	"intersection_pcerror": "Error message given if the servers are overloaded because too many DPL queries are being executed at the same time. Similar to {{msg-mw|view-pool-error}}",
-	"intersection-category": "Name of [[mw:Help:Tracking categories|tracking category]] to list pages that use the DynamicPageList feature",
+	"intersection-category": "Name of [[mw:Help:Tracking categories|tracking category]] to list pages that use the DynamicPageList feature\n{{Tracking category name}}",
 	"intersection-category-desc": "Description on [[Special:TrackingCategories]] for the {{msg-mw|intersection-category}} tracking category."
 }
