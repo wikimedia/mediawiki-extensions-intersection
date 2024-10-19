@@ -2,20 +2,20 @@
 
 namespace MediaWiki\Extension\DynamicPageList;
 
-use DateFormatter;
-use ExtensionRegistry;
 use ImageGalleryBase;
 use MediaWiki\Hook\ParserFirstCallInitHook;
 use MediaWiki\Hook\ParserTestGlobalsHook;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Parser\DateFormatter;
 use MediaWiki\Parser\Parser;
+use MediaWiki\Parser\ParserOptions;
 use MediaWiki\PoolCounter\PoolCounterWorkViaCallback;
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
 use PageImages\PageImages;
-use ParserOptions;
 use UnexpectedValueException;
-use WANObjectCache;
+use Wikimedia\ObjectCache\WANObjectCache;
 use Wikimedia\Rdbms\Database;
 use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\IReadableDatabase;
