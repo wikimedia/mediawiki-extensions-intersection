@@ -249,7 +249,8 @@ class Hooks implements
 							$orderMethod = 'categorysortkey';
 							break;
 						case 'popularity':
-							$orderMethod = 'categoryadd'; // no HitCounters since MW1.25
+							// no HitCounters since MW1.25
+							$orderMethod = 'categoryadd';
 							break;
 						case 'categoryadd':
 						default:
@@ -321,7 +322,8 @@ class Hooks implements
 						$addFirstCategoryDate = true;
 						$dateFormat = $arg;
 						if ( strlen( $dateFormat ) == 2 ) {
-							$dateFormat .= 'y'; # DateFormatter does not support no year. work around
+							# DateFormatter does not support no year. work around
+							$dateFormat .= 'y';
 							$stripYear = true;
 						}
 					} else {
@@ -337,13 +339,14 @@ class Hooks implements
 				case 'googlehack':
 					$googleHack = $arg !== 'false';
 					break;
-				case 'nofollow': # bug 6658
+				case 'nofollow':
+					# bug 6658
 					if ( $arg !== 'false' ) {
 						$linkOptions['rel'] = 'nofollow';
 					}
 					break;
-			} // end main switch()
-		} // end foreach()
+			}
+		}
 
 		$catCount = count( $categories );
 		$excludeCatCount = count( $excludeCategories );
@@ -482,7 +485,8 @@ class Hooks implements
 				$queryBuilder->orderBy( 'page_len', $sqlOrder );
 				break;
 			case 'created':
-				$queryBuilder->orderBy( 'page_id', $sqlOrder ); // Since they're never reused and increasing
+				// Since they're never reused and increasing
+				$queryBuilder->orderBy( 'page_id', $sqlOrder );
 				break;
 			case 'categorysortkey':
 				$queryBuilder->orderBy( [ 'c1.cl_type', 'c1.cl_sortkey' ], $sqlOrder );
@@ -631,7 +635,8 @@ class Hooks implements
 				$gallery->setPerRow( $galleryNumbRows );
 			}
 			if ( $galleryCaption !== '' ) {
-				$gallery->setCaption( $galleryCaption ); // gallery class escapes string
+				// gallery class escapes string
+				$gallery->setCaption( $galleryCaption );
 			}
 			return $gallery->toHtml();
 		}
