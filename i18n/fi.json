@@ -12,5 +12,6 @@
 	"intersection_toomanycats": "Virhe: Liian monta luokkaa!",
 	"intersection_noresults": "Näitä kriteerejä täyttäviä sivuja ei ole.",
 	"intersection_noincludecats": "Virhe: Lisää vähintään yksi luokka tai määritä nimiavaruus!",
+	"intersection_pcerror": "Tätä luetteloa ei voida näyttää, koska palvelimet ovat ylikuormitettuja. Yritä myöhemmin uudelleen.",
 	"intersection-category": "DynamicPageListiä käyttävät sivut"
 }
