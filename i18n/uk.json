@@ -4,7 +4,8 @@
 			"Ahonc",
 			"Base",
 			"DDPAT",
-			"Ice bulldog"
+			"Ice bulldog",
+			"Ата"
 		]
 	},
 	"intersection-desc": "Виводить у маркований список останні додавання до категорії або об'єднання кількох категорій",
@@ -12,6 +13,6 @@
 	"intersection_noresults": "Нема сторінок, що відповідають цим критеріям.",
 	"intersection_noincludecats": "Помилка: ви повинні включити хоча б одну категорію або зазначити простір назв!",
 	"intersection_pcerror": "Цей список не може бути показано, оскільки сервери перевантажені. Будь ласка, спробуйте пізніше.",
-	"intersection-category": "Сторінки, що використовують DynamicPageList",
+	"intersection-category": "Сторінки, що використовують розширення DynamicPageList",
 	"intersection-category-desc": "Сторінка містить тег <code>&lt;DynamicPageList&gt;</code>"
 }
