@@ -9,7 +9,7 @@
 	"descriptionmsg": "intersection-desc",
 	"type": "parserhook",
 	"requires": {
-		"MediaWiki": ">= 1.43"
+		"MediaWiki": ">= 1.44"
 	},
 	"license-name": "GPL-2.0-or-later",
 	"AutoloadNamespaces": {
