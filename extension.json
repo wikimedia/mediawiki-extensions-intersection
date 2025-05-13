@@ -21,8 +21,7 @@
 		]
 	},
 	"Hooks": {
-		"ParserFirstCallInit": "main",
-		"ParserTestGlobals": "main"
+		"ParserFirstCallInit": "main"
 	},
 	"HookHandlers": {
 		"main": {

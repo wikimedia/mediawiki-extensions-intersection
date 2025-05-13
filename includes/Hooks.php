@@ -4,7 +4,6 @@ namespace MediaWiki\Extension\DynamicPageList;
 
 use ImageGalleryBase;
 use MediaWiki\Hook\ParserFirstCallInitHook;
-use MediaWiki\Hook\ParserTestGlobalsHook;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Parser\DateFormatter;
 use MediaWiki\Parser\Parser;
@@ -23,8 +22,7 @@ use Wikimedia\Rdbms\LikeValue;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 
 class Hooks implements
-	ParserFirstCallInitHook,
-	ParserTestGlobalsHook
+	ParserFirstCallInitHook
 {
 
 	/**
@@ -726,12 +724,4 @@ class Hooks implements
 		);
 	}
 
-	/**
-	 * Use legacy gallery syntax in tests.
-	 * FIXME the tests should be updated instead
-	 * @param array &$globals
-	 */
-	public function onParserTestGlobals( &$globals ) {
-		$globals['wgParserEnableLegacyMediaDOM'] = true;
-	}
 }
