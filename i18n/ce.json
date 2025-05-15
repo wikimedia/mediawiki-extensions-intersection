@@ -8,6 +8,7 @@
 	"intersection_toomanycats": "ГӀалат. ТӀех дукха категореш йу!",
 	"intersection_noresults": "ХӀокху критерешца агӀонаш йац.",
 	"intersection_noincludecats": "ГӀалат. Цхьа категори йа цӀеран меттиг мукъане а йукъайаккха йеза ахьа!",
+	"intersection_pcerror": "ХӀара могӀам гайта йиш йац, хӀунда аьлча серверш тӀехсов дӀасайаржийна йу. Дехар до, йуха а хьажа.",
 	"intersection-category": "DynamicPageList лелош йолу агӀонаш",
 	"intersection-category-desc": "ХӀокху агӀонна йукъахь йу тег <code>&lt;DynamicPageList&gt;</code>"
 }
