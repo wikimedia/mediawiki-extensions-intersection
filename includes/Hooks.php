@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\DynamicPageList;
 
 use ImageGalleryBase;
 use MediaWiki\Hook\ParserFirstCallInitHook;
+use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Parser\DateFormatter;
 use MediaWiki\Parser\Parser;
@@ -450,22 +451,55 @@ class Hooks implements
 			$queryBuilder->field( 'pp2.pp_value', 'pageimage_nonfree' );
 		}
 
+		$migrationStage = $services->getMainConfig()->get(
+			MainConfigNames::CategoryLinksSchemaMigrationStage
+		);
+
 		// Alias each category as c1, c2, etc.
 		$currentTableNumber = 1;
 		foreach ( $categories as $cat ) {
-			$queryBuilder->join( 'categorylinks', "c$currentTableNumber", [
-				"page_id = c{$currentTableNumber}.cl_from",
-				"c{$currentTableNumber}.cl_to" => $cat->getDBKey(),
-			] );
+			$currentCategorylinksAlias = "c$currentTableNumber";
+			$currentLinktargetAlias = "linktarget$currentTableNumber";
+			if ( $migrationStage & SCHEMA_COMPAT_READ_OLD ) {
+				$queryBuilder->join( 'categorylinks', $currentCategorylinksAlias, [
+					"page_id = {$currentCategorylinksAlias}.cl_from",
+					"{$currentCategorylinksAlias}.cl_to" => $cat->getDBKey(),
+				] );
+			} else {
+				$queryBuilder->join( 'categorylinks', $currentCategorylinksAlias, [
+					"page_id = {$currentCategorylinksAlias}.cl_from",
+				] );
+				$queryBuilder->join( 'linktarget', $currentLinktargetAlias, [
+					"{$currentCategorylinksAlias}.cl_target_id = {$currentLinktargetAlias}.lt_id",
+				] );
+				$queryBuilder->where( [
+					"{$currentLinktargetAlias}.lt_title" => $cat->getDBKey(),
+					"{$currentLinktargetAlias}.lt_namespace" => $cat->getNamespace(),
+				] );
+			}
 			$currentTableNumber++;
 		}
 
 		foreach ( $excludeCategories as $cat ) {
-			$queryBuilder->leftJoin( 'categorylinks', "c$currentTableNumber", [
-				"page_id = c{$currentTableNumber}.cl_from",
-				"c{$currentTableNumber}.cl_to" => $cat->getDBKey(),
-			] );
-			$queryBuilder->where( [ "c{$currentTableNumber}.cl_to" => null ] );
+			$currentCategorylinksAlias = "c$currentTableNumber";
+			$currentLinktargetAlias = "linktarget$currentTableNumber";
+			if ( $migrationStage & SCHEMA_COMPAT_READ_OLD ) {
+				$queryBuilder->leftJoin( 'categorylinks', $currentCategorylinksAlias, [
+					"page_id = {$currentCategorylinksAlias}.cl_from",
+					"{$currentCategorylinksAlias}.cl_to" => $cat->getDBKey(),
+				] );
+				$queryBuilder->where( [ "{$currentCategorylinksAlias}.cl_to" => null ] );
+			} else {
+				$queryBuilder->leftJoin( 'categorylinks', $currentCategorylinksAlias, [
+					"page_id = {$currentCategorylinksAlias}.cl_from",
+				] );
+				$queryBuilder->leftJoin( 'linktarget', $currentLinktargetAlias, [
+					"{$currentCategorylinksAlias}.cl_target_id = {$currentLinktargetAlias}.lt_id",
+					"{$currentLinktargetAlias}.lt_title" => $cat->getDBKey(),
+					"{$currentLinktargetAlias}.lt_namespace" => $cat->getNamespace(),
+				] );
+				$queryBuilder->where( [ "{$currentLinktargetAlias}.lt_title" => null ] );
+			}
 			$currentTableNumber++;
 		}
 
