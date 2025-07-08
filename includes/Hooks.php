@@ -490,15 +490,19 @@ class Hooks implements
 				] );
 				$queryBuilder->where( [ "{$currentCategorylinksAlias}.cl_to" => null ] );
 			} else {
-				$queryBuilder->leftJoin( 'categorylinks', $currentCategorylinksAlias, [
-					"page_id = {$currentCategorylinksAlias}.cl_from",
+				$subquery = $dbr->newSelectQueryBuilder()
+					->select( 'cl_from' )
+					->from( 'categorylinks' )
+					->join( 'linktarget', null, [ 'cl_target_id = lt_id' ] )
+					->where( [
+						'lt_title' => $cat->getDBKey(),
+						'lt_namespace' => $cat->getNamespace(),
+					] )
+					->caller( __METHOD__ );
+				$queryBuilder->leftJoin( $subquery, "excluded_pages{$currentTableNumber}", [
+					"page_id = excluded_pages{$currentTableNumber}.cl_from",
 				] );
-				$queryBuilder->leftJoin( 'linktarget', $currentLinktargetAlias, [
-					"{$currentCategorylinksAlias}.cl_target_id = {$currentLinktargetAlias}.lt_id",
-					"{$currentLinktargetAlias}.lt_title" => $cat->getDBKey(),
-					"{$currentLinktargetAlias}.lt_namespace" => $cat->getNamespace(),
-				] );
-				$queryBuilder->where( [ "{$currentLinktargetAlias}.lt_title" => null ] );
+				$queryBuilder->where( [ "excluded_pages{$currentTableNumber}.cl_from" => null ] );
 			}
 			$currentTableNumber++;
 		}
