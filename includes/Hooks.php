@@ -482,7 +482,6 @@ class Hooks implements
 
 		foreach ( $excludeCategories as $cat ) {
 			$currentCategorylinksAlias = "c$currentTableNumber";
-			$currentLinktargetAlias = "linktarget$currentTableNumber";
 			if ( $migrationStage & SCHEMA_COMPAT_READ_OLD ) {
 				$queryBuilder->leftJoin( 'categorylinks', $currentCategorylinksAlias, [
 					"page_id = {$currentCategorylinksAlias}.cl_from",
