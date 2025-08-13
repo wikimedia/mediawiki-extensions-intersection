@@ -1,11 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Winston Sung"
+			"Winston Sung",
+			"Yueman"
 		]
 	},
 	"intersection-desc": "輸出一個點列最近響分類嘅項目，或者係幾個分類嘅一個聯繫",
 	"intersection_toomanycats": "DynamicPageList: 太多分類!",
 	"intersection_noresults": "無一頁符合呢啲條件。",
-	"intersection_noincludecats": "DynamicPageList: 你需要去包含最少一個分類，或者指定一個空間名!"
+	"intersection_noincludecats": "DynamicPageList: 你需要去包含最少一個分類，或者指定一個空間名!",
+	"intersection_pcerror": "呢個清單顯示唔到，因為伺服器超載。請遲啲再試過。",
+	"intersection-category": "用咗DynamicPageList擴展功能嘅頁",
+	"intersection-category-desc": "呢版包含一個 <code>&lt;DynamicPageList&gt;</code> 標籤"
 }
