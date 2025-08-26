@@ -4,7 +4,6 @@ namespace MediaWiki\Extension\DynamicPageList;
 
 use ImageGalleryBase;
 use MediaWiki\Hook\ParserFirstCallInitHook;
-use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Parser\DateFormatter;
 use MediaWiki\Parser\Parser;
@@ -451,58 +450,40 @@ class Hooks implements
 			$queryBuilder->field( 'pp2.pp_value', 'pageimage_nonfree' );
 		}
 
-		$migrationStage = $services->getMainConfig()->get(
-			MainConfigNames::CategoryLinksSchemaMigrationStage
-		);
-
 		// Alias each category as c1, c2, etc.
 		$currentTableNumber = 1;
+
 		foreach ( $categories as $cat ) {
 			$currentCategorylinksAlias = "c$currentTableNumber";
-			$currentLinktargetAlias = "linktarget$currentTableNumber";
-			if ( $migrationStage & SCHEMA_COMPAT_READ_OLD ) {
-				$queryBuilder->join( 'categorylinks', $currentCategorylinksAlias, [
-					"page_id = {$currentCategorylinksAlias}.cl_from",
-					"{$currentCategorylinksAlias}.cl_to" => $cat->getDBKey(),
-				] );
-			} else {
-				$queryBuilder->join( 'categorylinks', $currentCategorylinksAlias, [
-					"page_id = {$currentCategorylinksAlias}.cl_from",
-				] );
-				$queryBuilder->join( 'linktarget', $currentLinktargetAlias, [
-					"{$currentCategorylinksAlias}.cl_target_id = {$currentLinktargetAlias}.lt_id",
-				] );
-				$queryBuilder->where( [
-					"{$currentLinktargetAlias}.lt_title" => $cat->getDBKey(),
-					"{$currentLinktargetAlias}.lt_namespace" => $cat->getNamespace(),
-				] );
-			}
+			$currentLinktargetAlias = "lt$currentTableNumber";
+			$queryBuilder->join( 'categorylinks', $currentCategorylinksAlias, [
+				"page_id = {$currentCategorylinksAlias}.cl_from",
+			] );
+			$queryBuilder->join( 'linktarget', $currentLinktargetAlias, [
+				"{$currentCategorylinksAlias}.cl_target_id = {$currentLinktargetAlias}.lt_id",
+			] );
+			$queryBuilder->where( [
+				"{$currentLinktargetAlias}.lt_title" => $cat->getDBKey(),
+				"{$currentLinktargetAlias}.lt_namespace" => $cat->getNamespace(),
+			] );
 			$currentTableNumber++;
 		}
 
 		foreach ( $excludeCategories as $cat ) {
 			$currentCategorylinksAlias = "c$currentTableNumber";
-			if ( $migrationStage & SCHEMA_COMPAT_READ_OLD ) {
-				$queryBuilder->leftJoin( 'categorylinks', $currentCategorylinksAlias, [
-					"page_id = {$currentCategorylinksAlias}.cl_from",
-					"{$currentCategorylinksAlias}.cl_to" => $cat->getDBKey(),
-				] );
-				$queryBuilder->where( [ "{$currentCategorylinksAlias}.cl_to" => null ] );
-			} else {
-				$subquery = $dbr->newSelectQueryBuilder()
-					->select( 'cl_from' )
-					->from( 'categorylinks' )
-					->join( 'linktarget', null, [ 'cl_target_id = lt_id' ] )
-					->where( [
-						'lt_title' => $cat->getDBKey(),
-						'lt_namespace' => $cat->getNamespace(),
-					] )
-					->caller( __METHOD__ );
-				$queryBuilder->leftJoin( $subquery, "excluded_pages{$currentTableNumber}", [
-					"page_id = excluded_pages{$currentTableNumber}.cl_from",
-				] );
-				$queryBuilder->where( [ "excluded_pages{$currentTableNumber}.cl_from" => null ] );
-			}
+			$subquery = $dbr->newSelectQueryBuilder()
+				->select( 'cl_from' )
+				->from( 'categorylinks' )
+				->join( 'linktarget', null, [ 'cl_target_id = lt_id' ] )
+				->where( [
+					'lt_title' => $cat->getDBKey(),
+					'lt_namespace' => $cat->getNamespace(),
+				] )
+				->caller( __METHOD__ );
+			$queryBuilder->leftJoin( $subquery, "excluded_pages{$currentTableNumber}", [
+				"page_id = excluded_pages{$currentTableNumber}.cl_from",
+			] );
+			$queryBuilder->where( [ "excluded_pages{$currentTableNumber}.cl_from" => null ] );
 			$currentTableNumber++;
 		}
 
