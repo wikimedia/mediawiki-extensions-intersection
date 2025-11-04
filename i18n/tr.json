@@ -12,6 +12,6 @@
 	"intersection_noresults": "Bu kriterleri karşılayan sayfa yok.",
 	"intersection_noincludecats": "Hata: En az bir kategori eklemeniz veya bir ad alanı belirtmeniz gerekiyor!",
 	"intersection_pcerror": "Sunucular aşırı yüklendiğinden bu liste görüntülenemiyor. Lütfen daha sonra tekrar deneyiniz.",
-	"intersection-category": "DynamicPageList kullanan sayfalar",
+	"intersection-category": "DynamicPageList uzantısını kullanan sayfalar",
 	"intersection-category-desc": "Sayfa bir <code>&lt;DynamicPageList&gt;</code> etiketi içeriyor"
 }
