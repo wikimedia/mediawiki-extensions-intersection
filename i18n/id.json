@@ -4,6 +4,7 @@
 			"Daud I.F. Argana",
 			"Farras",
 			"IvanLanin",
+			"Penyuwangi",
 			"Rtnf"
 		]
 	},
@@ -13,5 +14,5 @@
 	"intersection_noincludecats": "DynamicPageList: Anda perlu mencantumkan paling tidak satu kategori, atau menyebutkan satu ruang nama!",
 	"intersection_pcerror": "Daftar ini tidak bisa ditampilkan karena peladen sedang sibuk. Tolong coba lagi nanti.",
 	"intersection-category": "Halaman yang menggunakan ekstensi DynamicPageList",
-	"intersection-category-desc": "Halaman yang menyertakan tag <code>&lt;DynamicPageList&gt;</code>."
+	"intersection-category-desc": "Halaman menyertakan tanda <code>&lt;DynamicPageList&gt;</code>"
 }
