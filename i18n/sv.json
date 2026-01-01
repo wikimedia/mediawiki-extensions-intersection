@@ -11,5 +11,5 @@
 	"intersection_toomanycats": "Fel: För många kategorier!",
 	"intersection_noresults": "Inga sidor uppfyller dessa kriterier.",
 	"intersection_noincludecats": "Fel: Du måste inkludera minst en kategori eller ange en namnrymd!",
-	"intersection-category": "Sidor som använder DynamicPageList-tillägget"
+	"intersection-category": "Sidor som använder DynamicPageList"
 }
