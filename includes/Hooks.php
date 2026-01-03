@@ -72,7 +72,6 @@ class Hooks implements
 		$order = 'descending';
 		$redirects = 'exclude';
 		$stable = 'include';
-		$quality = 'include';
 		$flaggedRevs = false;
 
 		$namespaceFiltering = false;
@@ -286,22 +285,6 @@ class Hooks implements
 							break;
 					}
 					break;
-				case 'qualitypages':
-					switch ( $arg ) {
-						case 'include':
-							$quality = 'include';
-							break;
-						case 'only':
-							$flaggedRevs = true;
-							$quality = 'only';
-							break;
-						case 'exclude':
-						default:
-							$flaggedRevs = true;
-							$quality = 'exclude';
-							break;
-					}
-					break;
 				case 'suppresserrors':
 					if ( $arg == 'true' || $arg === 'all' ) {
 						$suppressErrors = true;
@@ -418,11 +401,6 @@ class Hooks implements
 				$queryBuilder->where( [ 'fp_stable' => null ] );
 			}
 
-			if ( $quality == 'only' ) {
-				$queryBuilder->where( $dbr->expr( 'fp_quality', '>=', 1 ) );
-			} elseif ( $quality == 'exclude' ) {
-				$queryBuilder->where( $dbr->expr( 'fp_quality', '=', 0 )->or( 'fp_quality', '=', null ) );
-			}
 		}
 
 		if ( $redirects == 'only' ) {
