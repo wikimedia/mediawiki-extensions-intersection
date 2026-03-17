@@ -526,7 +526,7 @@ order=descending
 </div>
 		</li>
 		<li class="gallerybox" style="width: 105px">
-			<div class="thumb" style="width: 100px; height: 150px;"><span typeof="mw:File"><a href="/wiki/File:Foobar.svg" class="mw-file-description"><img alt="Foobar.svg" src="http://example.com/images/thumb/f/ff/Foobar.svg/70px-Foobar.svg.png" decoding="async" width="70" height="53" srcset="http://example.com/images/thumb/f/ff/Foobar.svg/105px-Foobar.svg.png 1.5x, http://example.com/images/thumb/f/ff/Foobar.svg/140px-Foobar.svg.png 2x" /></a></span></div>
+			<div class="thumb" style="width: 100px; height: 150px;"><span typeof="mw:File"><a href="/wiki/File:Foobar.svg" class="mw-file-description"><img alt="Foobar.svg" src="http://example.com/images/f/ff/Foobar.svg" decoding="async" width="70" height="53" /></a></span></div>
 			<div class="gallerytext"><a href="/wiki/File:Foobar.svg" class="galleryfilename galleryfilename-truncate" title="File:Foobar.svg">File:Foobar.svg</a>
 <p>240 × 180; 12 KB<br />
 </p>
