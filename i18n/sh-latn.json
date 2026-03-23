@@ -9,5 +9,5 @@
 	"intersection_toomanycats": "Greška: Previše kategorija!",
 	"intersection_noresults": "Nijedna stranica ne zadovoljava navedene kriterijume.",
 	"intersection_noincludecats": "Greška: Mora da uključite najmanje jednu kategoriju ili pak navedete imenski prostor!",
-	"intersection_pcerror": "Ovaj spisak nije moguće prikazati jer su poslužitelji preopterećeni. Pokušajte ponovo kasnije."
+	"intersection_pcerror": "Nije moguće prikazati ovu listu jer su serveri preopterećeni. Pokušajte ponovo kasnije."
 }
