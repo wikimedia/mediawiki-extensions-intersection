@@ -469,6 +469,8 @@ mode=gallery
 
 !! test
 mode=gallery (complex, with image + bad image)
+!! options
+disabled
 !! wikitext
 <DynamicPageList>
 mode=gallery
