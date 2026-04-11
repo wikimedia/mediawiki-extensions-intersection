@@ -674,7 +674,7 @@ class Hooks implements
 	 * @param string $pageName Name of page (for logging purposes)
 	 * @param IReadableDatabase $dbr
 	 * @param SelectQueryBuilder $queryBuilder
-	 * @return array|bool List of stdObj's or false on poolcounter being full
+	 * @return \stdClass[]|false List of stdObj's or false on poolcounter being full
 	 */
 	public static function processQuery(
 		string $pageName,
