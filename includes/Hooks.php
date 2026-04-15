@@ -2,10 +2,10 @@
 
 namespace MediaWiki\Extension\DynamicPageList;
 
-use ImageGalleryBase;
-use MediaWiki\Hook\ParserFirstCallInitHook;
+use MediaWiki\Gallery\ImageGalleryBase;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Parser\DateFormatter;
+use MediaWiki\Parser\Hook\ParserFirstCallInitHook;
 use MediaWiki\Parser\Parser;
 use MediaWiki\Parser\ParserOptions;
 use MediaWiki\PoolCounter\PoolCounterWorkViaCallback;
