@@ -35,7 +35,7 @@ class Hooks implements
 
 	/**
 	 * The callback function for converting the input text to HTML output
-	 * @param string $input
+	 * @param ?string $input
 	 * @param array $args
 	 * @param Parser $mwParser
 	 * @return string
@@ -101,7 +101,7 @@ class Hooks implements
 
 		$contLang = $services->getContentLanguage();
 
-		$parameters = explode( "\n", $input );
+		$parameters = explode( "\n", $input ?? '' );
 		foreach ( $parameters as $parameter ) {
 			$paramField = explode( '=', $parameter, 2 );
 			if ( count( $paramField ) < 2 ) {
