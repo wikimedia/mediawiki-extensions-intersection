@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ahmed-Najib-Biabani-Ibrahimkhel"
+			"Ahmed-Najib-Biabani-Ibrahimkhel",
+			"شاه زمان پټان"
 		]
 	},
 	"intersection_toomanycats": "ستونزه: ګڼ شمېر وېشنيزې!",
-	"intersection_noresults": "هېڅ مخ د دغو شرطونو سره اړخ نه لګوي."
+	"intersection_noresults": "هېڅ مخ د دغو شرطونو سره اړخ نه لګوي.",
+	"intersection-category-desc": "په مخ کې <code>&lt;DynamicPageList&gt;</code> نښلن رانغاړل شوی دی"
 }
