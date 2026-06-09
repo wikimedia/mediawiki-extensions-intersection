@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"AhmedG612"
+		]
+	},
+	"intersection-desc": "Waxay soo saartaa liis dhibco leh oo ka kooban gelitaannadii ugu dambeeyay ee ku jira qayb, ama isgoyska dhowr qaybood.",
+	"intersection_toomanycats": "Khalad: Qaybo aad u badan!",
+	"intersection_noresults": "Ma jiraan bogag buuxinaya shuruudahan.",
+	"intersection_noincludecats": "Khalad: Waa inaad ku dartaa ugu yaraan hal qayb, ama aad sheegtaa meel magac!",
+	"intersection_pcerror": "Liiskan lama soo bandhigi karo sababtoo ah adeegayaashu aad bay u mashquulsan yihiin. Fadlan mar kale isku day goor dambe.",
+	"intersection-category": "Bogagga isticmaalaya kordhinta DynamicPageList",
+	"intersection-category-desc": "Boggu waxa uu ka kooban yahay calaamadda <code>&lt;DynamicPageList&gt;</code>"
+}
