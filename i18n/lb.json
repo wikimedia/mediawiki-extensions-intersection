@@ -8,7 +8,7 @@
 	},
 	"intersection-desc": "Generéiert eng Lëscht mat de rezentesten Androungen an eng Kategorie, oder an eng Intersektioun vu méi Kategorien",
 	"intersection_toomanycats": "Feeler: Ze vill Kategorien!",
-	"intersection_noresults": "Keng Säiten entspriechen de Krittären.",
+	"intersection_noresults": "Et entsprieche keng Säiten de Krittären.",
 	"intersection_noincludecats": "Feeler: Dir musst mindestens eng Kategorie abannen oder den Nummraum uginn!",
 	"intersection_pcerror": "Dës Lëscht kann net ugewise ginn, well d'Serveren iwwerlaascht. Probéiert wgl. méi spéit nach eng Kéier.",
 	"intersection-category": "Säiten, déi d'DynamicPageList-Erweiderung benotzen",
