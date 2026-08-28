@@ -2,11 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"Helix84",
-			"Luky001"
+			"Luky001",
+			"Wizzard"
 		]
 	},
 	"intersection-desc": "Vypíše zoznam najnovších položiek v kategórii alebo zjednotení niekoľkých kategórií",
 	"intersection_toomanycats": "Error: Príliš veľa kategórií!",
 	"intersection_noresults": "Tieto kritériá nespĺňajú žiadne stránky.",
-	"intersection_noincludecats": "Error: Musíte uviesť aspoň jednu kategóriu alebo menný priestor!"
+	"intersection_noincludecats": "Error: Musíte uviesť aspoň jednu kategóriu alebo menný priestor!",
+	"intersection_pcerror": "Tento zoznam sa nedá zobraziť, pretože servery sú preťažené. Skúste to, prosím, neskôr.",
+	"intersection-category": "Stránky používajúce rozšírenie DynamicPageList",
+	"intersection-category-desc": "Stránka obsahuje značku <code>&lt;DynamicPageList&gt;</code>"
 }
