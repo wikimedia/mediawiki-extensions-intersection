@@ -15,9 +15,7 @@ use MediaWiki\WikiMap\WikiMap;
 use PageImages\PageImages;
 use UnexpectedValueException;
 use Wikimedia\ObjectCache\WANObjectCache;
-use Wikimedia\Rdbms\Database;
 use Wikimedia\Rdbms\IExpression;
-use Wikimedia\Rdbms\IReadableDatabase;
 use Wikimedia\Rdbms\LikeValue;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 
@@ -503,7 +501,7 @@ class Hooks implements
 		// To track down what page offending queries are on.
 		// For some reason, $fname doesn't get escaped by our code?!
 		$pageName = str_replace( [ '*', '/' ], '-', $mwParser->getTitle()->getPrefixedDBkey() );
-		$rows = self::processQuery( $pageName, $dbr, $queryBuilder );
+		$rows = self::processQuery( $pageName, $queryBuilder );
 		if ( $rows === false ) {
 			// This error path is very fast (We exit immediately if poolcounter is full)
 			// Thus it should be safe to try again in ~5 minutes.
@@ -650,13 +648,11 @@ class Hooks implements
 
 	/**
 	 * @param string $pageName Name of page (for logging purposes)
-	 * @param IReadableDatabase $dbr
 	 * @param SelectQueryBuilder $queryBuilder
 	 * @return \stdClass[]|false List of stdObj's or false on poolcounter being full
 	 */
 	public static function processQuery(
 		string $pageName,
-		IReadableDatabase $dbr,
 		SelectQueryBuilder $queryBuilder
 	) {
 		global $wgDLPQueryCacheTime, $wgDLPMaxQueryTime;
@@ -697,11 +693,10 @@ class Hooks implements
 		return $cache->getWithSetCallback(
 			$cache->makeKey( "DPLQuery", hash( "sha256", $query ) ),
 			$wgDLPQueryCacheTime,
-			static function ( $oldVal, &$ttl, &$setOpts ) use ( $worker, $dbr ){
+			static function ( $oldVal, &$ttl, &$setOpts ) use ( $worker ){
 				// TODO: Maybe could do something like check max(cl_timestamp) in
 				// category and the count in category.cat_pages, and invalidate if
 				// it appears like someone added or removed something from the category.
-				$setOpts += Database::getCacheSetOptions( $dbr );
 				$res = $worker->execute();
 				if ( $res === false ) {
 					// Do not cache errors.
