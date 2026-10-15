@@ -5,7 +5,11 @@
 			"شاه زمان پټان"
 		]
 	},
+	"intersection-desc": "په يوه وېشنيزه کې د وروستيو توکو يا ډ څو وېشنيزو د پریکون يوه گولۍ شوی لړليک چمتو کوي",
 	"intersection_toomanycats": "ستونزه: گڼ شمېر وېشنيزې!",
 	"intersection_noresults": "هېڅ مخ د دغو شرطونو سره اړخ نه لگوي.",
+	"intersection_noincludecats": "تېروتنه: تاسو بايد لږترلږه يوه وېشنيزه پکې راونغاړئ يا يو نوم‌تشيال مشخص کړئ!",
+	"intersection_pcerror": "دا لړليک نشي ښودل کېدی ځکه چې پالنگر ډېر بار شوی دی. مهرباني وکړئ وروسته بيا هڅه وکړئ.",
+	"intersection-category": "هغه مخونه چې د خوځنده‌مخلړ شاتاړی کاروي",
 	"intersection-category-desc": "په مخ کې <code>&lt;DynamicPageList&gt;</code> نښلن رانغاړل شوی دی"
 }
